@@ -94,6 +94,7 @@ a {
   text-align: center;
 }
 
+/* Style spécifique pour le Hero de la page Services */
 .hero-subpage {
   position: relative;
   height: 45vh;
@@ -125,7 +126,7 @@ a {
   z-index: -1;
 }
 
-/* Badge Google */
+/* Badge Google Reviews */
 .google-badge {
   background: #fff;
   display: flex;
@@ -165,15 +166,8 @@ a {
   cursor: pointer;
 }
 
-.btn-orange {
-  background-color: var(--accent-orange);
-  color: #fff;
-}
-
-.btn-orange:hover {
-  background-color: transparent;
-  color: var(--accent-orange);
-}
+.btn-orange { background-color: var(--accent-orange); color: #fff; }
+.btn-orange:hover { background-color: transparent; color: var(--accent-orange); }
 
 .btn-orange-small {
   background-color: var(--accent-orange);
@@ -184,27 +178,12 @@ a {
   text-align: center;
   border: 1px solid var(--accent-orange);
 }
+.btn-orange-small:hover { background-color: transparent; color: var(--accent-orange); }
 
-.btn-orange-small:hover {
-  background-color: transparent;
-  color: var(--accent-orange);
-}
-
-/* --- SERVICES & CARDS --- */
+/* --- SERVICES & CARDS (Homepage) --- */
 .section-padding { padding: 90px 0; }
-
-.section-title {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 50px;
-  color: #fff;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-}
+.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: #fff; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
 .service-card {
   background: var(--bg-dark);
@@ -217,7 +196,6 @@ a {
   align-items: center;
   text-align: center;
 }
-
 .service-card:hover { border-color: var(--accent-orange); transform: translateY(-8px); }
 .service-icon { width: 50px; height: 50px; fill: var(--accent-orange); margin-bottom: 20px; }
 .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
@@ -236,7 +214,7 @@ a {
 .hub-icon { width: 40px; height: 40px; fill: var(--accent-orange); margin-bottom: 20px; }
 .hub-card h2 { color: #fff; font-size: 1.6rem; margin-bottom: 15px; }
 
-/* --- QUALITY SECTION (Side-by-Side) --- */
+/* --- QUALITY SECTION (Layout Side-by-Side) --- */
 .quality-flex-layout {
   display: flex;
   align-items: center;
@@ -257,7 +235,7 @@ a {
 .gallery-item img { width: 100%; border-radius: 8px; transition: 0.3s; }
 .gallery-item:hover img { filter: brightness(1.1); }
 
-/* --- FINAL CTA --- */
+/* --- FINAL CTA (Centrage Parfait) --- */
 .final-cta {
   background-color: #0d0d0d;
   border-top: 1px solid #222;
@@ -295,7 +273,6 @@ a {
 .footer-list { list-style: none; }
 .footer-list li { margin-bottom: 12px; }
 
-/* Styles liens footer */
 .footer-list a, .contact-entry a, .legal-links a {
   color: var(--text-gray) !important;
 }
