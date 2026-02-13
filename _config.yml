@@ -1,0 +1,35 @@
+# --- _config.yml ---
+
+# Infos principales du site (SEO de base)
+title: Auto C&W
+email: contact@auto-cw.com
+description: "Le Studio de Detailing Ultime à Sallanches. Protection Céramique, Film PPF, Polissage et Rénovation Esthétique Premium pour votre automobile."
+author: "Duval DVL"
+
+# ⚠️ CONFIGURATION URL CRUCIALE POUR LE TEST ⚠️
+# Sur le site de test github.io :
+url: "https://duvaldvl.github.io" # Ton domaine github
+baseurl: "/autocw" # Le nom du dossier du dépôt.
+
+# LE JOUR DE LA MISE EN LIGNE FINALE SUR LE NDD, IL FAUDRA METTRE :
+# url: "https://auto-cw.com"
+# baseurl: ""  <-- Très important, le baseurl devient vide
+
+# Configuration de construction
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Données de l'entreprise (accessibles partout via site.company.xxx)
+company:
+  name: "Auto C&W"
+  phone: "06 76 83 04 88"
+  phone_clean: "0676830488" # Pour le lien tel:
+  address: "1081 avenue André Lasquin"
+  city: "Sallanches"
+  zip: "74700"
+  map_link: "https://maps.app.goo.gl/VotreLienGoogleMapsIci" # À récupérer sur sa fiche GMB
+  instagram: "https://www.instagram.com/autocw/"
+  facebook: "https://www.facebook.com/profile.php?id=61572290684216"
