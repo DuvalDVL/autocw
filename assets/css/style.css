@@ -26,7 +26,7 @@ body {
   padding: 0 25px;
 }
 
-/* Reset Global des Liens (Supprime bleu/souligné par défaut) */
+/* Reset Global des Liens */
 a {
   text-decoration: none !important;
   color: inherit;
@@ -77,8 +77,6 @@ a {
 .main-nav a:hover { color: var(--accent-orange); }
 
 .header-actions { display: flex; align-items: center; gap: 20px; }
-
-/* Icônes sociaux dans la Navbar */
 .nav-socials { display: flex; gap: 15px; margin-right: 10px; }
 .icon-nav { width: 22px; height: 22px; fill: #fff; transition: 0.3s; }
 .icon-nav:hover { fill: var(--accent-orange); }
@@ -96,10 +94,9 @@ a {
   text-align: center;
 }
 
-/* --- Mise à jour de la section HERO SUBPAGE --- */
 .hero-subpage {
-  position: relative; /* Indispensable pour l'image absolue */
-  height: 45vh; /* Hauteur réduite par rapport à la homepage */
+  position: relative;
+  height: 45vh;
   min-height: 350px;
   display: flex;
   align-items: center;
@@ -128,7 +125,6 @@ a {
   z-index: -1;
 }
 
-/* Badge Google Reviews SVG */
 .google-badge {
   background: #fff;
   display: flex;
@@ -153,7 +149,7 @@ a {
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 55px; /* Augmentation du padding corrigée */
+  margin-bottom: 55px;
 }
 
 /* --- BOUTONS --- */
@@ -178,13 +174,12 @@ a {
   color: var(--accent-orange);
 }
 
-/* Boutons dans les cards avec effet au survol */
 .btn-orange-small {
   background-color: var(--accent-orange);
   color: #fff;
   padding: 10px 20px;
   font-size: 0.8rem;
-  margin-top: 35px; /* Augmentation du padding corrigée */
+  margin-top: 35px;
   text-align: center;
   border: 1px solid var(--accent-orange);
 }
@@ -240,7 +235,7 @@ a {
 .hub-icon { width: 40px; height: 40px; fill: var(--accent-orange); margin-bottom: 20px; }
 .hub-card h2 { color: #fff; font-size: 1.6rem; margin-bottom: 15px; }
 
-/* --- QUALITY SECTION (Layout Side-by-Side) --- */
+/* --- QUALITY SECTION (Side-by-Side) --- */
 .quality-flex-layout {
   display: flex;
   align-items: center;
@@ -261,7 +256,7 @@ a {
 .gallery-item img { width: 100%; border-radius: 8px; transition: 0.3s; }
 .gallery-item:hover img { filter: brightness(1.1); }
 
-/* --- FINAL CTA (Centrage parfait corrigé) --- */
+/* --- FINAL CTA --- */
 .final-cta {
   background-color: #0d0d0d;
   border-top: 1px solid #222;
@@ -278,7 +273,7 @@ a {
 .cta-content-wrapper h2 { font-size: 2.8rem; margin-bottom: 15px; color: #fff; }
 .btn-large { font-size: 1.2rem; padding: 18px 45px; margin-top: 25px; }
 
-/* --- FOOTER (Style & Liens corrigés) --- */
+/* --- FOOTER --- */
 .site-footer {
   background: var(--bg-dark);
   border-top: 1px solid #222;
@@ -299,10 +294,8 @@ a {
 .footer-list { list-style: none; }
 .footer-list li { margin-bottom: 12px; }
 
-/* Blocage des styles par défaut et forçage gris/orange */
 .footer-list a, .contact-entry a, .legal-links a {
   color: var(--text-gray) !important;
-  text-decoration: none !important;
 }
 
 .footer-list a:hover, .contact-entry a:hover, .legal-links a:hover {
@@ -360,7 +353,6 @@ a {
   .desktop-only { display: none; }
   .mobile-only { display: flex; }
   
-  #menu-toggle { background: none; border: none; cursor: pointer; padding: 10px; }
   #menu-toggle span { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; }
 
   #mobile-menu {
