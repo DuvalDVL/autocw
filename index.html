@@ -4,14 +4,12 @@ hero_image: "/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp"
 ---
 
 <section class="hero-section">
-  <div class="hero-overlay" style="background: rgba(10,10,10,0.55);"></div>
-  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="Studio Detailing Auto C&W" class="hero-bg" fetchpriority="high">
+  <div class="hero-overlay" style="background: rgba(10,10,10,0.45);"></div>
+  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="Studio Detailing Sallanches" class="hero-bg" fetchpriority="high">
   <div class="container hero-content">
     <h1>LE STUDIO DE DETAILING<br> <span class="text-orange">ULTIME À SALLANCHES</span></h1>
     <p>Sublimez votre véhicule. Protection et rénovation esthétique haute performance.</p>
-    <div class="hero-actions">
-      <a href="{{ site.baseurl }}/contact/" class="btn btn-orange">Réserver une prestation</a>
-    </div>
+    <a href="{{ site.baseurl }}/contact/" class="btn btn-orange">Réserver une prestation</a>
   </div>
 </section>
 
@@ -23,21 +21,39 @@ hero_image: "/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp"
         <div class="icon-wrapper"><svg viewBox="0 0 24 24" class="service-icon"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7A3,3 0 0,1 15,10A3,3 0 0,1 12,13A3,3 0 0,1 9,10A3,3 0 0,1 12,7M12,15C14.67,15 20,16.33 20,19V20H4V19C4,16.33 9.33,15 12,15Z"/></svg></div>
         <h3>Protection Céramique</h3>
         <p>Bouclier liquide longue durée. Brillance extrême et hydrophobie incomparable.</p>
-        <a href="{{ site.baseurl }}/ceramique/" class="btn-text">Découvrir le service →</a>
+        <a href="{{ site.baseurl }}/ceramique/" class="btn btn-orange-small">En savoir plus</a>
       </div>
+      <div class="service-card">
+        <div class="icon-wrapper"><svg viewBox="0 0 24 24" class="service-icon"><path d="M12,15C15.87,15 19,15.89 19,17V19H5V17C5,15.89 8.13,15 12,15M12,13C9.24,13 7,10.76 7,8C7,5.24 9.24,3 12,3C14.76,3 17,5.24 17,8C17,10.76 14.76,13 12,13M12,1L11,1L11,21L12,21L12,1Z"/></svg></div>
+        <h3>Film PPF (Bodyfence)</h3>
+        <p>Protection ultime contre les impacts. Film auto-cicatrisant invisible.</p>
+        <a href="{{ site.baseurl }}/ppf/" class="btn btn-orange-small">En savoir plus</a>
       </div>
+      <div class="service-card">
+        <div class="icon-wrapper"><svg viewBox="0 0 24 24" class="service-icon"><path d="M19,2L14,6.5V9.5L19,5V2M15,12A5,5 0 0,1 10,17A5,5 0 0,1 5,12A5,5 0 0,1 10,7A5,5 0 0,1 15,12M13,12A3,3 0 0,0 10,9A3,3 0 0,0 7,12A3,3 0 0,0 10,15A3,3 0 0,0 13,12M21,16.5L16,21V18L21,13.5V16.5Z"/></svg></div>
+        <h3>Detailing & Rénovation</h3>
+        <p>Polissage de précision et nettoyage en profondeur pour un état concours.</p>
+        <a href="{{ site.baseurl }}/detailing/" class="btn btn-orange-small">En savoir plus</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="quality-section section-padding">
-  <div class="container quality-flex">
-    <div class="quality-img">
-      <img src="{{ site.baseurl }}/assets/img/studio-detailing-auto-cw-prestation-qualite.webp" alt="Soin méticuleux à l'atelier" loading="lazy">
-    </div>
-    <div class="quality-text">
+  <div class="container quality-container">
+    <div class="quality-header">
       <h2>L'Excellence <span class="text-orange">dans chaque geste</span></h2>
-      <p>Chaque véhicule qui entre dans notre studio reçoit une attention chirurgicale. Nous n'utilisons que des produits certifiés et des techniques de pointe pour garantir un résultat sans compromis.</p>
-      <a href="{{ site.company.instagram }}" target="_blank" class="btn btn-orange">Suivez-nous sur Instagram</a>
+    </div>
+    <div class="quality-content-box">
+      <div class="quality-img-wrap">
+        <img src="{{ site.baseurl }}/assets/img/studio-detailing-auto-cw-prestation-qualite.webp" alt="Soin méticuleux" loading="lazy" width="600" height="400">
+      </div>
+      <div class="quality-info">
+        <p>Chaque véhicule qui entre dans notre studio reçoit une attention chirurgicale. Nous n'utilisons que des produits certifiés et des techniques de pointe pour garantir un résultat sans compromis.</p>
+        <div class="center-btn">
+          <a href="{{ site.company.instagram }}" target="_blank" class="btn btn-orange">Suivez-nous sur Instagram</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -45,7 +61,6 @@ hero_image: "/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp"
 <section class="final-cta section-padding">
   <div class="container cta-centered">
     <h2>Prêt à redonner <span class="text-orange">éclat à votre auto ?</span></h2>
-    <p>Contactez-nous pour un diagnostic et un devis personnalisé.</p>
     <a href="{{ site.baseurl }}/contact/" class="btn btn-orange btn-large">Prendre rendez-vous</a>
   </div>
 </section>
