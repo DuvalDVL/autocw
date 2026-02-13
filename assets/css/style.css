@@ -97,8 +97,8 @@ a {
 /* Style spécifique pour le Hero de la page Services */
 .hero-subpage {
   position: relative;
-  height: 45vh;
-  min-height: 350px;
+  height: 75vh;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
