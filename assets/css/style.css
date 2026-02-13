@@ -26,14 +26,14 @@ body {
   padding: 0 25px;
 }
 
-/* Reset Global des Liens (Supprime bleu/souligné par défaut) */
+/* Reset Global des Liens */
 a {
   text-decoration: none !important;
   color: inherit;
   transition: 0.3s;
 }
 
-/* --- NAVBAR (Correction doublons & visibilité) --- */
+/* --- NAVBAR --- */
 .site-header {
   background-color: var(--bg-dark);
   height: var(--nav-height);
@@ -104,24 +104,25 @@ a {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* Opacité réduite */
+  background: rgba(0, 0, 0, 0.45);
   z-index: -1;
 }
 
-/* Badge Google Reviews */
+/* Badge Google avec SVG */
 .google-badge {
   background: #fff;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 15px;
+  gap: 10px;
+  padding: 8px 18px;
   border-radius: 50px;
   width: fit-content;
-  margin: 0 auto 30px;
+  margin: 0 auto 35px;
 }
-.google-badge .rating { color: #000; font-weight: 900; }
-.google-badge .stars { color: #f1c40f; }
-.google-badge .badge-text { color: #666; font-size: 0.75rem; font-weight: 700; }
+.icon-google { width: 20px; height: 20px; }
+.google-badge .rating { color: #000; font-weight: 900; font-size: 1.1rem; }
+.google-badge .stars { color: #f1c40f; font-size: 1.1rem; }
+.google-badge .badge-text { color: #666; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; }
 
 .hero-content h1 {
   font-size: clamp(2.2rem, 5vw, 4rem);
@@ -132,7 +133,7 @@ a {
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 45px; /* Augmentation padding vers le bouton */
+  margin-bottom: 45px; /* Augmentation padding H2-CTA corrigée */
 }
 
 /* --- BOUTONS --- */
@@ -142,7 +143,6 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 4px;
-  transition: 0.3s;
   border: 1px solid var(--accent-orange);
   cursor: pointer;
 }
@@ -157,13 +157,13 @@ a {
   color: var(--accent-orange);
 }
 
-/* Hover sur boutons des cards */
+/* Hover sur boutons des cards avec padding */
 .btn-orange-small {
   background-color: var(--accent-orange);
   color: #fff;
   padding: 10px 20px;
   font-size: 0.8rem;
-  margin-top: 25px; /* Padding card-bouton */
+  margin-top: 30px; /* Augmentation padding paragraphe-CTA */
   text-align: center;
   border: 1px solid var(--accent-orange);
 }
@@ -237,32 +237,28 @@ a {
 }
 
 .quality-img-centered:hover img {
-  transform: scale(1.05); /* Effet zoom demandé */
+  transform: scale(1.05);
 }
 
 .center-btn { display: flex; justify-content: center; }
 
-/* --- GALERIE --- */
-.gallery-item img { width: 100%; border-radius: 8px; transition: 0.3s; }
-.gallery-item:hover img { filter: brightness(1.1); }
-
-/* --- FINAL CTA (Centrage corrigé) --- */
+/* --- FINAL CTA (Correction centrage complet) --- */
 .final-cta {
   background-color: #0d0d0d;
   border-top: 1px solid #222;
+  text-align: center;
 }
 
 .cta-centered {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .cta-content-wrapper h2 { font-size: 2.8rem; margin-bottom: 15px; }
 .btn-large { font-size: 1.2rem; padding: 18px 45px; margin-top: 25px; }
 
-/* --- FOOTER (Structure & Liens corrigés) --- */
+/* --- FOOTER (Style liens forcé) --- */
 .site-footer {
   background: var(--bg-dark);
   border-top: 1px solid #222;
@@ -283,9 +279,10 @@ a {
 .footer-list { list-style: none; }
 .footer-list li { margin-bottom: 12px; }
 
-/* Force gris sur liens footer et suppression bleu/souligné */
+/* Blocage des styles par défaut sur tous les liens du footer */
 .footer-list a, .contact-entry a, .legal-links a {
   color: var(--text-gray) !important;
+  text-decoration: none !important;
 }
 
 .footer-list a:hover, .contact-entry a:hover, .legal-links a:hover {
@@ -305,7 +302,6 @@ a {
   font-size: 0.85rem;
 }
 
-/* Duval DVL Link spécifique */
 .duval-link { color: var(--accent-orange) !important; font-weight: 700; }
 
 /* --- STICKY BUTTON (Pulsation) --- */
