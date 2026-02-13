@@ -2,11 +2,20 @@
 layout: default
 title: Le Studio de Detailing Ultime à Sallanches
 description: Centre expert en soins esthétiques automobiles. Protection Céramique, Film PPF, et rénovation intérieure/extérieure premium à Sallanches et Megève.
+# Variable pour le préchargement LCP
+hero_image: "/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp"
 ---
 
 <section class="hero-section">
   <div class="hero-overlay"></div>
-  <img src="{{ site.baseurl }}/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp" alt="Studio de Detailing Auto C&W à Sallanches - Protection Céramique et PPF" class="hero-bg">
+  <img 
+    src="{{ site.baseurl }}{{ page.hero_image }}" 
+    alt="Studio de Detailing Auto C&W à Sallanches - Protection Céramique et PPF" 
+    class="hero-bg"
+    fetchpriority="high"
+    loading="eager"
+    width="1920"
+    height="1080">
   <div class="container hero-content">
     <h1>LE STUDIO DE DETAILING<br> <span class="text-orange">ULTIME À SALLANCHES</span></h1>
     <p>Sublimez votre véhicule. Protection et rénovation esthétique haute performance.</p>
@@ -20,18 +29,25 @@ description: Centre expert en soins esthétiques automobiles. Protection Cérami
   <div class="container">
     <h2 class="section-title">Nos Expertises <span class="text-orange">Studio</span></h2>
     <div class="grid-3">
+      
       <div class="service-card">
+        <img src="{{ site.baseurl }}/assets/img/icon-ceramique.webp" alt="Service Protection Céramique" loading="lazy" decoding="async" width="60" height="60" style="margin-bottom: 20px;">
         <h3>Protection Céramique</h3>
         <p>Bouclier liquide longue durée. Brillance extrême, hydrophobie et facilité de lavage incomparable.</p>
       </div>
+
       <div class="service-card">
+        <img src="{{ site.baseurl }}/assets/img/icon-ppf.webp" alt="Service Film Protection PPF" loading="lazy" decoding="async" width="60" height="60" style="margin-bottom: 20px;">
         <h3>Film PPF (Bodyfence)</h3>
         <p>La protection ultime contre les impacts de gravillons. Film auto-cicatrisant invisible.</p>
       </div>
+
       <div class="service-card">
+        <img src="{{ site.baseurl }}/assets/img/icon-detailing.webp" alt="Service Detailing et Rénovation" loading="lazy" decoding="async" width="60" height="60" style="margin-bottom: 20px;">
         <h3>Detailing & Rénovation</h3>
         <p>Polissage de correction et nettoyage intérieur en profondeur pour un état concours.</p>
       </div>
+
     </div>
   </div>
 </section>
