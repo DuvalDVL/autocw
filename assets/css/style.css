@@ -78,7 +78,7 @@ a {
 
 .header-actions { display: flex; align-items: center; gap: 20px; }
 .nav-socials { display: flex; gap: 15px; margin-right: 10px; }
-.icon-nav { width: 22px; height: 22px; fill: #fff; transition: 0.3s; }
+.icon-nav { width: 22px; height: 22px; fill: #fff; }
 .icon-nav:hover { fill: var(--accent-orange); }
 
 .desktop-only { display: block; }
@@ -189,7 +189,7 @@ a {
   color: var(--accent-orange);
 }
 
-/* --- SERVICES & CARDS --- */
+/* --- SERVICES & CARDS (Homepage) --- */
 .section-padding { padding: 90px 0; }
 
 .section-title {
@@ -222,7 +222,12 @@ a {
 .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
 
 /* --- SERVICES HUB GRID (Page /services/) --- */
-.services-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+.services-hub-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 40px; 
+}
+
 .hub-card { 
   background: var(--bg-dark); 
   padding: 40px; 
@@ -231,11 +236,12 @@ a {
   transition: 0.3s;
   text-align: left;
 }
+
 .hub-card:hover { background: #1a1a1a; transform: translateX(5px); }
 .hub-icon { width: 40px; height: 40px; fill: var(--accent-orange); margin-bottom: 20px; }
 .hub-card h2 { color: #fff; font-size: 1.6rem; margin-bottom: 15px; }
 
-/* --- QUALITY SECTION (Side-by-Side) --- */
+/* --- QUALITY SECTION (Side-by-Side Corrigé) --- */
 .quality-flex-layout {
   display: flex;
   align-items: center;
@@ -252,11 +258,7 @@ a {
 .quality-text-side p { font-size: 1.15rem; margin-bottom: 35px; }
 .quality-cta-wrap { display: flex; justify-content: flex-start; width: 100%; }
 
-/* --- GALERIE --- */
-.gallery-item img { width: 100%; border-radius: 8px; transition: 0.3s; }
-.gallery-item:hover img { filter: brightness(1.1); }
-
-/* --- FINAL CTA --- */
+/* --- FINAL CTA (Centrage Parfait) --- */
 .final-cta {
   background-color: #0d0d0d;
   border-top: 1px solid #222;
@@ -273,7 +275,7 @@ a {
 .cta-content-wrapper h2 { font-size: 2.8rem; margin-bottom: 15px; color: #fff; }
 .btn-large { font-size: 1.2rem; padding: 18px 45px; margin-top: 25px; }
 
-/* --- FOOTER --- */
+/* --- FOOTER (Style Liens Corrigé) --- */
 .site-footer {
   background: var(--bg-dark);
   border-top: 1px solid #222;
@@ -296,6 +298,7 @@ a {
 
 .footer-list a, .contact-entry a, .legal-links a {
   color: var(--text-gray) !important;
+  text-decoration: none !important;
 }
 
 .footer-list a:hover, .contact-entry a:hover, .legal-links a:hover {
@@ -353,6 +356,7 @@ a {
   .desktop-only { display: none; }
   .mobile-only { display: flex; }
   
+  #menu-toggle { background: none; border: none; cursor: pointer; padding: 10px; }
   #menu-toggle span { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; }
 
   #mobile-menu {
