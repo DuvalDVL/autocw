@@ -166,8 +166,15 @@ a {
   cursor: pointer;
 }
 
-.btn-orange { background-color: var(--accent-orange); color: #fff; }
-.btn-orange:hover { background-color: transparent; color: var(--accent-orange); }
+.btn-orange {
+  background-color: var(--accent-orange);
+  color: #fff;
+}
+
+.btn-orange:hover {
+  background-color: transparent;
+  color: var(--accent-orange);
+}
 
 .btn-orange-small {
   background-color: var(--accent-orange);
@@ -178,12 +185,27 @@ a {
   text-align: center;
   border: 1px solid var(--accent-orange);
 }
-.btn-orange-small:hover { background-color: transparent; color: var(--accent-orange); }
+
+.btn-orange-small:hover {
+  background-color: transparent;
+  color: var(--accent-orange);
+}
 
 /* --- SERVICES & CARDS (Homepage) --- */
 .section-padding { padding: 90px 0; }
-.section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: #fff; }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
 
 .service-card {
   background: var(--bg-dark);
@@ -196,6 +218,7 @@ a {
   align-items: center;
   text-align: center;
 }
+
 .service-card:hover { border-color: var(--accent-orange); transform: translateY(-8px); }
 .service-icon { width: 50px; height: 50px; fill: var(--accent-orange); margin-bottom: 20px; }
 .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
@@ -214,7 +237,7 @@ a {
 .hub-icon { width: 40px; height: 40px; fill: var(--accent-orange); margin-bottom: 20px; }
 .hub-card h2 { color: #fff; font-size: 1.6rem; margin-bottom: 15px; }
 
-/* --- QUALITY SECTION (Layout Side-by-Side) --- */
+/* --- QUALITY SECTION (Side-by-Side) --- */
 .quality-flex-layout {
   display: flex;
   align-items: center;
