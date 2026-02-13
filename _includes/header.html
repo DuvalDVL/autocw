@@ -5,14 +5,14 @@
     <nav class="main-nav desktop-only">
       <ul>
         <li><a href="{{ site.baseurl }}/">Accueil</a></li>
-        <li><a href="#services">Prestations</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="{{ site.baseurl }}/#services">Prestations</a></li>
+        <li><a href="{{ site.baseurl }}/#contact">Contact</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
       <a href="tel:{{ site.company.phone_clean }}" class="btn btn-orange desktop-only">{{ site.company.phone }}</a>
-      <button id="menu-toggle" class="mobile-only" aria-label="Ouvrir le menu">
+      <button id="menu-toggle" class="mobile-only" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -22,56 +22,17 @@
     <nav>
       <ul>
         <li><a href="{{ site.baseurl }}/">Accueil</a></li>
-        <li><a href="#services">Prestations</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="{{ site.baseurl }}/#services">Prestations</a></li>
+        <li><a href="{{ site.baseurl }}/#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="mobile-socials">
-       <a href="{{ site.company.instagram }}" target="_blank"><svg class="icon-social" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2C22,19.4 19.4,22 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8C2,4.6 4.6,2 7.8,2M12,7C9.2,7 7,9.2 7,12C7,14.8 9.2,17 12,17C14.8,17 17,14.8 17,12C17,9.2 14.8,7 12,7M12,15C10.3,15 9,13.7 9,12C9,10.3 10.3,9 12,9C13.7,9 15,10.3 15,12C15,13.7 13.7,15 12,15M17.2,4.8C16.7,4.8 16.3,5.2 16.3,5.7C16.3,6.2 16.7,6.6 17.2,6.6C17.7,6.6 18.1,6.2 18.1,5.7C18.1,5.2 17.7,4.8 17.2,4.8Z"/></svg></a>
-       <a href="{{ site.company.facebook }}" target="_blank"><svg class="icon-social" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg></a>
+       <a href="{{ site.company.instagram }}" target="_blank" aria-label="Instagram">
+         <svg class="icon-social" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2C22,19.4 19.4,22 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8C2,4.6 4.6,2 7.8,2M12,7C9.2,7 7,9.2 7,12C7,14.8 9.2,17 12,17C14.8,17 17,14.8 17,12C17,9.2 14.8,7 12,7M12,15C10.3,15 9,13.7 9,12C9,10.3 10.3,9 12,9C13.7,9 15,10.3 15,12C15,13.7 13.7,15 12,15M17.2,4.8C16.7,4.8 16.3,5.2 16.3,5.7C16.3,6.2 16.7,6.6 17.2,6.6C17.7,6.6 18.1,6.2 18.1,5.7C18.1,5.2 17.7,4.8 17.2,4.8Z"/></svg>
+       </a>
+       <a href="{{ site.company.facebook }}" target="_blank" aria-label="Facebook">
+         <svg class="icon-social" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
+       </a>
     </div>
   </div>
 </header>
-
-<script>
-  // Script minimaliste pour le menu mobile
-  const btn = document.getElementById('menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-  btn.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    btn.classList.toggle('open');
-  });
-</script>
-
-<style>
-  /* Ajouts CSS pour le responsive */
-  .desktop-only { display: block; }
-  .mobile-only { display: none; }
-
-  @media (max-width: 768px) {
-    .desktop-only { display: none; }
-    .mobile-only { display: block; }
-    
-    #menu-toggle {
-      background: none; border: none; cursor: pointer;
-      width: 30px; height: 20px; position: relative;
-    }
-    #menu-toggle span {
-      display: block; width: 100%; height: 2px; background: white;
-      position: absolute; transition: .3s;
-    }
-    #menu-toggle span:nth-child(2) { top: 9px; }
-    #menu-toggle span:nth-child(3) { top: 18px; }
-    
-    #mobile-menu {
-      position: fixed; top: var(--nav-height); left: 0; width: 100%;
-      height: 0; background: var(--bg-dark); overflow: hidden;
-      transition: height .3s ease; z-index: 99;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-    }
-    #mobile-menu.active { height: calc(100vh - var(--nav-height)); }
-    #mobile-menu ul { list-style: none; text-align: center; margin-bottom: 30px; }
-    #mobile-menu li { margin: 20px 0; font-size: 1.5rem; font-weight: bold; }
-    .mobile-socials { display: flex; gap: 20px; }
-  }
-</style>
