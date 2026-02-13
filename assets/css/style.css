@@ -26,7 +26,7 @@ body {
   padding: 0 25px;
 }
 
-/* Reset Global des Liens (Supprime bleu/souligné) */
+/* Reset Global des Liens */
 a {
   text-decoration: none !important;
   color: inherit;
@@ -84,7 +84,7 @@ a {
 .desktop-only { display: block; }
 .mobile-only { display: none; }
 
-/* --- HERO SECTION (Espacement corrigé) --- */
+/* --- HERO SECTION --- */
 .hero-section {
   position: relative;
   height: 80vh;
@@ -116,7 +116,7 @@ a {
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 45px; /* Augmentation padding vers le bouton */
+  margin-bottom: 45px;
 }
 
 /* --- BOUTONS --- */
@@ -127,6 +127,7 @@ a {
   text-transform: uppercase;
   border-radius: 4px;
   border: 1px solid var(--accent-orange);
+  cursor: pointer;
 }
 
 .btn-orange {
@@ -139,13 +140,20 @@ a {
   color: var(--accent-orange);
 }
 
+/* HOVER SUR PETITS BOUTONS */
 .btn-orange-small {
   background-color: var(--accent-orange);
   color: #fff;
   padding: 10px 20px;
   font-size: 0.8rem;
-  margin-top: 25px; /* Espacement corrigé dans les cards */
+  margin-top: 25px;
   text-align: center;
+  border: 1px solid var(--accent-orange);
+}
+
+.btn-orange-small:hover {
+  background-color: transparent;
+  color: var(--accent-orange);
 }
 
 /* --- SERVICES & CARDS --- */
@@ -172,7 +180,7 @@ a {
   transition: 0.3s;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrage du contenu */
+  align-items: center;
   text-align: center;
 }
 
@@ -187,11 +195,27 @@ a {
 .quality-content-box { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: var(--bg-dark); padding: 40px; border-radius: 12px; }
 .quality-img-wrap { overflow: hidden; border-radius: 8px; }
 .quality-img-wrap img { width: 100%; transition: 0.5s ease; display: block; }
-.quality-img-wrap:hover img { transform: scale(1.05); } /* Hover Zoom */
+.quality-img-wrap:hover img { transform: scale(1.05); }
 .quality-info p { font-size: 1.1rem; margin-bottom: 30px; line-height: 1.8; }
 .center-btn { text-align: center; width: 100%; }
 
-/* --- FOOTER (Style liens corrigé) --- */
+/* --- FINAL CTA : Correction du centrage --- */
+.final-cta {
+  background-color: #0d0d0d;
+  border-top: 1px solid #222;
+}
+
+.cta-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-content-wrapper h2 { font-size: 2.8rem; margin-bottom: 15px; }
+.btn-large { font-size: 1.2rem; padding: 18px 45px; margin-top: 25px; }
+
+/* --- FOOTER --- */
 .site-footer {
   background: var(--bg-dark);
   border-top: 1px solid #222;
@@ -212,10 +236,8 @@ a {
 .footer-list { list-style: none; }
 .footer-list li { margin-bottom: 12px; }
 
-/* Style Navigation & Contact */
 .footer-list a, .contact-entry a, .legal-links a {
   color: var(--text-gray) !important;
-  text-decoration: none !important;
 }
 
 .footer-list a:hover, .contact-entry a:hover, .legal-links a:hover {
@@ -235,7 +257,7 @@ a {
   font-size: 0.85rem;
 }
 
-.duval-link { color: var(--accent-orange) !important; font-weight: 700; text-decoration: none !important; }
+.duval-link { color: var(--accent-orange) !important; font-weight: 700; }
 
 /* --- STICKY BUTTON --- */
 .sticky-call-btn {
