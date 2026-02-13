@@ -1,0 +1,120 @@
+/* --- assets/css/style.css --- */
+
+:root {
+  /* Palette Studio Dark Mode - Option B */
+  --bg-darkest: #0a0a0a; /* Noir très profond pour le fond principal */
+  --bg-dark: #141414;    /* Gris très foncé pour les cards/navbar */
+  --text-light: #ffffff; /* Blanc pur pour les titres */
+  --text-gray: #cccccc;  /* Gris clair pour les paragraphes (meilleur contraste) */
+  
+  /* L'Accent Orange Électrique (Différenciant) */
+  --accent-orange: #FF5F00; /* Un orange très saturé et vif */
+  --accent-orange-hover: #FF7A2E; /* Version plus claire au survol */
+  
+  --nav-height: 80px;
+  --container-width: 1200px;
+}
+
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* On trouvera une font plus "racing" plus tard */
+  background-color: var(--bg-darkest);
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-light);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Utility Classes pour l'orange */
+.text-orange { color: var(--accent-orange); }
+.bg-orange { background-color: var(--accent-orange); color: white; }
+
+/* Boutons style "Studio" */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-orange {
+  background-color: var(--accent-orange);
+  color: white;
+  border: 2px solid var(--accent-orange);
+}
+
+.btn-orange:hover {
+  background-color: transparent;
+  color: var(--accent-orange);
+}
+
+/* --- Sections de base (pour la preview) --- */
+.hero {
+  height: 80vh;
+  background-color: var(--bg-darkest); /* Temporaire avant l'image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 2px solid var(--accent-orange); /* Petite touche studio */
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Cards style "Dark Mode" */
+.service-card {
+  background-color: var(--bg-dark);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a; /* Bordure subtile */
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-orange); /* L'orange apparaît au survol */
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
+  color: var(--accent-orange);
+}
