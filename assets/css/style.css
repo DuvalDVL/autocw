@@ -33,7 +33,7 @@ a {
   transition: 0.3s;
 }
 
-/* --- NAVBAR (Correction doublons & visibilité) --- */
+/* --- NAVBAR --- */
 .site-header {
   background-color: var(--bg-dark);
   height: var(--nav-height);
@@ -86,13 +86,20 @@ a {
 .desktop-only { display: block; }
 .mobile-only { display: none; }
 
-/* --- HERO SECTION (Espacements & Badge Google) --- */
+/* --- HERO SECTIONS (Home + Subpages) --- */
 .hero-section {
   position: relative;
   height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.hero-subpage {
+  padding: 120px 0 60px;
+  background: var(--bg-dark);
+  border-bottom: 1px solid #222;
   text-align: center;
 }
 
@@ -106,7 +113,7 @@ a {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* Filtre réduit pour visibilité */
+  background: rgba(0, 0, 0, 0.45);
   z-index: -1;
 }
 
@@ -126,7 +133,7 @@ a {
 .google-badge .stars { color: #f1c40f; font-size: 1.1rem; }
 .google-badge .badge-text { color: #666; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; }
 
-.hero-content h1 {
+.hero-content h1, .hero-subpage h1 {
   font-size: clamp(2.2rem, 5vw, 4rem);
   color: #fff;
   margin-bottom: 25px;
@@ -135,7 +142,7 @@ a {
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 45px; /* Padding entre texte et bouton CTA */
+  margin-bottom: 55px; /* Augmentation du padding corrigée */
 }
 
 /* --- BOUTONS --- */
@@ -160,13 +167,13 @@ a {
   color: var(--accent-orange);
 }
 
-/* Boutons dans les cards de services */
+/* Boutons dans les cards avec effet au survol */
 .btn-orange-small {
   background-color: var(--accent-orange);
   color: #fff;
   padding: 10px 20px;
   font-size: 0.8rem;
-  margin-top: 30px; /* Padding card-bouton */
+  margin-top: 35px; /* Augmentation du padding corrigée */
   text-align: center;
   border: 1px solid var(--accent-orange);
 }
@@ -208,9 +215,16 @@ a {
 .service-icon { width: 50px; height: 50px; fill: var(--accent-orange); margin-bottom: 20px; }
 .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
 
-/* --- SERVICES HUB GRID (Nouvelle Page Services) --- */
+/* --- SERVICES HUB GRID (Page /services/) --- */
 .services-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-.hub-card { background: var(--bg-dark); padding: 40px; border-radius: 8px; border-left: 4px solid var(--accent-orange); transition: 0.3s; }
+.hub-card { 
+  background: var(--bg-dark); 
+  padding: 40px; 
+  border-radius: 8px; 
+  border-left: 4px solid var(--accent-orange); 
+  transition: 0.3s;
+  text-align: left;
+}
 .hub-card:hover { background: #1a1a1a; transform: translateX(5px); }
 .hub-icon { width: 40px; height: 40px; fill: var(--accent-orange); margin-bottom: 20px; }
 .hub-card h2 { color: #fff; font-size: 1.6rem; margin-bottom: 15px; }
@@ -225,28 +239,29 @@ a {
 .quality-image-side { flex: 1; }
 .quality-img-wrap { overflow: hidden; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
 .quality-img-wrap img { width: 100%; transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1); display: block; }
-.quality-img-wrap:hover img { transform: scale(1.08); } /* Effet zoom demandé */
+.quality-img-wrap:hover img { transform: scale(1.05); }
 
-.quality-text-side { flex: 1.2; }
+.quality-text-side { flex: 1.2; text-align: left; }
 .quality-text-side h2 { font-size: 2.8rem; color: #fff; margin-bottom: 25px; }
 .quality-text-side p { font-size: 1.15rem; margin-bottom: 35px; }
-.quality-cta-wrap { display: flex; justify-content: center; width: 100%; }
+.quality-cta-wrap { display: flex; justify-content: flex-start; width: 100%; }
 
 /* --- GALERIE --- */
 .gallery-item img { width: 100%; border-radius: 8px; transition: 0.3s; }
 .gallery-item:hover img { filter: brightness(1.1); }
 
-/* --- FINAL CTA (Correction centrage complet) --- */
+/* --- FINAL CTA (Centrage parfait corrigé) --- */
 .final-cta {
   background-color: #0d0d0d;
   border-top: 1px solid #222;
+  text-align: center;
 }
 
 .cta-centered {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
 }
 
 .cta-content-wrapper h2 { font-size: 2.8rem; margin-bottom: 15px; color: #fff; }
@@ -273,7 +288,7 @@ a {
 .footer-list { list-style: none; }
 .footer-list li { margin-bottom: 12px; }
 
-/* Blocage des styles par défaut sur tous les liens du footer */
+/* Blocage des styles par défaut et forçage gris/orange */
 .footer-list a, .contact-entry a, .legal-links a {
   color: var(--text-gray) !important;
   text-decoration: none !important;
@@ -296,7 +311,6 @@ a {
   font-size: 0.85rem;
 }
 
-/* Duval DVL Link orange spécifique */
 .duval-link { color: var(--accent-orange) !important; font-weight: 700; }
 
 /* --- STICKY BUTTON (Pulsation) --- */
@@ -328,6 +342,7 @@ a {
 @media (max-width: 992px) {
   .footer-grid-main { grid-template-columns: 1fr; gap: 40px; }
   .quality-flex-layout { flex-direction: column; text-align: center; }
+  .quality-cta-wrap { justify-content: center; }
 }
 
 @media (max-width: 768px) {
