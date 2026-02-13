@@ -14,14 +14,13 @@
   <meta property="og:description" content="{{ page.description | default: site.description }}">
   <meta property="og:image" content="{{ site.baseurl }}/assets/img/og-image.jpg">
 
-  {% if page.url == "/" %}
-  <link rel="preload" as="image" href="{{ site.baseurl }}/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp" fetchpriority="high">
+  {% if page.hero_image %}
+  <link rel="preload" as="image" href="{{ site.baseurl }}{{ page.hero_image }}" fetchpriority="high">
   {% endif %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
 </head>
 <body>
@@ -47,11 +46,9 @@
         btn.onclick = () => {
           menu.classList.toggle('active');
           btn.classList.toggle('open');
-          // Empêche le scroll du body quand le menu est ouvert
           document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
         };
 
-        // Ferme le menu si on clique sur un lien (ancre)
         menu.querySelectorAll('a').forEach(link => {
           link.onclick = () => {
             menu.classList.remove('active');
