@@ -26,7 +26,7 @@ body {
   padding: 0 25px;
 }
 
-/* --- NAVBAR (Correction doublons & visibilité) --- */
+/* --- NAVBAR --- */
 .site-header {
   background-color: var(--bg-dark);
   height: var(--nav-height);
@@ -72,11 +72,15 @@ body {
 
 .main-nav a:hover { color: var(--accent-orange); }
 
-/* Gestion affichage Desktop vs Mobile */
+.header-actions { display: flex; align-items: center; gap: 20px; }
+.nav-socials { display: flex; gap: 15px; margin-right: 10px; }
+.icon-nav { width: 22px; height: 22px; fill: #fff; transition: 0.3s; }
+.icon-nav:hover { fill: var(--accent-orange); }
+
 .desktop-only { display: block; }
 .mobile-only { display: none; }
 
-/* --- HERO SECTION (Filtre réduit) --- */
+/* --- HERO SECTION --- */
 .hero-section {
   position: relative;
   height: 80vh;
@@ -96,7 +100,6 @@ body {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.55); /* Opacité réduite pour plus de clarté */
   z-index: -1;
 }
 
@@ -116,6 +119,7 @@ body {
   border-radius: 4px;
   transition: 0.3s;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn-orange {
@@ -127,6 +131,15 @@ body {
 .btn-orange:hover {
   background-color: transparent;
   color: var(--accent-orange);
+}
+
+.btn-orange-small {
+  background-color: var(--accent-orange);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+  margin-top: auto;
+  text-align: center;
 }
 
 /* --- SERVICES & CARDS --- */
@@ -156,45 +169,34 @@ body {
 }
 
 .service-card:hover { border-color: var(--accent-orange); transform: translateY(-8px); }
-
 .service-icon { width: 50px; height: 50px; fill: var(--accent-orange); margin-bottom: 20px; }
-
 .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
 
-.btn-text {
-  color: var(--accent-orange);
-  font-weight: 700;
-  text-decoration: none;
-  margin-top: auto;
-  padding-top: 20px;
-  display: inline-block;
-}
+/* --- QUALITY SECTION --- */
+.quality-container { display: flex; flex-direction: column; align-items: center; }
+.quality-header { text-align: center; margin-bottom: 40px; }
+.quality-header h2 { font-size: 2.5rem; color: #fff; }
+.quality-content-box { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: var(--bg-dark); padding: 40px; border-radius: 12px; }
+.quality-img-wrap { overflow: hidden; border-radius: 8px; }
+.quality-img-wrap img { width: 100%; transition: 0.5s ease; display: block; filter: grayscale(15%); }
+.quality-img-wrap:hover img { transform: scale(1.05); } /* Hover Zoom Effect */
+.quality-info p { font-size: 1.1rem; margin-bottom: 30px; line-height: 1.8; }
+.center-btn { text-align: center; width: 100%; }
 
-/* --- QUALITY SECTION (Image/Texte) --- */
-.quality-flex {
-  display: flex;
-  align-items: center;
-  gap: 60px;
-}
+/* --- GALERIE --- */
+.gallery-item img { width: 100%; border-radius: 8px; transition: 0.3s; }
+.gallery-item:hover img { filter: brightness(1.1); }
 
-.quality-img { flex: 1; }
-.quality-img img { width: 100%; border-radius: 12px; filter: grayscale(20%); }
-
-.quality-text { flex: 1; }
-.quality-text h2 { color: #fff; margin-bottom: 25px; font-size: 2.5rem; }
-.quality-text p { margin-bottom: 30px; font-size: 1.1rem; }
-
-/* --- FINAL CTA (Centré & Prominent) --- */
+/* --- FINAL CTA --- */
 .final-cta {
   background-color: #0d0d0d;
   border-top: 1px solid #222;
   text-align: center;
 }
-
 .cta-centered h2 { font-size: 2.8rem; margin-bottom: 15px; }
 .btn-large { font-size: 1.2rem; padding: 18px 45px; margin-top: 25px; }
 
-/* --- FOOTER (Structure colonnes corrigée) --- */
+/* --- FOOTER --- */
 .site-footer {
   background: var(--bg-dark);
   border-top: 1px solid #222;
@@ -207,28 +209,16 @@ body {
   gap: 50px;
 }
 
-.branding-col p { margin: 20px 0; max-width: 350px; }
-
-.footer-socials { display: flex; gap: 15px; }
-
-.icon-social {
-  width: 28px !important;
-  height: 28px !important;
-  fill: #fff;
-  transition: 0.3s;
-}
-
+.footer-socials { display: flex; gap: 15px; margin-top: 20px; }
+.icon-social { width: 28px !important; height: 28px !important; fill: #fff; transition: 0.3s; }
 .icon-social:hover { fill: var(--accent-orange); }
 
 .footer-col h4 { color: #fff; margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; }
-
 .footer-list { list-style: none; }
 .footer-list li { margin-bottom: 12px; }
-.footer-list a { color: var(--text-gray); text-decoration: none; }
 .footer-list a:hover { color: var(--accent-orange); }
 
 .contact-entry { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
-.contact-entry a { color: var(--text-gray); text-decoration: none; }
 .icon-small { width: 18px; height: 18px; fill: var(--accent-orange); }
 
 .footer-bottom-flex {
@@ -241,10 +231,9 @@ body {
   font-size: 0.85rem;
 }
 
-.creator-link { color: #fff; font-weight: 700; text-decoration: none; }
-.legal-links a { color: var(--text-gray); text-decoration: none; margin: 0 5px; }
+.duval-link { color: var(--accent-orange) !important; font-weight: 700; text-decoration: none; }
 
-/* --- STICKY BUTTON (Pulsation) --- */
+/* --- STICKY BUTTON --- */
 .sticky-call-btn {
   position: fixed;
   bottom: 25px;
@@ -272,12 +261,12 @@ body {
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 992px) {
   .footer-grid-main { grid-template-columns: 1fr; gap: 40px; }
-  .quality-flex { flex-direction: column; text-align: center; }
+  .quality-content-box { grid-template-columns: 1fr; text-align: center; }
 }
 
 @media (max-width: 768px) {
   .desktop-only { display: none; }
-  .mobile-only { display: block; }
+  .mobile-only { display: flex; }
   
   #menu-toggle { background: none; border: none; cursor: pointer; padding: 10px; }
   #menu-toggle span { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; }
@@ -292,4 +281,5 @@ body {
   #mobile-menu li { margin: 20px 0; font-size: 1.4rem; font-weight: 700; }
   
   .footer-bottom-flex { flex-direction: column; text-align: center; gap: 20px; }
+  .mobile-nav-tools { display: flex; align-items: center; gap: 15px; }
 }
