@@ -26,6 +26,13 @@ body {
   padding: 0 25px;
 }
 
+/* Reset Global des Liens (Supprime bleu/souligné) */
+a {
+  text-decoration: none !important;
+  color: inherit;
+  transition: 0.3s;
+}
+
 /* --- NAVBAR --- */
 .site-header {
   background-color: var(--bg-dark);
@@ -49,7 +56,6 @@ body {
   font-size: 1.6rem;
   font-weight: 900;
   color: var(--text-light);
-  text-decoration: none;
   letter-spacing: 1px;
 }
 
@@ -66,8 +72,6 @@ body {
   text-transform: uppercase;
   font-size: 0.85rem;
   color: var(--text-light);
-  text-decoration: none;
-  transition: 0.3s;
 }
 
 .main-nav a:hover { color: var(--accent-orange); }
@@ -80,7 +84,7 @@ body {
 .desktop-only { display: block; }
 .mobile-only { display: none; }
 
-/* --- HERO SECTION --- */
+/* --- HERO SECTION (Espacement corrigé) --- */
 .hero-section {
   position: relative;
   height: 80vh;
@@ -106,8 +110,13 @@ body {
 .hero-content h1 {
   font-size: clamp(2.2rem, 5vw, 4rem);
   color: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   line-height: 1.1;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 45px; /* Augmentation padding vers le bouton */
 }
 
 /* --- BOUTONS --- */
@@ -117,15 +126,12 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 4px;
-  transition: 0.3s;
-  text-decoration: none;
-  cursor: pointer;
+  border: 1px solid var(--accent-orange);
 }
 
 .btn-orange {
   background-color: var(--accent-orange);
   color: #fff;
-  border: 1px solid var(--accent-orange);
 }
 
 .btn-orange:hover {
@@ -138,7 +144,7 @@ body {
   color: #fff;
   padding: 10px 20px;
   font-size: 0.8rem;
-  margin-top: auto;
+  margin-top: 25px; /* Espacement corrigé dans les cards */
   text-align: center;
 }
 
@@ -166,6 +172,8 @@ body {
   transition: 0.3s;
   display: flex;
   flex-direction: column;
+  align-items: center; /* Centrage du contenu */
+  text-align: center;
 }
 
 .service-card:hover { border-color: var(--accent-orange); transform: translateY(-8px); }
@@ -178,25 +186,12 @@ body {
 .quality-header h2 { font-size: 2.5rem; color: #fff; }
 .quality-content-box { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: var(--bg-dark); padding: 40px; border-radius: 12px; }
 .quality-img-wrap { overflow: hidden; border-radius: 8px; }
-.quality-img-wrap img { width: 100%; transition: 0.5s ease; display: block; filter: grayscale(15%); }
-.quality-img-wrap:hover img { transform: scale(1.05); } /* Hover Zoom Effect */
+.quality-img-wrap img { width: 100%; transition: 0.5s ease; display: block; }
+.quality-img-wrap:hover img { transform: scale(1.05); } /* Hover Zoom */
 .quality-info p { font-size: 1.1rem; margin-bottom: 30px; line-height: 1.8; }
 .center-btn { text-align: center; width: 100%; }
 
-/* --- GALERIE --- */
-.gallery-item img { width: 100%; border-radius: 8px; transition: 0.3s; }
-.gallery-item:hover img { filter: brightness(1.1); }
-
-/* --- FINAL CTA --- */
-.final-cta {
-  background-color: #0d0d0d;
-  border-top: 1px solid #222;
-  text-align: center;
-}
-.cta-centered h2 { font-size: 2.8rem; margin-bottom: 15px; }
-.btn-large { font-size: 1.2rem; padding: 18px 45px; margin-top: 25px; }
-
-/* --- FOOTER --- */
+/* --- FOOTER (Style liens corrigé) --- */
 .site-footer {
   background: var(--bg-dark);
   border-top: 1px solid #222;
@@ -210,13 +205,22 @@ body {
 }
 
 .footer-socials { display: flex; gap: 15px; margin-top: 20px; }
-.icon-social { width: 28px !important; height: 28px !important; fill: #fff; transition: 0.3s; }
+.icon-social { width: 28px !important; height: 28px !important; fill: #fff; }
 .icon-social:hover { fill: var(--accent-orange); }
 
 .footer-col h4 { color: #fff; margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; }
 .footer-list { list-style: none; }
 .footer-list li { margin-bottom: 12px; }
-.footer-list a:hover { color: var(--accent-orange); }
+
+/* Style Navigation & Contact */
+.footer-list a, .contact-entry a, .legal-links a {
+  color: var(--text-gray) !important;
+  text-decoration: none !important;
+}
+
+.footer-list a:hover, .contact-entry a:hover, .legal-links a:hover {
+  color: var(--accent-orange) !important;
+}
 
 .contact-entry { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
 .icon-small { width: 18px; height: 18px; fill: var(--accent-orange); }
@@ -231,7 +235,7 @@ body {
   font-size: 0.85rem;
 }
 
-.duval-link { color: var(--accent-orange) !important; font-weight: 700; text-decoration: none; }
+.duval-link { color: var(--accent-orange) !important; font-weight: 700; text-decoration: none !important; }
 
 /* --- STICKY BUTTON --- */
 .sticky-call-btn {
@@ -281,5 +285,4 @@ body {
   #mobile-menu li { margin: 20px 0; font-size: 1.4rem; font-weight: 700; }
   
   .footer-bottom-flex { flex-direction: column; text-align: center; gap: 20px; }
-  .mobile-nav-tools { display: flex; align-items: center; gap: 15px; }
 }
