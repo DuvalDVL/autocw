@@ -26,14 +26,14 @@ body {
   padding: 0 25px;
 }
 
-/* Reset Global des Liens */
+/* Reset Global des Liens (Supprime bleu/souligné par défaut) */
 a {
   text-decoration: none !important;
   color: inherit;
   transition: 0.3s;
 }
 
-/* --- NAVBAR --- */
+/* --- NAVBAR (Correction doublons & visibilité) --- */
 .site-header {
   background-color: var(--bg-dark);
   height: var(--nav-height);
@@ -77,6 +77,8 @@ a {
 .main-nav a:hover { color: var(--accent-orange); }
 
 .header-actions { display: flex; align-items: center; gap: 20px; }
+
+/* Icônes sociaux dans la Navbar */
 .nav-socials { display: flex; gap: 15px; margin-right: 10px; }
 .icon-nav { width: 22px; height: 22px; fill: #fff; transition: 0.3s; }
 .icon-nav:hover { fill: var(--accent-orange); }
@@ -104,11 +106,11 @@ a {
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.45); /* Filtre réduit pour visibilité */
   z-index: -1;
 }
 
-/* Badge Google avec SVG */
+/* Badge Google Reviews SVG */
 .google-badge {
   background: #fff;
   display: flex;
@@ -133,7 +135,7 @@ a {
 
 .hero-content p {
   font-size: 1.2rem;
-  margin-bottom: 45px; /* Augmentation padding H2-CTA corrigée */
+  margin-bottom: 45px; /* Padding entre texte et bouton CTA */
 }
 
 /* --- BOUTONS --- */
@@ -143,6 +145,7 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 4px;
+  transition: 0.3s;
   border: 1px solid var(--accent-orange);
   cursor: pointer;
 }
@@ -157,13 +160,13 @@ a {
   color: var(--accent-orange);
 }
 
-/* Hover sur boutons des cards avec padding */
+/* Boutons dans les cards de services */
 .btn-orange-small {
   background-color: var(--accent-orange);
   color: #fff;
   padding: 10px 20px;
   font-size: 0.8rem;
-  margin-top: 30px; /* Augmentation padding paragraphe-CTA */
+  margin-top: 30px; /* Padding card-bouton */
   text-align: center;
   border: 1px solid var(--accent-orange);
 }
@@ -205,60 +208,51 @@ a {
 .service-icon { width: 50px; height: 50px; fill: var(--accent-orange); margin-bottom: 20px; }
 .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 1.4rem; }
 
-/* --- QUALITY SECTION (Centered Layout) --- */
-.quality-container-centered {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
+/* --- SERVICES HUB GRID (Nouvelle Page Services) --- */
+.services-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+.hub-card { background: var(--bg-dark); padding: 40px; border-radius: 8px; border-left: 4px solid var(--accent-orange); transition: 0.3s; }
+.hub-card:hover { background: #1a1a1a; transform: translateX(5px); }
+.hub-icon { width: 40px; height: 40px; fill: var(--accent-orange); margin-bottom: 20px; }
+.hub-card h2 { color: #fff; font-size: 1.6rem; margin-bottom: 15px; }
+
+/* --- QUALITY SECTION (Layout Side-by-Side) --- */
+.quality-flex-layout {
+  display: flex;
+  align-items: center;
+  gap: 80px;
 }
 
-.quality-header-centered h2 {
-  font-size: 2.8rem;
-  color: #fff;
-  margin-bottom: 20px;
-}
+.quality-image-side { flex: 1; }
+.quality-img-wrap { overflow: hidden; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+.quality-img-wrap img { width: 100%; transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1); display: block; }
+.quality-img-wrap:hover img { transform: scale(1.08); } /* Effet zoom demandé */
 
-.quality-header-centered p {
-  font-size: 1.15rem;
-  margin-bottom: 40px;
-}
+.quality-text-side { flex: 1.2; }
+.quality-text-side h2 { font-size: 2.8rem; color: #fff; margin-bottom: 25px; }
+.quality-text-side p { font-size: 1.15rem; margin-bottom: 35px; }
+.quality-cta-wrap { display: flex; justify-content: center; width: 100%; }
 
-.quality-img-centered {
-  overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 40px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-}
-
-.quality-img-centered img {
-  width: 100%;
-  transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-  display: block;
-}
-
-.quality-img-centered:hover img {
-  transform: scale(1.05);
-}
-
-.center-btn { display: flex; justify-content: center; }
+/* --- GALERIE --- */
+.gallery-item img { width: 100%; border-radius: 8px; transition: 0.3s; }
+.gallery-item:hover img { filter: brightness(1.1); }
 
 /* --- FINAL CTA (Correction centrage complet) --- */
 .final-cta {
   background-color: #0d0d0d;
   border-top: 1px solid #222;
-  text-align: center;
 }
 
 .cta-centered {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
-.cta-content-wrapper h2 { font-size: 2.8rem; margin-bottom: 15px; }
+.cta-content-wrapper h2 { font-size: 2.8rem; margin-bottom: 15px; color: #fff; }
 .btn-large { font-size: 1.2rem; padding: 18px 45px; margin-top: 25px; }
 
-/* --- FOOTER (Style liens forcé) --- */
+/* --- FOOTER (Style & Liens corrigés) --- */
 .site-footer {
   background: var(--bg-dark);
   border-top: 1px solid #222;
@@ -272,7 +266,7 @@ a {
 }
 
 .footer-socials { display: flex; gap: 15px; margin-top: 20px; }
-.icon-social { width: 28px !important; height: 28px !important; fill: #fff; }
+.icon-social { width: 28px !important; height: 28px !important; fill: #fff; transition: 0.3s; }
 .icon-social:hover { fill: var(--accent-orange); }
 
 .footer-col h4 { color: #fff; margin-bottom: 25px; font-size: 1.1rem; text-transform: uppercase; }
@@ -302,6 +296,7 @@ a {
   font-size: 0.85rem;
 }
 
+/* Duval DVL Link orange spécifique */
 .duval-link { color: var(--accent-orange) !important; font-weight: 700; }
 
 /* --- STICKY BUTTON (Pulsation) --- */
@@ -332,6 +327,7 @@ a {
 /* --- MOBILE RESPONSIVE --- */
 @media (max-width: 992px) {
   .footer-grid-main { grid-template-columns: 1fr; gap: 40px; }
+  .quality-flex-layout { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 768px) {
