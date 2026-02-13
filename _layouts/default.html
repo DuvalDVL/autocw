@@ -8,11 +8,12 @@
   <meta name="description" content="{{ page.description | default: site.description }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
+  <link rel="icon" type="image/avif" href="{{ site.baseurl }}/assets/img/favicon.avif">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description }}">
-  <meta property="og:image" content="{{ site.baseurl }}/assets/img/og-image.jpg">
 
   {% if page.hero_image %}
   <link rel="preload" as="image" href="{{ site.baseurl }}{{ page.hero_image }}" fetchpriority="high">
@@ -47,13 +48,6 @@
           btn.classList.toggle('open');
           document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
         };
-        menu.querySelectorAll('a').forEach(link => {
-          link.onclick = () => {
-            menu.classList.remove('active');
-            btn.classList.remove('open');
-            document.body.style.overflow = 'auto';
-          };
-        });
       }
     });
   </script>
