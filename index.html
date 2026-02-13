@@ -1,14 +1,16 @@
 ---
 layout: default
 title: Le Studio de Detailing Ultime à Sallanches
-description: Centre expert en esthétique automobile. Protection Céramique, Film PPF, et rénovation intérieure/extérieure premium à Sallanches et Megève.
+description: Centre expert en soins esthétiques automobiles. Protection Céramique, Film PPF, et rénovation intérieure/extérieure premium à Sallanches et Megève.
 ---
 
-<section class="hero">
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <img src="{{ site.baseurl }}/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp" alt="Studio de Detailing Auto C&W à Sallanches - Protection Céramique et PPF" class="hero-bg">
   <div class="container hero-content">
     <h1>LE STUDIO DE DETAILING<br> <span class="text-orange">ULTIME À SALLANCHES</span></h1>
     <p>Sublimez votre véhicule. Protection et rénovation esthétique haute performance.</p>
-    <div style="margin-top: 30px;">
+    <div class="hero-actions">
       <a href="#contact" class="btn btn-orange">Réserver une prestation</a>
     </div>
   </div>
@@ -16,8 +18,7 @@ description: Centre expert en esthétique automobile. Protection Céramique, Fil
 
 <section id="services" class="section-padding">
   <div class="container">
-    <h2 style="text-align: center;">Nos Expertises <span class="text-orange">Studio</span></h2>
-    
+    <h2 class="section-title">Nos Expertises <span class="text-orange">Studio</span></h2>
     <div class="grid-3">
       <div class="service-card">
         <h3>Protection Céramique</h3>
@@ -25,21 +26,20 @@ description: Centre expert en esthétique automobile. Protection Céramique, Fil
       </div>
       <div class="service-card">
         <h3>Film PPF (Bodyfence)</h3>
-        <p>La protection ultime contre les impacts de gravillons et rayures. Film auto-cicatrisant invisible.</p>
+        <p>La protection ultime contre les impacts de gravillons. Film auto-cicatrisant invisible.</p>
       </div>
       <div class="service-card">
         <h3>Detailing & Rénovation</h3>
-        <p>Polissage de correction, lustrage et nettoyage intérieur en profondeur pour un état concours.</p>
+        <p>Polissage de correction et nettoyage intérieur en profondeur pour un état concours.</p>
       </div>
     </div>
-
   </div>
 </section>
 
-<section id="contact" class="section-padding" style="background-color: var(--bg-dark); text-align: center;">
+<section id="contact" class="section-padding contact-cta">
   <div class="container">
     <h2>Votre projet <span class="text-orange">commence ici</span></h2>
-    <p style="margin-bottom: 30px;">Étude sur mesure de votre véhicule à l'atelier.</p>
+    <p>Étude sur mesure de votre véhicule à l'atelier de Sallanches.</p>
     <a href="tel:{{ site.company.phone_clean }}" class="btn btn-orange">{{ site.company.phone }}</a>
   </div>
 </section>
