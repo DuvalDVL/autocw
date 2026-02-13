@@ -269,3 +269,20 @@ body {
   .hero-content h1 { font-size: 2.5rem; }
   .section-padding { padding: 60px 0; }
 }
+
+/* Ajout dans assets/css/style.css */
+.icon-wrapper {
+  margin-bottom: 25px;
+  display: flex;
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+  fill: var(--accent-orange); /* L'icône prend la couleur orange Studio */
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1); /* Petit effet dynamique au survol */
+}
