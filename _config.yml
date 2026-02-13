@@ -8,8 +8,8 @@ author: "Duval DVL"
 
 # ⚠️ CONFIGURATION URL CRUCIALE POUR LE TEST ⚠️
 # Sur le site de test github.io :
-url: "https://duvaldvl.github.io" # Ton domaine github
-baseurl: "/autocw" # Le nom du dossier du dépôt.
+url: "https://duvaldvl.github.io"
+baseurl: "/autocw"
 
 # LE JOUR DE LA MISE EN LIGNE FINALE SUR LE NDD, IL FAUDRA METTRE :
 # url: "https://auto-cw.com"
