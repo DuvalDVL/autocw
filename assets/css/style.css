@@ -129,26 +129,24 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (CORRECTIF CIBLÉ)
+   3. DROPDOWN MENU (FIX DÉFINITIF)
    ========================================= */
 
-/* 1. La zone de survol (le bouton PRESTATIONS) */
-.main-nav > ul > li.dropdown {
+.dropdown {
+  position: relative !important;
   display: flex !important;
   align-items: center !important;
-  height: 100% !important; /* Force la hauteur pour que le survol soit stable */
-  position: relative !important;
   cursor: pointer !important;
+  height: 100% !important; /* Fix: Zone de survol sur toute la hauteur du header */
 }
 
-/* 2. La boite qui s'ouvre */
 .dropdown-content {
-  display: flex !important;
-  flex-direction: column !important; /* Empile les liens verticalement */
+  display: flex !important;           /* On utilise flex pour un meilleur calcul de la hauteur */
+  flex-direction: column !important;  /* Empile les liens verticalement */
   position: absolute !important;
-  top: 100% !important; /* Aligné au bas du bandeau noir */
+  top: 100% !important;
   left: 50% !important;
-  transform: translateX(-50%) translateY(0) !important;
+  transform: translateX(-50%) translateY(20px) !important;
   
   background-color: #1a1a1a !important;
   min-width: 280px !important;
@@ -163,43 +161,71 @@ ul { list-style: none; }
   transition: all 0.2s ease-in-out !important;
   
   list-style: none !important;
-  /* Augmente le padding du bas pour bien englober le 2ème lien */
-  padding: 10px 0 15px 0 !important; 
+  /* MODIFICATION ICI : On augmente le 3ème chiffre (bas) pour agrandir la box */
+  padding: 10px 0 35px 0 !important; 
   z-index: 9999 !important;
-  height: auto !important; /* S'ajuste selon le nombre de liens */
+  height: auto !important;            /* La box s'adapte maintenant au contenu */
 }
 
-/* 3. Les liens à l'intérieur de la boite */
-.dropdown-content li {
+.icon-arrow { 
+  width: 14px !important; 
+  height: 14px !important; 
+  fill: currentColor !important; 
+  margin-left: 6px !important; 
+  transition: transform 0.3s ease !important;
+  display: inline-block !important;
+}
+
+.dropdown-content::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -30px !important;
+  left: 0 !important;
   width: 100% !important;
+  height: 30px !important;
+  background: transparent !important;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.dropdown:hover .icon-arrow { 
+  transform: rotate(180deg) !important; 
+}
+
+.dropdown-content li {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
 }
 
 .dropdown-content li a {
   display: block !important;
-  padding: 15px 25px !important; /* Respiration entre les lignes */
+  padding: 16px 25px !important; 
   text-transform: none !important;
-  font-size: 0.95rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
   color: #ccc !important;
   border-bottom: 1px solid rgba(255,255,255,0.05) !important;
-  line-height: 1.4 !important;
+  transition: background 0.2s, padding-left 0.2s !important;
+  text-decoration: none !important;
+  line-height: 1.5 !important;
+  white-space: normal !important; 
 }
 
-/* Retire la bordure sous le dernier lien */
 .dropdown-content li:last-child a {
   border-bottom: none !important;
 }
 
-/* Effet au survol des liens */
 .dropdown-content li a:hover {
   background: #252525 !important;
   color: var(--accent-orange) !important;
-  padding-left: 30px !important;
-}
-
-/* 4. Affichage au survol du parent */
-.main-nav > ul > li.dropdown:hover .dropdown-content {
-  opacity: 1 !important;
-  visibility: visible !important;
+  padding-left: 35px !important;
 }
 
 /* =========================================
