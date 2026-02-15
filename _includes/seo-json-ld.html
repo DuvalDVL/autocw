@@ -1,0 +1,40 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDetaling",
+  "name": "{{ site.company.name }}",
+  "image": "{{ site.url }}{{ site.baseurl }}/assets/img/og-image.jpg",
+  "@id": "{{ site.url }}{{ site.baseurl }}",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "telephone": "{{ site.company.phone }}",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.company.address }}",
+    "addressLocality": "{{ site.company.city }}",
+    "postalCode": "{{ site.company.zip }}",
+    "addressCountry": "FR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.9388, 
+    "longitude": 6.6296
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "08:30",
+    "closes": "18:00"
+  },
+  "sameAs": [
+    "{{ site.company.instagram }}",
+    "{{ site.company.facebook }}"
+  ]
+}
+</script>
