@@ -438,6 +438,11 @@ ul { list-style: none; }
   margin-top: 50px;
 }
 
+/* =========================================
+   NOS FORMULES NETTOYAGE (FIX)
+   ========================================= */
+
+/* 1. État de base identique pour TOUTES les cartes */
 .price-card {
   background: var(--bg-dark); 
   border: 1px solid #333; 
@@ -445,11 +450,30 @@ ul { list-style: none; }
   padding: 35px;
   display: flex; 
   flex-direction: column; 
-  transition: 0.3s; 
+  transition: all 0.3s ease; /* Transition fluide pour le hover */
   position: relative; 
   overflow: hidden;
+  transform: translateY(0); /* Force l'état initial */
 }
-.price-card:hover { border-color: var(--accent-orange); transform: translateY(-5px); }
+
+/* 2. Effet au survol uniquement */
+.price-card:hover {
+  border-color: var(--accent-orange) !important;
+  transform: translateY(-10px) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. Sécurité : On neutralise toute mise en avant forcée sur la 3ème carte */
+.service-cards-grid .price-card:nth-child(3) {
+  border-color: #333; /* On remet la bordure grise par défaut */
+  transform: translateY(0);
+}
+
+/* On s'assure que le survol fonctionne toujours sur la 3ème après le reset */
+.service-cards-grid .price-card:nth-child(3):hover {
+  border-color: var(--accent-orange);
+  transform: translateY(-10px);
+}
 .price-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
 .card-price { font-size: 1.8rem; font-weight: 900; color: var(--accent-orange); margin-bottom: 20px; display: block; }
 .card-price span { font-size: 0.9rem; color: #888; font-weight: 400; }
