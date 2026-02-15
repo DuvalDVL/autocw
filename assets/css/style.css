@@ -658,16 +658,22 @@ ul { list-style: none; }
   border: none; 
   cursor: pointer; 
   fill: var(--accent-orange); 
-  width: 50px; 
-  height: 50px; 
+  width: 80px; 
+  height: 80px; 
   transition: 0.3s; 
   opacity: 0.6;
-  padding: 0 20px;
+  padding: 0;
+}
+
+/* 2. ON FORCE LA TAILLE DE L'ICÔNE INTERNE */
+.nav-arrow svg {
+  width: 45px;   /* Taille de l'icône proprement dite */
+  height: 45px;
 }
 
 .nav-arrow:hover { 
   opacity: 1; 
-  transform: scale(1.1); 
+  transform: scale(1.2); 
 }
 
 /* Adaptation Mobile Avis */
