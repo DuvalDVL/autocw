@@ -176,21 +176,24 @@ ul { list-style: none; }
 
 /* Liens du dropdown */
 .dropdown-content li { 
-  display: block; 
+  display: block !important; 
   width: 100%; 
   margin: 0; 
-  height: auto !important; /* ✅ CORRIGE la hauteur énorme héritée du menu principal */
+  height: auto !important;
+  align-items: initial !important;
 }
 
 .dropdown-content li a {
-  display: block;
+  display: block !important; /* 🔥 CRUCIAL : force block au lieu du flex hérité */
   padding: 14px 25px;
-  text-transform: none; /* Texte normal */
+  text-transform: none;
   font-size: 0.9rem;
   font-weight: 500;
   color: #ccc !important;
   border-bottom: 1px solid rgba(255,255,255,0.05);
   transition: background 0.2s, padding-left 0.2s;
+  height: auto !important; /* 🔥 CRUCIAL : hauteur automatique pour les liens */
+  align-items: initial !important;
 }
 
 .dropdown-content li:last-child a { border-bottom: none; }
