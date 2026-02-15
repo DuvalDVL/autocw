@@ -58,11 +58,20 @@ ul { list-style: none; }
   height: 100%;
 }
 
+/* --- Style du Logo (Image) --- */
 .logo {
-  font-size: 1.6rem;
-  font-weight: 900;
-  color: var(--text-light);
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  height: 100%; /* S'assure que le lien prend toute la hauteur du header */
+  padding: 10px 0; /* Ajoute un peu d'air en haut/bas */
+}
+
+.logo-img {
+  height: 55px !important; /* Force la hauteur à 55px (pour un header de 85px) */
+  width: auto;             /* Conserve les proportions sans écraser */
+  max-width: 100%;         /* Sécurité pour ne pas déborder */
+  display: block;
+  object-fit: contain;     /* S'assure que l'image tient dans la boîte */
 }
 
 .text-orange { color: var(--accent-orange); }
@@ -88,7 +97,7 @@ ul { list-style: none; }
 .main-nav > ul > li.dropdown {
   display: flex;
   align-items: center;
-  height: auto; /* Pas 100% ! */
+  height: auto;
   position: relative;
 }
 
@@ -112,27 +121,6 @@ ul { list-style: none; }
   color: var(--accent-orange);
 }
 
-/* ✅ Styles spécifiques pour le bouton du dropdown */
-.dropbtn {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  color: var(--text-light);
-  display: inline-flex !important; /* Inline-flex au lieu de flex pour ne pas s'étirer */
-  align-items: center;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 0;
-  line-height: 1;
-  transition: color 0.3s ease;
-  height: auto !important; /* Hauteur automatique */
-}
-
-.dropbtn:hover {
-  color: var(--accent-orange);
-}
-
 /* --- Actions (Droite) --- */
 .header-actions { display: flex; align-items: center; }
 .nav-socials { display: flex; gap: 15px; align-items: center; }
@@ -148,7 +136,7 @@ ul { list-style: none; }
    ========================================= */
 .dropdown {
   position: relative;
-  height: 100%;
+  /* ✅ SUPPRIMÉ height: 100% qui causait le problème */
   display: flex;
   align-items: center;
   cursor: pointer;
