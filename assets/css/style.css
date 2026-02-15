@@ -94,7 +94,12 @@ a {
 .main-nav a:hover, .dropbtn:hover { color: var(--accent-orange); }
 
 /* --- NAV DROPDOWN (CORRECTIF BUG) --- */
-.dropdown { position: relative; }
+.dropdown {
+  position: relative;
+  height: 100%; /* Important pour coller au bas du header */
+  display: flex;
+  align-items: center;
+}
 
 .icon-arrow { 
   width: 18px; 
@@ -107,8 +112,9 @@ a {
 
 .dropdown-content {
   position: absolute;
-  top: 60px; /* Descend un peu le menu */
-  left: -20px; /* Centre légèrement */
+  top: 100%; /* Descend un peu le menu */
+  left: 50%; /* Centre légèrement */
+  transform: translateX(-50%) translateY(10px);
   background-color: #1a1a1a; /* Fond plus clair que le noir pur */
   min-width: 280px; /* Élargi pour éviter que le texte s'écrase */
   white-space: nowrap;
@@ -118,12 +124,27 @@ a {
   border-radius: 4px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(15px);
   transition: all 0.3s ease;
   list-style: none;
-  padding: 15px 0;
+  padding: 10px 0;
   z-index: 9999;
   display: block;
+}
+
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -20px; /* Remonte au dessus du menu */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Zone invisible qui connecte le bouton au menu */
+    background: transparent;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Remonte à sa place finale */
 }
 
 .dropdown-content li { display: block; height: auto; width: 100%; }
