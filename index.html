@@ -1,7 +1,5 @@
 ---
 layout: default
-title: Auto C&W | Studio Detailing & Protection Céramique Sallanches
-description: Le Studio de Detailing Ultime en Haute-Savoie. Protection Céramique, Film PPF, Polissage et Nettoyage Premium.
 hero_image: "/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp"
 ---
 
@@ -9,16 +7,8 @@ hero_image: "/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp"
   <div class="hero-overlay"></div>
   <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="Studio Detailing Sallanches" class="hero-bg" fetchpriority="high">
   <div class="container hero-content">
-    
-    <a href="https://share.google/zXNwrR8EUs0J27IPe" target="_blank" class="google-badge">
-      <svg viewBox="0 0 24 24" class="icon-google"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c3.11 0 5.71-1.03 7.62-2.81l-3.57-2.77c-1 .67-2.28 1.07-3.8 1.07-2.92 0-5.39-1.97-6.27-4.62H2.18v2.87A11.99 11.99 0 0 0 12 23z" fill="#34A853"/><path d="M5.73 13.87c-.22-.67-.35-1.38-.35-2.12s.13-1.45.35-2.12V6.76H2.18A11.99 11.99 0 0 0 0 11.5c0 1.76.38 3.44 1.07 4.96l4.66-3.59z" fill="#FBBC05"/><path d="M12 4.75c1.69 0 3.21.58 4.41 1.72l3.31-3.31C17.71 1.05 15.11 0 12 0 7.35 0 3.4 2.67 1.44 6.56l4.66 3.59c.88-2.65 3.35-4.62 12-4.62z" fill="#EA4335"/></svg>
-      <span class="rating">5.0</span>
-      <div class="stars">★★★★★</div>
-      <span class="badge-text">AVIS GOOGLE</span>
-    </a>
-
+    {% include google-badge.html %}
     <h1>LE STUDIO <span class="text-orange">AUTOCW</span><br>L'EXCELLENCE À SALLANCHES</h1>
-    <p>Protection longue durée et sublimation esthétique pour véhicules d'exception.</p>
     <a href="{{ site.baseurl }}/contact/" class="btn btn-orange">Demander un devis gratuit</a>
   </div>
 </section>
@@ -30,61 +20,107 @@ hero_image: "/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp"
       
       <div class="bento-item bento-main">
         <div class="bento-content">
-          <h3>Protection Céramique</h3>
-          <p>Le bouclier nanotechnologique ultime. Brillance miroir et hydrophobie extrême pour faciliter vos lavages.</p>
-          <a href="{{ site.baseurl }}/services/detailing-esthetique-protection-ceramique-sallanches/" class="btn btn-orange-small">Détails du service</a>
+          <h3>Nettoyage Auto & Moteur</h3>
+          <p>S'adresse aux propriétaires exigeants souhaitant retrouver l'aspect neuf de leur habitacle et compartiment moteur. De la citadine à l'utilitaire, nous réalisons un shampouinage complet, un dégraissage vapeur et un soin des cuirs pour une propreté chirurgicale.</p>
+          <a href="{{ site.baseurl }}/services/nettoyage-auto-interieur-exterieur-sallanches/" class="btn btn-orange-small">Voir les services nettoyage</a>
         </div>
-        <svg class="bento-icon-bg" viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"/></svg>
+        <svg class="bento-icon-bg" viewBox="0 0 24 24"><path d="M19,2L14,6.5V9.5L19,5V2M15,12A5,5 0 0,1 10,17A5,5 0 0,1 5,12Z"/></svg>
       </div>
       
       <div class="bento-item bento-tall">
         <div class="bento-content">
-          <h3>Nettoyage Premium</h3>
-          <p>Soin intérieur et extérieur minutieux. Shampouinage des tissus et soin des cuirs.</p>
+          <h3>Detailing Esthétique</h3>
+          <p>Sublimez votre patrimoine automobile. Correction des défauts vernis par polissage multi-étapes et rénovation d'optiques. Un service dédié à ceux qui visent la perfection visuelle et la valorisation de leur véhicule.</p>
+          <a href="{{ site.baseurl }}/services/detailing-esthetique-protection-ceramique-sallanches/" class="btn btn-orange-small">Voir l'esthétique</a>
         </div>
-        <svg class="bento-icon-bg" viewBox="0 0 24 24"><path d="M19,2L14,6.5V9.5L19,5V2M15,12A5,5 0 0,1 10,17A5,5 0 0,1 5,12Z"/></svg>
       </div>
 
       <div class="bento-item">
-        <h3>Vitres Teintées</h3>
-        <p>Protection UV et chaleur.</p>
+        <h3>Film PPF</h3>
+        <p>Protection invisible auto-cicatrisante contre les gravillons.</p>
       </div>
 
       <div class="bento-item">
-        <h3>Polissage</h3>
-        <p>Correction des défauts vernis.</p>
+        <h3>Céramique</h3>
+        <p>Bouclier hydrophobe et brillance miroir longue durée.</p>
       </div>
+
+      <div class="bento-item" style="background: #1a1a1a;">
+        <div class="bento-content">
+          <h3>Tous nos services</h3>
+          <a href="{{ site.baseurl }}/services/" class="btn btn-orange-small">Voir le catalogue</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="container" style="margin-bottom: 80px;">
+  <div class="b2b-card">
+    <div class="b2b-content">
+      <h2>Partenariat <span class="text-orange">Professionnels</span></h2>
+      <p>Concessionnaires, agents et gestionnaires de flottes : optimisez la rotation de votre parc VO. Nous proposons des solutions de sous-traitance en préparation esthétique pour valoriser vos véhicules en showroom.</p>
+      <a href="{{ site.baseurl }}/detailing-professionnels-concessionnaires-sallanches/" class="btn btn-orange">Espace Pro</a>
+    </div>
+    <div class="b2b-visual desktop-only">
+      <svg width="200" height="200" fill="var(--accent-orange)" opacity="0.2" viewBox="0 0 24 24"><path d="M12,7V3H2V21H22V7H12M4,19V5H10V19H4M20,19H12V9H20V19M14,11H18V13H14V11M14,15H18V17H14V15Z"/></svg>
     </div>
   </div>
 </section>
 
 <section class="section-padding" style="background: #080808;">
-  <div class="container">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
-      <h2 style="margin: 0; color: #fff;">Réalisations <span class="text-orange">Récentes</span></h2>
-      <a href="{{ site.baseurl }}/galerie/" class="text-orange" style="font-weight: 700;">Voir la galerie →</a>
+  <div class="container text-center">
+    <h2 class="section-title">Réalisations <span class="text-orange">Récentes</span></h2>
+    <div class="home-gallery-grid" style="margin-bottom: 40px;">
+      <div class="gallery-thumb"><img src="{{ site.baseurl }}/assets/img/porsche.webp" alt="Projet"></div>
+      <div class="gallery-thumb"><img src="{{ site.baseurl }}/assets/img/audi.webp" alt="Projet"></div>
+      <div class="gallery-thumb"><img src="{{ site.baseurl }}/assets/img/bmw.webp" alt="Projet"></div>
     </div>
-    <div class="home-gallery-grid">
-      <div class="gallery-thumb"><img src="{{ site.baseurl }}/assets/img/studio-detailing-auto-cw-prestation-qualite.webp" alt="Réalisation Detailing" loading="lazy"></div>
-      <div class="gallery-thumb"><img src="{{ site.baseurl }}/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp" alt="Protection Carrosserie" loading="lazy"></div>
-      <div class="gallery-thumb"><img src="{{ site.baseurl }}/assets/img/prestations-detailing-sallanches-ceramique.webp" alt="Polissage Automobile" loading="lazy"></div>
+    <a href="{{ site.company.instagram }}" target="_blank" class="btn btn-orange">En voir plus sur Instagram</a>
+  </div>
+</section>
+
+<section class="section-padding">
+  <div class="container">
+    <h2 class="section-title">Ils nous font <span class="text-orange">Confiance</span></h2>
+    <div class="reviews-container">
+      <div class="review-track" id="reviewTrack">
+        <div class="review-slide">
+          <p class="review-text">"Un travail d'orfèvre sur ma Porsche. La céramique est bluffante."</p>
+          <span class="review-author">Jean-Marc T.</span>
+        </div>
+        <div class="review-slide">
+          <p class="review-text">"Nettoyage moteur et intérieur parfait pour la vente de mon VO. Vendu en 2 jours !"</p>
+          <span class="review-author">Sophie R.</span>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="nav-arrow" onclick="moveReview(-1)"><svg viewBox="0 0 24 24"><path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/></svg></button>
+        <button class="nav-arrow" onclick="moveReview(1)"><svg viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg></button>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section-padding">
   <div class="container">
-    <div class="local-expertise text-center" style="text-align: center; background: #0d0d0d; padding: 50px; border-radius: 20px; border: 1px solid #1a1a1a;">
+    <div class="local-expertise text-center">
       <h2>Votre Studio Detailing en <span class="text-orange">Haute-Savoie</span></h2>
-      <p>Situé à Sallanches, Auto C&W intervient pour les passionnés des Pays du Mont-Blanc :</p>
-      <div style="margin-top: 30px;">
-        <span class="city-tag">Megève</span>
-        <span class="city-tag">Chamonix</span>
-        <span class="city-tag">Combloux</span>
-        <span class="city-tag">Saint-Gervais</span>
-        <span class="city-tag">Passy</span>
-        <span class="city-tag">Cluses</span>
+      <p style="max-width: 900px; margin: 0 auto 30px;">Situé stratégiquement à Sallanches, Auto C&W est le partenaire privilégié des passionnés d'automobiles et des collectionneurs de la vallée de l'Arve. Nous intervenons quotidiennement pour sublimer et protéger les véhicules circulant dans les conditions exigeantes de nos montagnes.</p>
+      <div class="city-tags">
+        <span class="city-tag">Sallanches</span> <span class="city-tag">Megève</span> <span class="city-tag">Chamonix</span> <span class="city-tag">Combloux</span> <span class="city-tag">Cluses</span>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  let currentReview = 0;
+  function moveReview(dir) {
+    const track = document.getElementById('reviewTrack');
+    const slides = document.querySelectorAll('.review-slide');
+    currentReview = (currentReview + dir + slides.length) % slides.length;
+    track.style.transform = `translateX(-${currentReview * 100}%)`;
+  }
+</script>
