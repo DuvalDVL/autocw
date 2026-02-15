@@ -601,3 +601,78 @@ ul { list-style: none; }
   .footer-bottom-flex { flex-direction: column; text-align: center; gap: 20px; }
   #cookie-banner { flex-direction: column; text-align: center; }
 }
+
+/* =========================================
+   REVIEWS / CAROUSEL
+   ========================================= */
+.reviews-container { 
+  position: relative; 
+  overflow: hidden; 
+  padding: 60px 0; 
+  background: var(--bg-darkest);
+}
+
+.review-track { 
+  display: flex; 
+  transition: transform 0.5s ease-in-out; 
+}
+
+.review-slide { 
+  min-width: 100%; 
+  padding: 0 15%; 
+  text-align: center; 
+  box-sizing: border-box;
+}
+
+.review-text { 
+  font-size: 1.5rem; 
+  color: #fff; 
+  font-style: italic; 
+  margin-bottom: 25px; 
+  line-height: 1.4; 
+}
+
+.review-author { 
+  color: var(--accent-orange); 
+  font-weight: 900; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+  display: block;
+}
+
+/* Navigation du Carrousel */
+.carousel-nav {
+  position: absolute; 
+  top: 50%; 
+  width: 100%;
+  display: flex; 
+  justify-content: space-between; 
+  transform: translateY(-50%);
+  pointer-events: none; /* Laisse passer le clic au milieu */
+  z-index: 10;
+}
+
+.nav-arrow { 
+  pointer-events: auto; /* Active le clic sur les flèches */
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  fill: var(--accent-orange); 
+  width: 50px; 
+  height: 50px; 
+  transition: 0.3s; 
+  opacity: 0.6;
+  padding: 0 20px;
+}
+
+.nav-arrow:hover { 
+  opacity: 1; 
+  transform: scale(1.1); 
+}
+
+/* Adaptation Mobile Avis */
+@media (max-width: 768px) {
+  .review-slide { padding: 0 40px; }
+  .review-text { font-size: 1.1rem; }
+  .nav-arrow { width: 40px; height: 40px; }
+}
