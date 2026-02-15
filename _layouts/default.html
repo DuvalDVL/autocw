@@ -24,5 +24,24 @@
     const menu = document.getElementById('mobile-menu');
     if(btn) btn.onclick = () => { menu.classList.toggle('active'); btn.classList.toggle('open'); };
   </script>
+  <div id="cookie-banner">
+  <p>Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez notre politique de confidentialité.</p>
+  <button class="btn-accept" onclick="acceptCookies()">J'accepte</button>
+</div>
+
+<script>
+  function acceptCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookiesAccepted', 'true');
+  }
+
+  window.onload = function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+      setTimeout(function() {
+        document.getElementById('cookie-banner').classList.add('show');
+      }, 2000);
+    }
+  };
+</script>
 </body>
 </html>
