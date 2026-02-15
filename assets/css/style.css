@@ -162,7 +162,7 @@ ul { list-style: none; }
   
   list-style: none !important;
   /* MODIFICATION ICI : On augmente le 3ème chiffre (bas) pour agrandir la box */
-  padding: 22px 0 !important; !important; 
+  padding: 22px 0 !important;
   z-index: 9999 !important;
   height: auto !important;            /* La box s'adapte maintenant au contenu */
 }
@@ -439,40 +439,41 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   NOS FORMULES NETTOYAGE (FIX)
+   NOS FORMULES NETTOYAGE (FIX FINAL)
    ========================================= */
 
 /* 1. État de base identique pour TOUTES les cartes */
 .price-card {
   background: var(--bg-dark); 
-  border: 1px solid #333; 
+  border: 1px solid #333 !important; 
   border-radius: 12px; 
   padding: 35px;
   display: flex; 
   flex-direction: column; 
-  transition: all 0.3s ease; /* Transition fluide pour le hover */
+  transition: all 0.3s ease; 
   position: relative; 
   overflow: hidden;
-  transform: translateY(0); /* Force l'état initial */
+  transform: translateY(0) !important;
+  box-shadow: none;
 }
 
-/* 2. Effet au survol uniquement */
+/* 2. Effet au survol uniquement pour TOUTES les cartes */
 .price-card:hover {
   border-color: var(--accent-orange) !important;
   transform: translateY(-10px) !important;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* 3. Sécurité : On neutralise toute mise en avant forcée sur la 3ème carte */
-.service-cards-grid .price-card:nth-child(3) {
-  border-color: #333; /* On remet la bordure grise par défaut */
-  transform: translateY(0);
+/* 3. On s'assure que la 3ème carte n'a pas de style "forcé" par défaut */
+.service-cards-grid .price-card:nth-of-type(3) {
+  border-color: #333 !important;
+  transform: translateY(0) !important;
 }
 
-/* On s'assure que le survol fonctionne toujours sur la 3ème après le reset */
-.service-cards-grid .price-card:nth-child(3):hover {
-  border-color: var(--accent-orange);
-  transform: translateY(-10px);
+/* 4. On réactive le hover spécifiquement pour la 3ème au cas où */
+.service-cards-grid .price-card:nth-of-type(3):hover {
+  border-color: var(--accent-orange) !important;
+  transform: translateY(-10px) !important;
 }
 .price-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
 .card-price { font-size: 1.8rem; font-weight: 900; color: var(--accent-orange); margin-bottom: 20px; display: block; }
