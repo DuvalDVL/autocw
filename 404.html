@@ -1,0 +1,39 @@
+---
+layout: default
+title: Page Introuvable (404) | Auto C&W
+description: "Oups ! Il semblerait que cette page ait disparu au lavage. Retournez à l'accueil du studio Auto C&W."
+hero_image: "/assets/img/detailing-auto-sallanches-ceramique-ppf-auto-cw.webp"
+permalink: /404.html
+---
+
+<section class="hero-subpage" style="height: 60vh;">
+  <div class="hero-overlay"></div>
+  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="Erreur 404" class="hero-bg">
+  <div class="container hero-content">
+    <h1 style="font-size: clamp(3rem, 8vw, 6rem);">404</h1>
+    <p style="font-size: 1.5rem; margin-top: 0;">Oups ! Page introuvable.</p>
+  </div>
+</section>
+
+<section class="section-padding" style="background-color: var(--bg-darkest); text-align: center;">
+  <div class="container">
+    
+    <div style="max-width: 600px; margin: 0 auto;">
+      <svg style="width: 80px; fill: var(--accent-orange); margin-bottom: 30px;" viewBox="0 0 24 24">
+        <path d="M11,15H13V17H11V15M11,7H13V13H11V7M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z" />
+      </svg>
+      
+      <h2 style="color: #fff; margin-bottom: 20px;">Il semblerait que cette page ait <span class="text-orange">disparu au lavage...</span></h2>
+      
+      <p style="color: #ccc; margin-bottom: 40px;">
+        Désolé, la page que vous cherchez n'existe pas ou a été déplacée. Même avec notre meilleur polissage, nous n'arrivons pas à la faire briller à nouveau.
+      </p>
+
+      <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+        <a href="{{ site.baseurl }}/" class="btn btn-orange">Retour à l'accueil</a>
+        <a href="{{ site.baseurl }}/contact/" class="btn btn-orange" style="background: transparent; color: #fff;">Nous Contacter</a>
+      </div>
+    </div>
+
+  </div>
+</section>
