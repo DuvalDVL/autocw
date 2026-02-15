@@ -63,6 +63,7 @@ a {
 
 .main-nav ul {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 35px;
 }
@@ -441,7 +442,7 @@ a {
 }
 /* --- NAV DROPDOWN --- */
 .dropdown { position: relative; }
-.dropbtn { display: flex; align-items: center; gap: 5px; }
+.dropbtn { display: flex; align-items: line-height: normal; center; gap: 5px; }
 .icon-arrow { width: 16px; height: 16px; fill: currentColor; transition: 0.3s; }
 
 .dropdown-content {
