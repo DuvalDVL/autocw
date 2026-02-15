@@ -77,19 +77,28 @@ ul { list-style: none; }
   height: 100%;
 }
 
-.main-nav > ul > li {
+/* ✅ Seulement les <li> qui NE sont PAS .dropdown */
+.main-nav > ul > li:not(.dropdown) {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-/* ✅ Exclut .dropbtn pour éviter qu'il hérite du flex/height */
-.main-nav > ul > li > a:not(.dropbtn) {
+/* ✅ Le <li> dropdown a des règles différentes */
+.main-nav > ul > li.dropdown {
+  display: flex;
+  align-items: center;
+  height: auto; /* Pas 100% ! */
+  position: relative;
+}
+
+/* ✅ Tous les liens directs */
+.main-nav > ul > li > a {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 0.85rem;
   color: var(--text-light);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   cursor: pointer;
   background: none;
@@ -99,7 +108,7 @@ ul { list-style: none; }
   transition: color 0.3s ease;
 }
 
-.main-nav > ul > li > a:not(.dropbtn):hover {
+.main-nav > ul > li > a:hover {
   color: var(--accent-orange);
 }
 
