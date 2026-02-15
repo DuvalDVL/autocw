@@ -132,26 +132,12 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (FIX BRUTAL)
+   3. DROPDOWN MENU (FIX ULTIME)
    ========================================= */
-.dropdown {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  cursor: pointer !important;
-  height: auto !important; /* FORCE auto */
-}
 
-.icon-arrow { 
-  width: 14px !important; 
-  height: 14px !important; 
-  fill: currentColor !important; 
-  margin-left: 6px !important; 
-  transition: transform 0.3s ease !important;
-  display: inline-block !important;
-}
-
+/* ✅ CRITIQUE : Force le dropdown à ne PAS hériter du flex du menu principal */
 .dropdown-content {
+  display: block !important; /* PAS flex ! */
   position: absolute !important;
   top: 100% !important;
   left: 50% !important;
@@ -175,6 +161,23 @@ ul { list-style: none; }
   z-index: 9999 !important;
 }
 
+.dropdown {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  height: auto !important;
+}
+
+.icon-arrow { 
+  width: 14px !important; 
+  height: 14px !important; 
+  fill: currentColor !important; 
+  margin-left: 6px !important; 
+  transition: transform 0.3s ease !important;
+  display: inline-block !important;
+}
+
 .dropdown-content::before {
   content: "" !important;
   position: absolute !important;
@@ -191,22 +194,20 @@ ul { list-style: none; }
   transform: translateX(-50%) translateY(0) !important;
 }
 
-.dropdown:hover .icon-arrow { transform: rotate(180deg) !important; }
+.dropdown:hover .icon-arrow { 
+  transform: rotate(180deg) !important; 
+}
 
-/* ✅ FIX BRUTAL des items */
+/* ✅ Items du dropdown */
 .dropdown-content li {
-  all: revert !important; /* Reset TOUT */
-  display: block !important;
+  display: block !important; /* PAS flex ! */
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
   height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
 }
 
 .dropdown-content li a {
-  all: revert !important; /* Reset TOUT */
   display: block !important;
   padding: 14px 25px !important;
   text-transform: none !important;
@@ -217,8 +218,6 @@ ul { list-style: none; }
   transition: background 0.2s, padding-left 0.2s !important;
   text-decoration: none !important;
   height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
   line-height: 1.4 !important;
 }
 
@@ -231,6 +230,7 @@ ul { list-style: none; }
   color: var(--accent-orange) !important;
   padding-left: 35px !important;
 }
+
 /* =========================================
    4. HERO SECTIONS
    ========================================= */
