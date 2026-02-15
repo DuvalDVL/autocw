@@ -132,99 +132,105 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU
+   3. DROPDOWN MENU (FIX BRUTAL)
    ========================================= */
 .dropdown {
-  position: relative;
-  /* ✅ SUPPRIMÉ height: 100% qui causait le problème */
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  height: auto !important; /* FORCE auto */
 }
 
 .icon-arrow { 
-  width: 14px; 
-  height: 14px; 
-  fill: currentColor; 
-  margin-left: 6px; 
-  transition: transform 0.3s ease;
-  display: inline-block;
+  width: 14px !important; 
+  height: 14px !important; 
+  fill: currentColor !important; 
+  margin-left: 6px !important; 
+  transition: transform 0.3s ease !important;
+  display: inline-block !important;
 }
 
 .dropdown-content {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
+  position: absolute !important;
+  top: 100% !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(20px) !important;
   
-  background-color: #1a1a1a;
-  min-width: 270px;
-  white-space: nowrap;
+  background-color: #1a1a1a !important;
+  min-width: 270px !important;
+  white-space: nowrap !important;
   
-  box-shadow: 0 15px 35px rgba(0,0,0,0.9);
-  border: 1px solid #333;
-  border-top: 3px solid var(--accent-orange);
-  border-radius: 0 0 4px 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.9) !important;
+  border: 1px solid #333 !important;
+  border-top: 3px solid var(--accent-orange) !important;
+  border-radius: 0 0 4px 4px !important;
   
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s ease-in-out;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 0.2s ease-in-out !important;
   
-  list-style: none;
-  padding: 10px 0;
-  z-index: 9999;
+  list-style: none !important;
+  padding: 10px 0 !important;
+  z-index: 9999 !important;
 }
 
-/* Pont invisible pour éviter que le menu disparaisse */
 .dropdown-content::before {
-  content: "";
-  position: absolute;
-  top: -30px;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  background: transparent;
+  content: "" !important;
+  position: absolute !important;
+  top: -30px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 30px !important;
+  background: transparent !important;
 }
 
-/* Affichage au survol */
 .dropdown:hover .dropdown-content {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
 }
 
-.dropdown:hover .icon-arrow { transform: rotate(180deg); }
+.dropdown:hover .icon-arrow { transform: rotate(180deg) !important; }
 
-/* Items du dropdown */
+/* ✅ FIX BRUTAL des items */
 .dropdown-content li {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  height: auto;
+  all: revert !important; /* Reset TOUT */
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
 }
 
 .dropdown-content li a {
-  display: block;
-  padding: 14px 25px;
-  text-transform: none;
-  font-size: 0.9rem;
-  font-weight: 500;
+  all: revert !important; /* Reset TOUT */
+  display: block !important;
+  padding: 14px 25px !important;
+  text-transform: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
   color: #ccc !important;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  transition: background 0.2s, padding-left 0.2s;
+  border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+  transition: background 0.2s, padding-left 0.2s !important;
+  text-decoration: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  line-height: 1.4 !important;
 }
 
 .dropdown-content li:last-child a {
-  border-bottom: none;
+  border-bottom: none !important;
 }
 
 .dropdown-content li a:hover {
-  background: #252525;
+  background: #252525 !important;
   color: var(--accent-orange) !important;
-  padding-left: 35px;
+  padding-left: 35px !important;
 }
-
 /* =========================================
    4. HERO SECTIONS
    ========================================= */
