@@ -1,152 +1,177 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nettoyage & Rénovation - CW Auto</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
-        .section-dark { background-color: #000; }
-        .section-grey { background-color: #0a0a0a; }
-        .border-accent { border-color: #333; }
-        .text-muted { color: #a3a3a3; }
-    </style>
-</head>
-<body>
+---
+layout: default
+title: Nettoyage Auto & Rénovation Intérieure à Sallanches | Auto C&W
+description: "Plus qu'un lavage : une rénovation. Dégraissage carrosserie, pressing des sièges et soins des cuirs. Studio spécialisé à Sallanches."
+hero_image: "/assets/img/prestations-detailing-sallanches-ceramique.webp"
+---
 
-    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 py-5">
-        <div class="container mx-auto px-8 flex justify-between items-center">
-            <div class="text-xl font-bold tracking-[0.3em] uppercase">CW <span class="text-gray-500 font-light">Auto</span></div>
-            <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.2em]">
-                <a href="index.html" class="hover:text-gray-400 transition">Accueil</a>
-                <a href="#" class="text-white border-b border-white pb-1">Nettoyage</a>
-                <a href="#" class="hover:text-gray-400 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
+<section class="hero-subpage">
+  <div class="hero-overlay"></div>
+  <img src="{{ site.baseurl }}{{ page.hero_image }}" alt="Nettoyage Auto Sallanches" class="hero-bg" fetchpriority="high">
+  <div class="container hero-content">
+    <h1>NETTOYAGE & <span class="text-orange">RÉNOVATION</span></h1>
+    <p>Bien plus qu'un simple lavage. L'art de la préservation cosmétique.</p>
+    <a href="#formules" class="btn btn-orange">Voir les détails</a>
+  </div>
+</section>
 
-    <section class="relative h-screen flex items-center justify-center">
-        <img src="ton-image-home.jpg" alt="Detailing" class="absolute inset-0 w-full h-full object-cover opacity-60">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<section class="section-padding" style="background-color: var(--bg-darkest);">
+  <div class="container">
+    <div class="section-title">
+      <h2>L'Exigence <span class="text-orange">CW Auto</span></h2>
+      <p style="font-size: 1rem; color: #ccc; max-width: 800px; margin: 0 auto;">
+        Contrairement aux stations de lavage grand public qui rayent les vernis, nous utilisons des techniques manuelles de précision.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/></svg>
+        <h3>Zéro Micro-rayures</h3>
+        <p>Utilisation stricte de la technique des deux seaux, gants microfibres haute densité et séchage à l'air pulsé pour préserver votre vernis.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/></svg>
+        <h3>Chimie Maîtrisée</h3>
+        <p>Sélection de produits au pH neutre. Nous n'agressons ni vos jantes anodisées, ni vos chromes, ni vos joints sensibles.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24"><path d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+        <h3>Le Temps Nécessaire</h3>
+        <p>Là où un lavage rapide prend 20 minutes, nous prenons le temps nécessaire (2h à 8h) pour traquer la moindre imperfection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-padding" style="background-color: var(--bg-dark);">
+  <div class="container quality-flex-layout">
+    
+    <div class="quality-text-side">
+      <span class="text-orange" style="font-weight:700; letter-spacing:1px; text-transform:uppercase; font-size:0.9rem;">Extérieur</span>
+      <h2>Dégraissage & <span class="text-orange">Décontamination</span></h2>
+      <p>Une carrosserie lisse et brillante commence par une purification en profondeur que le lavage automatique ne peut pas offrir.</p>
+      
+      <ul style="list-style: none; padding: 0; margin-top: 20px;">
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+          <svg style="width: 24px; min-width:24px; fill: var(--accent-orange);" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+          <div>
+            <strong style="color: #fff; font-size: 1.1rem;">Jantes & Arches de roues</strong>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">Dégraissage complet (face interne/externe) pour éliminer la poussière de freins incrustée et les goudrons.</p>
+          </div>
+        </li>
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+          <svg style="width: 24px; min-width:24px; fill: var(--accent-orange);" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+          <div>
+            <strong style="color: #fff; font-size: 1.1rem;">Prélavage Mousse Active</strong>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">Application d'une "Snow Foam" pour ramollir le film routier sans contact mécanique.</p>
+          </div>
+        </li>
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+          <svg style="width: 24px; min-width:24px; fill: var(--accent-orange);" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+          <div>
+            <strong style="color: #fff; font-size: 1.1rem;">Lavage Manuel de Précision</strong>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">Technique des deux seaux, pinceaux pour les sigles et calandres, séchage microfibre.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="quality-image-side">
+      <div class="quality-img-wrap">
+        <img src="{{ site.baseurl }}/assets/img/prestations-detailing-sallanches-ceramique.webp" alt="Lavage Jantes Detailing">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-padding" style="background-color: var(--bg-darkest);">
+  <div class="container quality-flex-layout" id="formules">
+    
+    <div class="quality-image-side">
+      <div class="quality-img-wrap">
+        <img src="{{ site.baseurl }}/assets/img/studio-detailing-auto-cw-prestation-qualite.webp" alt="Nettoyage Intérieur Cuir">
+      </div>
+    </div>
+
+    <div class="quality-text-side">
+      <span class="text-orange" style="font-weight:700; letter-spacing:1px; text-transform:uppercase; font-size:0.9rem;">Habitacle</span>
+      <h2>Hygiène & <span class="text-orange">Rénovation</span></h2>
+      <p>Retrouvez le plaisir de conduire dans un intérieur sain, désinfecté et visuellement apaisant.</p>
+
+      <ul style="list-style: none; padding: 0; margin-top: 20px;">
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+          <svg style="width: 24px; min-width:24px; fill: var(--accent-orange);" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+          <div>
+            <strong style="color: #fff; font-size: 1.1rem;">Pressing Tissus & Moquettes</strong>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">Injection-extraction pour éliminer les taches profondes, les auréoles et les bactéries.</p>
+          </div>
+        </li>
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+          <svg style="width: 24px; min-width:24px; fill: var(--accent-orange);" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+          <div>
+            <strong style="color: #fff; font-size: 1.1rem;">Soin des Matériaux Nobles</strong>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">Nettoyage doux du cuir + lait nourrissant (aspect mat d'origine). Dressing des plastiques anti-UV.</p>
+          </div>
+        </li>
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start; gap: 15px;">
+          <svg style="width: 24px; min-width:24px; fill: var(--accent-orange);" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+          <div>
+            <strong style="color: #fff; font-size: 1.1rem;">Détails & Finitions</strong>
+            <p style="font-size: 0.95rem; margin-bottom: 0;">Dépoussiérage minutieux (aérateurs, rails de sièges, boutons) au pinceau et air comprimé.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="section-padding" style="background-color: var(--bg-dark);">
+  <div class="container">
+    <h2 class="section-title">Questions <span class="text-orange">Fréquentes</span></h2>
+    <div class="faq-section" style="margin-top: 0;">
+      <div class="faq-container">
         
-        <div class="relative z-10 text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-light uppercase tracking-[0.2em] mb-4">Nettoyage <span class="font-bold">Expert</span></h1>
-            <div class="w-12 h-[1px] bg-white mx-auto mb-6"></div>
-            <p class="text-gray-400 max-w-xl mx-auto text-sm uppercase tracking-widest leading-loose">L'excellence au service de votre patrimoine automobile</p>
-        </div>
-    </section>
+        <details>
+          <summary>Quelle différence avec un rouleau automatique ?</summary>
+          <p>Le rouleau crée des micro-rayures (tourbillons) sur votre vernis par friction mécanique agressive. Notre méthode manuelle préserve l'intégrité de votre peinture et nettoie des zones inaccessibles aux machines (contours de portes, étriers de freins, aérateurs).</p>
+        </details>
 
-    <section class="py-24 section-dark border-b border-white/5">
-        <div class="container mx-auto px-8">
-            <div class="max-w-4xl mx-auto">
-                <span class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-4 block text-center">Philosophie</span>
-                <h2 class="text-3xl font-bold uppercase tracking-tighter mb-12 text-center italic">L'Exigence CW Auto</h2>
-                <div class="grid md:grid-cols-2 gap-12 text-sm leading-relaxed text-muted">
-                    <p>Le detailing chez <span class="text-white">CW Auto</span> n'est pas un simple nettoyage de surface. C’est une discipline qui exige patience, précision et une maîtrise parfaite des matériaux. Nous traitons chaque véhicule comme une pièce de collection.</p>
-                    <p>Aucune brosse agressive, aucun rouleau. Nous utilisons exclusivement des techniques manuelles, des éclairages spécifiques pour détecter les défauts et une chimie respectueuse des vernis les plus tendres.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <details>
+          <summary>Combien de temps faut-il immobiliser le véhicule ?</summary>
+          <p>Comptez environ 2h à 3h pour un entretien "Maintenance" standard, et une journée complète (dépose le matin, récupération le soir) pour une rénovation intérieure/extérieure approfondie.</p>
+        </details>
 
-    <section class="py-24 section-grey">
-        <div class="container mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
-            <div class="order-2 md:order-1">
-                <img src="ext-cleaning.jpg" alt="Lavage extérieur" class="grayscale hover:grayscale-0 transition duration-700 rounded-sm">
-            </div>
-            <div class="order-1 md:order-2">
-                <span class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2 block">Prestation</span>
-                <h2 class="text-3xl font-bold uppercase mb-8">Soins Extérieurs & <br><span class="font-light">Dégraissage</span></h2>
-                <div class="space-y-8">
-                    <div>
-                        <h4 class="text-sm font-bold uppercase tracking-widest mb-2">Dégraissage Châssis & Jantes</h4>
-                        <p class="text-xs text-muted leading-relaxed">Suppression radicale de la poussière de frein incrustée et des contaminants ferreux. Nettoyage méticuleux des passages de roues et des faces internes des jantes.</p>
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-bold uppercase tracking-widest mb-2">Décontamination Carrosserie</h4>
-                        <p class="text-xs text-muted leading-relaxed">Prélavage à la mousse active (Snow Foam) pour encapsuler les micro-particules avant tout contact physique, garantissant un lavage sans micro-rayures.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <details>
+          <summary>Pouvez-vous récupérer des sièges tachés ?</summary>
+          <p>Oui. Grâce à nos machines d'injection-extraction professionnelles et à nos produits enzymatiques, nous parvenons à éliminer la grande majorité des taches (café, soda, auréoles d'eau) et des mauvaises odeurs.</p>
+        </details>
 
-    <section class="py-24 section-dark">
-        <div class="container mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
-            <div>
-                <span class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2 block">Habitacle</span>
-                <h2 class="text-3xl font-bold uppercase mb-8">Rénovation <br><span class="font-light">Intérieure</span></h2>
-                <ul class="space-y-6 text-sm">
-                    <li class="flex items-center space-x-4 border-b border-white/5 pb-4">
-                        <span class="text-gray-600">01.</span>
-                        <span>Pressing complet des tissus et moquettes par injection-extraction.</span>
-                    </li>
-                    <li class="flex items-center space-x-4 border-b border-white/5 pb-4">
-                        <span class="text-gray-600">02.</span>
-                        <span>Soin des cuirs : nettoyage au savon glycériné et protection mate.</span>
-                    </li>
-                    <li class="flex items-center space-x-4 border-b border-white/5 pb-4">
-                        <span class="text-gray-600">03.</span>
-                        <span>Détails au pinceau des aérateurs, boutons et zones complexes.</span>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <img src="int-cleaning.jpg" alt="Intérieur" class="grayscale hover:grayscale-0 transition duration-700 rounded-sm">
-            </div>
-        </div>
-    </section>
+        <details>
+          <summary>Le dégraissage risque-t-il d'abîmer mes jantes ?</summary>
+          <p>Absolument pas. Nous utilisons des décontaminants ferreux au pH neutre qui agissent chimiquement sur la saleté sans attaquer le matériau, que vos jantes soient en aluminium, chromées ou mates.</p>
+        </details>
 
-    <section class="py-24 section-grey text-center border-y border-white/5">
-        <div class="container mx-auto px-8">
-            <h2 class="text-2xl font-bold uppercase tracking-widest mb-12 underline underline-offset-[12px] decoration-white/20">La Valeur ajoutée</h2>
-            <div class="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto text-left">
-                <div class="border-l border-white/10 pl-6">
-                    <h3 class="font-bold mb-3 uppercase text-xs tracking-widest">Valorisation Immobilière</h3>
-                    <p class="text-xs text-muted leading-relaxed">Un véhicule soigné par un professionnel conserve une côte supérieure sur le marché de l'occasion. Le dossier d'entretien esthétique rassure vos futurs acquéreurs.</p>
-                </div>
-                <div class="border-l border-white/10 pl-6">
-                    <h3 class="font-bold mb-3 uppercase text-xs tracking-widest">Hygiène & Santé</h3>
-                    <p class="text-xs text-muted leading-relaxed">Au-delà du visuel, nous éliminons les bactéries, acariens et mauvaises odeurs incrustés pour un habitacle sain et purifié.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <details>
+          <summary>Faut-il vider la voiture avant de venir ?</summary>
+          <p>C'est préférable. Pour nous permettre d'accéder à tous les recoins (coffre, sous les sièges, vide-poches) et de nous concentrer sur le nettoyage, nous vous invitons à retirer vos effets personnels et sièges auto avant le rendez-vous.</p>
+        </details>
 
-    <section class="py-24 section-dark">
-        <div class="container mx-auto px-8 max-w-2xl">
-            <h2 class="text-2xl font-bold uppercase tracking-[0.3em] mb-12 text-center">F.A.Q</h2>
-            <div class="space-y-8 text-sm">
-                <div class="border-b border-white/10 pb-6">
-                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Différence avec un lavage classique ?</p>
-                    <p class="text-muted text-xs">Nous ne faisons pas de "lavage". Nous rénovons. Chaque zone est décontaminée et protégée pour un résultat durable et sans défaut.</p>
-                </div>
-                <div class="border-b border-white/10 pb-6">
-                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Les produits sont-ils risqués pour les jantes ?</p>
-                    <p class="text-muted text-xs">Non. Nous utilisons des agents décontaminants au pH neutre spécifiquement formulés pour les jantes vernies, mates ou chromées.</p>
-                </div>
-                <div class="border-b border-white/10 pb-6">
-                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Combien de temps faut-il immobiliser le véhicule ?</p>
-                    <p class="text-muted text-xs">De 4 heures à une journée complète selon le niveau de soin requis. L'excellence ne se précipite pas.</p>
-                </div>
-                <div class="border-b border-white/10 pb-6">
-                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Peut-on récupérer des sièges très tachés ?</p>
-                    <p class="text-muted text-xs">Grâce à l'injection-extraction professionnelle, nous éliminons la majorité des taches incrustées et les auréoles anciennes.</p>
-                </div>
-                <div class="border-b border-white/10 pb-6">
-                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Conseillez-vous de vider le véhicule ?</p>
-                    <p class="text-muted text-xs">Oui. Un habitacle vide nous permet d'accéder à 100% des surfaces (coffre, vide-poches) pour une finition parfaite.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer class="py-12 section-dark border-t border-white/10 text-center">
-        <p class="text-[10px] uppercase tracking-[0.5em] text-gray-600">&copy; 2026 CW AUTO - Pure Detailing</p>
-    </footer>
-
-</body>
-</html>
+<section class="final-cta section-padding">
+  <div class="container cta-centered">
+    <div class="cta-content-wrapper">
+      <h2>Prêt à retrouver votre voiture neuve ?</h2>
+      <p>Réservez votre créneau au studio Auto C&W à Sallanches.</p>
+      <a href="{{ site.baseurl }}/contact/" class="btn btn-orange btn-large">Prendre Rendez-vous</a>
+    </div>
+  </div>
+</section>
