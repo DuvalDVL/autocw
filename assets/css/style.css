@@ -547,3 +547,22 @@ a {
   display: inline-block; padding: 5px 15px; background: #1a1a1a; 
   border-radius: 50px; font-size: 0.8rem; margin: 5px; border: 1px solid #333;
 }
+<div id="cookie-banner">
+  <p style="margin:0; font-size: 0.9rem;">Nous utilisons des cookies pour optimiser votre expérience sur notre studio digital. <a href="{{ site.baseurl }}/politique-de-confidentialite/" style="color: var(--accent-orange); text-decoration: underline !important;">En savoir plus</a>.</p>
+  <button class="btn-accept" onclick="acceptCookies()">Accepter</button>
+</div>
+
+<script>
+  function acceptCookies() {
+    document.getElementById('cookie-banner').style.display = 'none';
+    localStorage.setItem('cookiesAccepted', 'true');
+  }
+
+  window.onload = function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+      setTimeout(function() {
+        document.getElementById('cookie-banner').classList.add('show');
+      }, 2000);
+    }
+  };
+</script>
