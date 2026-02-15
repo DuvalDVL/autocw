@@ -566,3 +566,53 @@ a {
     }
   };
 </script>
+
+/* --- FIX NAVBAR ALIGNMENT --- */
+.main-nav ul { align-items: center; } /* Alignement vertical parfait */
+.dropbtn { line-height: 1; padding: 10px 0; }
+
+/* --- BENTO ENRICHIE --- */
+.bento-grid { grid-auto-rows: minmax(180px, auto); }
+.bento-item { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+.bento-item .btn-orange-small { align-self: flex-start; margin-top: 15px; }
+
+/* --- B2B SECTION --- */
+.b2b-card {
+  background: linear-gradient(135deg, #141414 0%, #0a0a0a 100%);
+  border: 1px solid var(--accent-orange);
+  border-radius: 20px;
+  padding: 60px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.b2b-content { flex: 1; z-index: 2; }
+.b2b-card h2 { font-size: 2.2rem; color: #fff; margin-bottom: 20px; }
+
+/* --- REVIEWS CAROUSEL --- */
+.reviews-container { position: relative; overflow: hidden; padding: 40px 0; }
+.review-track { display: flex; transition: transform 0.5s ease-in-out; }
+.review-slide { min-width: 100%; padding: 0 60px; text-align: center; }
+.review-text { font-size: 1.4rem; font-style: italic; color: #fff; margin-bottom: 20px; }
+.review-author { font-weight: 700; color: var(--accent-orange); text-transform: uppercase; letter-spacing: 1px; }
+
+.carousel-nav {
+  position: absolute; top: 50%; width: 100%;
+  display: flex; justify-content: space-between; transform: translateY(-50%);
+  pointer-events: none;
+}
+.nav-arrow {
+  pointer-events: auto; background: none; border: none; 
+  cursor: pointer; fill: var(--accent-orange); width: 40px; height: 40px;
+  transition: 0.3s;
+}
+.nav-arrow:hover { transform: scale(1.2); }
+
+@media (max-width: 768px) {
+  .b2b-card { flex-direction: column; text-align: center; padding: 30px; }
+  .review-slide { padding: 0 20px; }
+  .review-text { font-size: 1.1rem; }
+}
