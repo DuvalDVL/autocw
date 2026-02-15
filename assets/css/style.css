@@ -32,7 +32,7 @@ a {
   transition: 0.3s;
 }
 
-/* --- NAVBAR (Alignement Corrigé) --- */
+/* --- NAVBAR --- */
 .site-header {
   background-color: var(--bg-dark);
   height: var(--nav-height);
@@ -93,7 +93,7 @@ a {
 
 .main-nav a:hover, .dropbtn:hover { color: var(--accent-orange); }
 
-/* --- NAV DROPDOWN --- */
+/* --- NAV DROPDOWN (CORRECTIF BUG) --- */
 .dropdown { position: relative; }
 
 .icon-arrow { 
@@ -107,44 +107,52 @@ a {
 
 .dropdown-content {
   position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: var(--bg-dark);
-  min-width: 260px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-  border: 1px solid #222;
+  top: 60px; /* Descend un peu le menu */
+  left: -20px; /* Centre légèrement */
+  background-color: #1a1a1a; /* Fond plus clair que le noir pur */
+  min-width: 300px; /* Élargi pour éviter que le texte s'écrase */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+  border: 1px solid #333;
+  border-top: 2px solid var(--accent-orange);
   border-radius: 4px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
-  transition: 0.3s;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
   list-style: none;
-  padding: 10px 0;
-  z-index: 1100;
+  padding: 15px 0;
+  z-index: 9999;
   display: block;
 }
 
-.dropdown-content li { display: block; height: auto; }
+.dropdown-content li { display: block; height: auto; width: 100%; }
 
 .dropdown-content li a {
   display: block;
-  padding: 12px 20px;
-  text-transform: none;
-  font-size: 0.85rem;
-  color: var(--text-gray) !important;
+  padding: 12px 25px;
+  text-transform: none; /* Texte normal pour lisibilité */
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ccc !important;
   width: 100%;
+  line-height: 1.4;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+
+.dropdown-content li:last-child a { border-bottom: none; }
 
 .dropdown-content li a:hover {
-  background: #1a1a1a;
+  background: #252525;
   color: var(--accent-orange) !important;
+  padding-left: 30px; /* Petit effet de glissement */
 }
 
+/* Affichage au survol */
 .dropdown:hover .dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
 .dropdown:hover .icon-arrow { transform: rotate(180deg); }
 
-.header-actions { display: flex; align-items: center; gap: 20px; }
-.nav-socials { display: flex; gap: 15px; margin-right: 10px; }
+.header-actions { display: flex; align-items: center; } /* Supprimé le gap fixe pour gérer les marges manuellement */
+.nav-socials { display: flex; gap: 15px; align-items: center; }
 .icon-nav { width: 22px; height: 22px; fill: #fff; transition: 0.3s; }
 .icon-nav:hover { fill: var(--accent-orange); }
 
@@ -234,9 +242,10 @@ a {
   color: #fff;
   padding: 10px 20px;
   font-size: 0.8rem;
-  margin-top: 15px;
+  margin-top: 25px;
   text-align: center;
   border: 1px solid var(--accent-orange);
+  align-self: flex-start; /* Important pour le Bento */
 }
 .btn-orange-small:hover { background-color: transparent; color: var(--accent-orange); }
 
@@ -246,48 +255,70 @@ a {
 .section-padding { padding: 90px 0; }
 .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 50px; color: #fff; }
 
-/* --- BENTO GRID (Services Homepage) --- */
+/* --- BENTO GRID (CORRECTIF DESIGN) --- */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: minmax(220px, auto);
-  gap: 20px;
+  grid-auto-rows: minmax(240px, auto); /* Un peu plus haut */
+  gap: 25px;
   margin-top: 50px;
 }
 
 .bento-item {
   background: var(--bg-dark);
   border: 1px solid #222;
-  border-radius: 15px;
-  padding: 40px;
+  border-radius: 16px;
+  padding: 45px;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between; /* Espace le contenu du haut et le bouton du bas */
   transition: 0.4s ease;
   z-index: 1;
 }
-.bento-item:hover { border-color: var(--accent-orange); transform: translateY(-5px); }
+.bento-item:hover { border-color: var(--accent-orange); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
 .bento-main { grid-column: span 2; grid-row: span 2; }
 .bento-tall { grid-row: span 2; }
-.bento-wide { grid-column: span 2; }
 
-.bento-content { position: relative; z-index: 2; width: 100%; }
-.bento-item h3 { font-size: 1.5rem; color: #fff; margin-bottom: 15px; }
-.bento-item p { font-size: 0.95rem; color: #ccc; margin-bottom: 20px; line-height: 1.5; }
+.bento-content { 
+  position: relative; 
+  z-index: 2; 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titre */
+.bento-item h3 { font-size: 1.6rem; color: #fff; margin-bottom: 20px; font-weight: 800; }
+
+/* Paragraphe contraint pour éviter l'effet "bloc large" */
+.bento-item p { 
+  font-size: 1rem; 
+  color: #bbb; 
+  margin-bottom: auto; /* Pousse le bouton vers le bas */
+  line-height: 1.6;
+  max-width: 85%; /* Laisse de la place à droite pour l'icône */
+}
+
+/* Bouton calé en bas */
+.bento-item .btn-orange-small { margin-top: 30px; }
 
 .bento-icon-bg {
-  position: absolute; bottom: -20px; right: -20px;
-  width: 140px; height: 140px;
-  fill: rgba(255, 95, 0, 0.05);
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 160px;
+  height: 160px;
+  fill: rgba(255, 95, 0, 0.05); /* Plus subtil */
   z-index: 0;
-  transform: rotate(-15deg);
+  transform: rotate(-10deg);
   transition: 0.5s;
   pointer-events: none;
 }
-.bento-item:hover .bento-icon-bg { fill: rgba(255, 95, 0, 0.15); transform: rotate(0deg) scale(1.1); }
+.bento-item:hover .bento-icon-bg { fill: rgba(255, 95, 0, 0.1); transform: rotate(0deg) scale(1.1); }
 
 /* --- SECTION B2B (Espace Pro) --- */
 .b2b-card {
@@ -317,7 +348,6 @@ a {
 .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; filter: grayscale(20%); }
 .gallery-thumb:hover img { transform: scale(1.05); filter: grayscale(0); }
 
-/* Galerie Page Complète */
 .gallery-item img { width: 100%; border-radius: 8px; transition: 0.3s; }
 .gallery-item:hover img { filter: brightness(1.1); }
 
@@ -341,14 +371,17 @@ a {
 }
 .nav-arrow:hover { opacity: 1; transform: scale(1.1); }
 
-/* --- LOCAL SEO SECTION --- */
+/* --- LOCAL SEO SECTION + SEPARATOR --- */
 .local-expertise {
-  display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px 0;
+  display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 0;
+  border-top: 1px solid #222; /* Le séparateur gris demandé */
+  margin-top: 0; /* Collé à la section précédente */
 }
 .city-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
 .city-tag {
   display: inline-block; padding: 8px 20px; background: #1a1a1a;
-  border-radius: 50px; font-size: 0.85rem; border: 1px solid #333; color: #ccc; transition: 0.3s;
+  border-radius: 50px; font-size: 0.85rem; border: 1px solid #333; color: #ccc;
+  transition: 0.3s;
 }
 .city-tag:hover { border-color: var(--accent-orange); color: #fff; }
 
@@ -375,7 +408,7 @@ a {
 .card-price span { font-size: 0.9rem; color: #888; font-weight: 400; }
 .card-icon { width: 50px; height: 50px; fill: var(--accent-orange); margin-bottom: 20px; }
 
-/* --- QUALITY SECTION (Side-by-Side) --- */
+/* --- QUALITY SECTION --- */
 .quality-flex-layout { display: flex; align-items: center; gap: 80px; }
 .quality-image-side { flex: 1; }
 .quality-img-wrap { overflow: hidden; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
