@@ -110,7 +110,8 @@ a {
   top: 60px; /* Descend un peu le menu */
   left: -20px; /* Centre légèrement */
   background-color: #1a1a1a; /* Fond plus clair que le noir pur */
-  min-width: 300px; /* Élargi pour éviter que le texte s'écrase */
+  min-width: 280px; /* Élargi pour éviter que le texte s'écrase */
+  white-space: nowrap;
   box-shadow: 0 15px 35px rgba(0,0,0,0.8);
   border: 1px solid #333;
   border-top: 2px solid var(--accent-orange);
