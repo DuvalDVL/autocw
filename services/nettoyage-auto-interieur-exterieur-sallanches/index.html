@@ -7,167 +7,145 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; background-color: #0a0a0a; color: #e5e5e5; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .text-gradient { background: linear-gradient(to right, #3b82f6, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; }
+        .section-dark { background-color: #000; }
+        .section-grey { background-color: #0a0a0a; }
+        .border-accent { border-color: #333; }
+        .text-muted { color: #a3a3a3; }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 glass py-4">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter">CW <span class="text-blue-500">AUTO</span></div>
-            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
-                <a href="index.html" class="hover:text-blue-500 transition">Accueil</a>
-                <a href="#" class="text-blue-500">Nettoyage</a>
-                <a href="#" class="hover:text-blue-500 transition">Contact</a>
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10 py-5">
+        <div class="container mx-auto px-8 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-[0.3em] uppercase">CW <span class="text-gray-500 font-light">Auto</span></div>
+            <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.2em]">
+                <a href="index.html" class="hover:text-gray-400 transition">Accueil</a>
+                <a href="#" class="text-white border-b border-white pb-1">Nettoyage</a>
+                <a href="#" class="hover:text-gray-400 transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <img src="ton-image-home.jpg" alt="Detailing" class="absolute inset-0 w-full h-full object-cover opacity-50">
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+    <section class="relative h-screen flex items-center justify-center">
+        <img src="ton-image-home.jpg" alt="Detailing" class="absolute inset-0 w-full h-full object-cover opacity-60">
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
         
         <div class="relative z-10 text-center px-4">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 uppercase tracking-tighter">Nettoyage <span class="text-gradient">Premium</span></h1>
-            <p class="text-gray-400 max-w-2xl mx-auto text-lg italic">"L'art de la perfection dans chaque détail."</p>
+            <h1 class="text-4xl md:text-6xl font-light uppercase tracking-[0.2em] mb-4">Nettoyage <span class="font-bold">Expert</span></h1>
+            <div class="w-12 h-[1px] bg-white mx-auto mb-6"></div>
+            <p class="text-gray-400 max-w-xl mx-auto text-sm uppercase tracking-widest leading-loose">L'excellence au service de votre patrimoine automobile</p>
         </div>
     </section>
 
-    <section class="py-24 container mx-auto px-6">
-        <div class="glass p-12 rounded-3xl border-blue-500/20 relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 opacity-10">
-                <i class="fa-solid fa-shield-halved text-9xl text-blue-500"></i>
-            </div>
-            <div class="max-w-3xl">
-                <h2 class="text-3xl font-bold mb-6 uppercase tracking-tight">L'Exigence <span class="text-blue-500">CW Auto</span></h2>
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    Le detailing n'est pas un simple lavage, c'est une science. Chez nous, chaque véhicule est traité avec une approche chirurgicale. Nous n'utilisons aucun rouleau, aucune brosse agressive. Uniquement le savoir-faire manuel et une chimie de précision.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="flex items-center space-x-4">
-                        <i class="fa-solid fa-check text-blue-500"></i>
-                        <span>Technique des deux seaux (Anti-rayures)</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fa-solid fa-check text-blue-500"></i>
-                        <span>Éclairage LED haute intensité pour inspection</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fa-solid fa-check text-blue-500"></i>
-                        <span>Microfibres de séchage haute densité</span>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <i class="fa-solid fa-check text-blue-500"></i>
-                        <span>Produits biodégradables au pH neutre</span>
-                    </div>
+    <section class="py-24 section-dark border-b border-white/5">
+        <div class="container mx-auto px-8">
+            <div class="max-w-4xl mx-auto">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-4 block text-center">Philosophie</span>
+                <h2 class="text-3xl font-bold uppercase tracking-tighter mb-12 text-center italic">L'Exigence CW Auto</h2>
+                <div class="grid md:grid-cols-2 gap-12 text-sm leading-relaxed text-muted">
+                    <p>Le detailing chez <span class="text-white">CW Auto</span> n'est pas un simple nettoyage de surface. C’est une discipline qui exige patience, précision et une maîtrise parfaite des matériaux. Nous traitons chaque véhicule comme une pièce de collection.</p>
+                    <p>Aucune brosse agressive, aucun rouleau. Nous utilisons exclusivement des techniques manuelles, des éclairages spécifiques pour détecter les défauts et une chimie respectueuse des vernis les plus tendres.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-[#0f0f0f]">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <span class="text-blue-500 font-bold uppercase tracking-widest text-sm">Extérieur</span>
-                <h2 class="text-4xl font-bold mt-2 mb-6 uppercase">Dégraissage & Décontamination</h2>
-                <p class="text-gray-400 mb-6 italic">Le secret d'une brillance durable réside dans la préparation.</p>
-                <div class="space-y-4 text-gray-300">
-                    <div class="glass p-4 rounded-xl">
-                        <h4 class="font-bold text-white uppercase text-sm mb-1">Jantes & Passages de roues</h4>
-                        <p class="text-sm">Suppression de la poussière de freins et goudron avec décontaminant ferreux.</p>
-                    </div>
-                    <div class="glass p-4 rounded-xl">
-                        <h4 class="font-bold text-white uppercase text-sm mb-1">Dégraissage Carrosserie</h4>
-                        <p class="text-sm">Mousse active (Snow Foam) pour décoller le film routier sans contact mécanique.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/10">
-                <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&q=80" alt="Nettoyage Jante" class="w-full h-full object-cover">
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 rounded-2xl overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1507136566006-bb7a05d1d3fe?auto=format&fit=crop&q=80" alt="Intérieur" class="w-full h-full object-cover">
+    <section class="py-24 section-grey">
+        <div class="container mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+            <div class="order-2 md:order-1">
+                <img src="ext-cleaning.jpg" alt="Lavage extérieur" class="grayscale hover:grayscale-0 transition duration-700 rounded-sm">
             </div>
             <div class="order-1 md:order-2">
-                <span class="text-blue-500 font-bold uppercase tracking-widest text-sm">Intérieur</span>
-                <h2 class="text-4xl font-bold mt-2 mb-6 uppercase">Habitacle & Confort</h2>
-                <ul class="space-y-4">
-                    <li class="flex items-start space-x-3">
-                        <i class="fa-solid fa-circle-dot text-blue-500 mt-1"></i>
-                        <span><strong>Pressing complet :</strong> Extraction des taches sur tissus et moquettes.</span>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2 block">Prestation</span>
+                <h2 class="text-3xl font-bold uppercase mb-8">Soins Extérieurs & <br><span class="font-light">Dégraissage</span></h2>
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest mb-2">Dégraissage Châssis & Jantes</h4>
+                        <p class="text-xs text-muted leading-relaxed">Suppression radicale de la poussière de frein incrustée et des contaminants ferreux. Nettoyage méticuleux des passages de roues et des faces internes des jantes.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest mb-2">Décontamination Carrosserie</h4>
+                        <p class="text-xs text-muted leading-relaxed">Prélavage à la mousse active (Snow Foam) pour encapsuler les micro-particules avant tout contact physique, garantissant un lavage sans micro-rayures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 section-dark">
+        <div class="container mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2 block">Habitacle</span>
+                <h2 class="text-3xl font-bold uppercase mb-8">Rénovation <br><span class="font-light">Intérieure</span></h2>
+                <ul class="space-y-6 text-sm">
+                    <li class="flex items-center space-x-4 border-b border-white/5 pb-4">
+                        <span class="text-gray-600">01.</span>
+                        <span>Pressing complet des tissus et moquettes par injection-extraction.</span>
                     </li>
-                    <li class="flex items-start space-x-3">
-                        <i class="fa-solid fa-circle-dot text-blue-500 mt-1"></i>
-                        <span><strong>Soin du cuir :</strong> Nettoyage en profondeur et protection UV matifiante.</span>
+                    <li class="flex items-center space-x-4 border-b border-white/5 pb-4">
+                        <span class="text-gray-600">02.</span>
+                        <span>Soin des cuirs : nettoyage au savon glycériné et protection mate.</span>
                     </li>
-                    <li class="flex items-start space-x-3">
-                        <i class="fa-solid fa-circle-dot text-blue-500 mt-1"></i>
-                        <span><strong>Détails :</strong> Pinceaux sur grilles d'aération et zones d'accès difficile.</span>
+                    <li class="flex items-center space-x-4 border-b border-white/5 pb-4">
+                        <span class="text-gray-600">03.</span>
+                        <span>Détails au pinceau des aérateurs, boutons et zones complexes.</span>
                     </li>
                 </ul>
             </div>
+            <div>
+                <img src="int-cleaning.jpg" alt="Intérieur" class="grayscale hover:grayscale-0 transition duration-700 rounded-sm">
+            </div>
         </div>
     </section>
 
-    <section class="py-20 bg-blue-900/10 border-y border-blue-500/10">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold uppercase mb-12">Pourquoi choisir le <span class="text-blue-500">Detailing</span> ?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8">
-                    <i class="fa-solid fa-chart-line text-blue-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold mb-2 uppercase">Plus-value revente</h3>
-                    <p class="text-sm text-gray-400">Un véhicule impeccable se vend 15 à 20% plus cher sur le marché de l'occasion.</p>
+    <section class="py-24 section-grey text-center border-y border-white/5">
+        <div class="container mx-auto px-8">
+            <h2 class="text-2xl font-bold uppercase tracking-widest mb-12 underline underline-offset-[12px] decoration-white/20">La Valeur ajoutée</h2>
+            <div class="grid md:grid-cols-2 gap-16 max-w-4xl mx-auto text-left">
+                <div class="border-l border-white/10 pl-6">
+                    <h3 class="font-bold mb-3 uppercase text-xs tracking-widest">Valorisation Immobilière</h3>
+                    <p class="text-xs text-muted leading-relaxed">Un véhicule soigné par un professionnel conserve une côte supérieure sur le marché de l'occasion. Le dossier d'entretien esthétique rassure vos futurs acquéreurs.</p>
                 </div>
-                <div class="p-8">
-                    <i class="fa-solid fa-hand-sparkles text-blue-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold mb-2 uppercase">Éclat "Showroom"</h3>
-                    <p class="text-sm text-gray-400">Retrouvez la profondeur de couleur et la brillance du jour de la sortie d'usine.</p>
-                </div>
-                <div class="p-8">
-                    <i class="fa-solid fa-bacteria text-blue-500 text-3xl mb-4"></i>
-                    <h3 class="font-bold mb-2 uppercase">Hygiène Totale</h3>
-                    <p class="text-sm text-gray-400">Élimination des acariens et bactéries pour un environnement sain.</p>
+                <div class="border-l border-white/10 pl-6">
+                    <h3 class="font-bold mb-3 uppercase text-xs tracking-widest">Hygiène & Santé</h3>
+                    <p class="text-xs text-muted leading-relaxed">Au-delà du visuel, nous éliminons les bactéries, acariens et mauvaises odeurs incrustés pour un habitacle sain et purifié.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 container mx-auto px-6 max-w-3xl">
-        <h2 class="text-3xl font-bold uppercase mb-12 text-center underline decoration-blue-500 underline-offset-8">F.A.Q</h2>
-        <div class="space-y-6">
-            <div class="glass p-6 rounded-xl">
-                <h4 class="font-bold text-white mb-2">Différence avec un lavage classique ?</h4>
-                <p class="text-sm text-gray-400">Le lavage classique retire la poussière. Le detailing retire les contaminants incrustés et rénove les surfaces.</p>
-            </div>
-            <div class="glass p-6 rounded-xl">
-                <h4 class="font-bold text-white mb-2">Le dégraissage jantes est-il sûr ?</h4>
-                <p class="text-sm text-gray-400">Oui, nous utilisons des produits sans acide, sûrs pour l'alu poli, le chrome et les jantes peintes.</p>
-            </div>
-            <div class="glass p-6 rounded-xl">
-                <h4 class="font-bold text-white mb-2">Combien de temps faut-il ?</h4>
-                <p class="text-sm text-gray-400">De 4h à une journée complète selon l'état et la formule choisie.</p>
-            </div>
-            <div class="glass p-6 rounded-xl">
-                <h4 class="font-bold text-white mb-2">Récupérez-vous les sièges tachés ?</h4>
-                <p class="text-sm text-gray-400">Oui, notre injecteur-extracteur professionnel vient à bout de 95% des taches courantes.</p>
-            </div>
-            <div class="glass p-6 rounded-xl">
-                <h4 class="font-bold text-white mb-2">Faut-il vider mon véhicule ?</h4>
-                <p class="text-sm text-gray-400">Idéalement oui, pour nous permettre d'accéder à chaque recoin sans risque pour vos objets personnels.</p>
+    <section class="py-24 section-dark">
+        <div class="container mx-auto px-8 max-w-2xl">
+            <h2 class="text-2xl font-bold uppercase tracking-[0.3em] mb-12 text-center">F.A.Q</h2>
+            <div class="space-y-8 text-sm">
+                <div class="border-b border-white/10 pb-6">
+                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Différence avec un lavage classique ?</p>
+                    <p class="text-muted text-xs">Nous ne faisons pas de "lavage". Nous rénovons. Chaque zone est décontaminée et protégée pour un résultat durable et sans défaut.</p>
+                </div>
+                <div class="border-b border-white/10 pb-6">
+                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Les produits sont-ils risqués pour les jantes ?</p>
+                    <p class="text-muted text-xs">Non. Nous utilisons des agents décontaminants au pH neutre spécifiquement formulés pour les jantes vernies, mates ou chromées.</p>
+                </div>
+                <div class="border-b border-white/10 pb-6">
+                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Combien de temps faut-il immobiliser le véhicule ?</p>
+                    <p class="text-muted text-xs">De 4 heures à une journée complète selon le niveau de soin requis. L'excellence ne se précipite pas.</p>
+                </div>
+                <div class="border-b border-white/10 pb-6">
+                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Peut-on récupérer des sièges très tachés ?</p>
+                    <p class="text-muted text-xs">Grâce à l'injection-extraction professionnelle, nous éliminons la majorité des taches incrustées et les auréoles anciennes.</p>
+                </div>
+                <div class="border-b border-white/10 pb-6">
+                    <p class="font-bold mb-2 uppercase text-[11px] tracking-widest">Conseillez-vous de vider le véhicule ?</p>
+                    <p class="text-muted text-xs">Oui. Un habitacle vide nous permet d'accéder à 100% des surfaces (coffre, vide-poches) pour une finition parfaite.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center text-gray-500 text-xs tracking-widest uppercase">
-        &copy; 2026 CW AUTO - Design & Performance
+    <footer class="py-12 section-dark border-t border-white/10 text-center">
+        <p class="text-[10px] uppercase tracking-[0.5em] text-gray-600">&copy; 2026 CW AUTO - Pure Detailing</p>
     </footer>
 
 </body>
