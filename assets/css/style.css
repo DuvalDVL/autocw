@@ -62,16 +62,16 @@ ul { list-style: none; }
 .logo {
   display: flex;
   align-items: center;
-  height: 100%; /* S'assure que le lien prend toute la hauteur du header */
-  padding: 10px 0; /* Ajoute un peu d'air en haut/bas */
+  height: 100%; 
+  padding: 10px 0;
 }
 
 .logo-img {
-  height: 55px !important; /* Force la hauteur à 55px (pour un header de 85px) */
-  width: auto;             /* Conserve les proportions sans écraser */
-  max-width: 100%;         /* Sécurité pour ne pas déborder */
+  height: 55px !important; 
+  width: auto;             
+  max-width: 100%;         
   display: block;
-  object-fit: contain;     /* S'assure que l'image tient dans la boîte */
+  object-fit: contain;     
 }
 
 .text-orange { color: var(--accent-orange); }
@@ -86,22 +86,19 @@ ul { list-style: none; }
   height: 100%;
 }
 
-/* ✅ Seulement les <li> qui NE sont PAS .dropdown */
 .main-nav > ul > li:not(.dropdown) {
   display: flex;
   align-items: center;
   height: 100%;
 }
 
-/* ✅ Le <li> dropdown a des règles différentes */
 .main-nav > ul > li.dropdown {
   display: flex;
   align-items: center;
-  height: auto;
+  height: 100%; /* Fix: occupe toute la hauteur pour un survol stable */
   position: relative;
 }
 
-/* ✅ Tous les liens directs */
 .main-nav > ul > li > a {
   font-weight: 600;
   text-transform: uppercase;
@@ -123,7 +120,7 @@ ul { list-style: none; }
 
 /* --- Actions (Droite) --- */
 .header-actions { display: flex; align-items: center; }
-.nav-socials { display: flex; gap: 15px; align-items: center; }
+.nav-socials { display: flex; gap: 15px; align-items: center; margin-right: 15px; }
 
 .icon-nav { width: 22px; height: 22px; fill: #fff; transition: 0.3s; }
 .icon-nav:hover { fill: var(--accent-orange); }
@@ -132,18 +129,27 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (FIX HAUTEUR)
+   3. DROPDOWN MENU (FIX DÉFINITIF)
    ========================================= */
+
+.dropdown {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  height: 100% !important; /* Fix: Zone de survol sur toute la hauteur du header */
+}
 
 .dropdown-content {
   display: block !important;
   position: absolute !important;
   top: 100% !important;
   left: 50% !important;
-  transform: translateX(-50%) translateY(0) !important; /* Calé au bord */
+  transform: translateX(-50%) translateY(10px) !important;
   
   background-color: #1a1a1a !important;
-  min-width: 270px !important;
+  min-width: 280px !important;
+  white-space: nowrap !important;
   
   box-shadow: 0 15px 35px rgba(0,0,0,0.9) !important;
   border: 1px solid #333 !important;
@@ -155,25 +161,61 @@ ul { list-style: none; }
   transition: all 0.2s ease-in-out !important;
   
   list-style: none !important;
-  /* ✅ ON AUGMENTE LE PADDING EN BAS POUR COUVRIR LE DEUXIÈME LIEN */
-  padding: 5px 0 15px 0 !important; 
+  padding: 10px 0 20px 0 !important; /* Augmenté en bas pour englober le 2ème lien */
   z-index: 9999 !important;
-  height: auto !important; /* Laisse la box s'adapter au contenu */
-  overflow: visible !important;
+}
+
+.icon-arrow { 
+  width: 14px !important; 
+  height: 14px !important; 
+  fill: currentColor !important; 
+  margin-left: 6px !important; 
+  transition: transform 0.3s ease !important;
+  display: inline-block !important;
+}
+
+.dropdown-content::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -30px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 30px !important;
+  background: transparent !important;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+.dropdown:hover .icon-arrow { 
+  transform: rotate(180deg) !important; 
+}
+
+.dropdown-content li {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
 }
 
 .dropdown-content li a {
   display: block !important;
-  padding: 18px 25px !important; /* Un peu plus d'espace pour le clic */
+  padding: 16px 25px !important;
   text-transform: none !important;
-  font-size: 0.95rem !important;
+  font-size: 0.9rem !important;
   font-weight: 500 !important;
   color: #ccc !important;
   border-bottom: 1px solid rgba(255,255,255,0.05) !important;
   transition: background 0.2s, padding-left 0.2s !important;
-  line-height: 1.4 !important;
-  white-space: normal !important; /* Permet le retour à la ligne si besoin */
+  text-decoration: none !important;
+  line-height: 1.5 !important;
+  white-space: normal !important;
 }
+
 .dropdown-content li:last-child a {
   border-bottom: none !important;
 }
@@ -237,7 +279,6 @@ ul { list-style: none; }
   margin-bottom: 45px; 
 }
 
-/* Badge Google */
 .google-badge {
   background: #fff;
   display: inline-flex;
@@ -388,7 +429,6 @@ ul { list-style: none; }
 .service-card h3 { font-size: 1.4rem; color: #fff; margin-bottom: 15px; font-weight: 700; }
 .service-card p { font-size: 0.95rem; color: #ccc; line-height: 1.6; }
 
-/* Grid des Tarifs */
 .service-cards-grid {
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -454,7 +494,6 @@ ul { list-style: none; }
 .gallery-thumb img, .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; filter: grayscale(20%); }
 .gallery-thumb:hover img, .gallery-item:hover img { transform: scale(1.05); filter: grayscale(0); }
 
-/* FAQ */
 .faq-section { max-width: 800px; margin: 0 auto; }
 .faq-container details {
   background: var(--bg-dark); 
@@ -494,18 +533,15 @@ ul { list-style: none; }
 .b2b-content { flex: 1; }
 .b2b-content h2 { font-size: 2.2rem; color: #fff; margin-bottom: 20px; }
 
-/* Final CTA */
 .final-cta { background-color: #0d0d0d; border-top: 1px solid #222; text-align: center; }
 .cta-centered { display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .cta-content-wrapper h2 { font-size: 2.8rem; margin-bottom: 15px; color: #fff; }
 
-/* Local SEO Tags */
 .local-expertise { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 60px 0; border-top: 1px solid #222; margin-top: 0; }
 .city-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 30px; }
 .city-tag { display: inline-block; padding: 8px 20px; background: #1a1a1a; border-radius: 50px; font-size: 0.85rem; border: 1px solid #333; color: #ccc; transition: 0.3s; }
 .city-tag:hover { border-color: var(--accent-orange); color: #fff; }
 
-/* Cookie Banner */
 #cookie-banner {
   position: fixed; bottom: -100%; left: 0; width: 100%;
   background: #111; border-top: 2px solid var(--accent-orange);
@@ -515,7 +551,6 @@ ul { list-style: none; }
 #cookie-banner.show { bottom: 0; }
 .btn-accept { background: var(--accent-orange); color: #fff; border: none; padding: 10px 25px; border-radius: 4px; font-weight: 700; cursor: pointer; }
 
-/* Services Hub (Page Services globale) */
 .services-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
 .hub-card { background: var(--bg-dark); padding: 40px; border-radius: 8px; border-left: 4px solid var(--accent-orange); transition: 0.3s; text-align: left; }
 .hub-card:hover { background: #1a1a1a; transform: translateX(5px); }
@@ -543,7 +578,6 @@ ul { list-style: none; }
 .duval-link { color: var(--accent-orange) !important; font-weight: 700; }
 .legal-links .sep { margin: 0 10px; color: #444; }
 
-/* Sticky Call Button */
 .sticky-call-btn {
   position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px;
   background: var(--accent-orange); border-radius: 50%; display: flex;
@@ -629,7 +663,6 @@ ul { list-style: none; }
   display: block;
 }
 
-/* Navigation du Carrousel */
 .carousel-nav {
   position: absolute; 
   top: 50%; 
@@ -664,7 +697,6 @@ ul { list-style: none; }
   transform: scale(1.2); 
 }
 
-/* Adaptation Mobile Avis */
 @media (max-width: 768px) {
   .review-slide { padding: 0 40px; }
   .review-text { font-size: 1.1rem; }
