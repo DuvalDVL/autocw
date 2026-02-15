@@ -162,7 +162,7 @@ ul { list-style: none; }
   
   list-style: none !important;
   /* MODIFICATION ICI : On augmente le 3ème chiffre (bas) pour agrandir la box */
-  padding: 10px 0 10px 0 !important; 
+  padding: 0 !important; 
   z-index: 9999 !important;
   height: auto !important;            /* La box s'adapte maintenant au contenu */
 }
