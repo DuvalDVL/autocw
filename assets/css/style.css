@@ -504,8 +504,51 @@ a {
   .review-text { font-size: 1.1rem; }
 }
 
+/* --- GRID 3 COLONNES (Section Studio) --- */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  margin-top: 40px;
+}
+
+/* Style des cartes dans la grille */
+.service-card {
+  background: var(--bg-dark);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre le contenu */
+  text-align: center;
+  height: 100%; /* Force la même hauteur pour les 3 cartes */
+}
+
+.service-card:hover {
+  border-color: var(--accent-orange);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Taille des icônes (pour éviter qu'elles soient géantes) */
+.service-icon {
+  width: 60px;
+  height: 60px;
+  fill: var(--accent-orange);
+  margin-bottom: 25px;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
 }
