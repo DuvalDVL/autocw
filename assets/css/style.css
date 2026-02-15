@@ -612,7 +612,27 @@ ul { list-style: none; }
   
   .hero-content h1 { font-size: 2.5rem; }
   
-  #menu-toggle span { display: block; width: 25px; height: 2px; background: #fff; margin: 5px 0; }
+  /* --- Toggle Mobile Orange sans Box --- */
+#menu-toggle {
+  background: transparent !important; /* Supprime la box blanc cassé */
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+}
+
+#menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-orange) !important; /* Traits oranges */
+  border-radius: 3px;
+  transition: 0.3s;
+}
   
   #mobile-menu {
     position: fixed; top: var(--nav-height); left: 0; width: 100%; height: 0;
@@ -620,8 +640,59 @@ ul { list-style: none; }
     display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 999;
   }
   #mobile-menu.active { height: calc(100vh - var(--nav-height)); }
-  #mobile-menu ul { text-align: center; list-style: none; }
-  #mobile-menu li { margin: 20px 0; font-size: 1.2rem; font-weight: 700; }
+  /* --- Structure interne du Menu Mobile --- */
+#mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+
+#mobile-menu li {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  list-style: none;
+}
+
+/* Ajout des séparateurs spécifiques */
+#mobile-menu li:nth-child(1), /* Sous Accueil */
+#mobile-menu li:nth-child(3) { /* Sous Espace Pro */
+  border-bottom: 1px solid #333; 
+  margin-bottom: 10px;
+}
+
+/* Inversion Galerie et À Propos */
+/* (On suppose ici l'ordre suivant : 1.Accueil, 2.Prestations, 3.Pro, 4.Galerie, 5.A Propos) */
+#mobile-menu li:nth-child(4) { order: 5; } /* Galerie passe après */
+#mobile-menu li:nth-child(5) { order: 4; } /* À Propos passe avant */
+
+/* Séparateur avant le bouton Contact */
+#mobile-menu li:last-of-type {
+  border-top: 1px solid #333;
+  margin-top: 15px;
+  padding-top: 25px;
+}
+
+/* --- Icônes Réseaux Sociaux en bas du menu --- */
+.mobile-socials-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+  padding-bottom: 20px;
+}
+
+.mobile-socials-wrap svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--text-light);
+  transition: 0.3s;
+}
+
+.mobile-socials-wrap svg:hover {
+  fill: var(--accent-orange);
+}
   
   .footer-bottom-flex { flex-direction: column; text-align: center; gap: 20px; }
   #cookie-banner { flex-direction: column; text-align: center; }
@@ -703,4 +774,24 @@ ul { list-style: none; }
   .review-slide { padding: 0 40px; }
   .review-text { font-size: 1.1rem; }
   .nav-arrow { width: 40px; height: 40px; }
+}
+
+/* --- Correction débordement cartes Services --- */
+@media (max-width: 768px) {
+  .services-hub-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 15px; /* Empêche de coller aux bords */
+  }
+  
+  .hub-card {
+    width: 100%; /* Force la largeur à l'écran */
+    box-sizing: border-box;
+  }
+}
+
+/* --- Espacement CTA Final --- */
+.cta-content-wrapper .btn {
+  margin-top: 30px !important; /* Espace entre le texte et le bouton */
 }
