@@ -206,7 +206,7 @@ ul { list-style: none; }
 
 .dropdown-content li a {
   display: block !important;
-  padding: 5px 25px !important; 
+  padding: 18px 25px !important; 
   text-transform: none !important;
   font-size: 0.9rem !important;
   font-weight: 500 !important;
