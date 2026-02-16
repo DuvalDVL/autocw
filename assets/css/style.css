@@ -129,7 +129,7 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (CORRIGÉ & AJUSTÉ V7)
+   3. DROPDOWN MENU (CORRIGÉ & STABILISÉ V8)
    ========================================= */
 
 .dropdown {
@@ -161,7 +161,7 @@ ul { list-style: none; }
   transition: all 0.2s ease-in-out !important;
   
   list-style: none !important;
-  /* Keep container padding at 0 */
+  /* On remet le padding conteneur à 0 pour coller aux bords */
   padding: 0 !important; 
   z-index: 9999 !important;
   height: auto !important;
@@ -204,7 +204,7 @@ ul { list-style: none; }
   height: auto !important;
 }
 
-/* General Link Styles (Base state) */
+/* Style de base des liens */
 .dropdown-content li a {
   display: block !important;
   text-transform: none !important;
@@ -214,37 +214,35 @@ ul { list-style: none; }
   border-bottom: 1px solid rgba(255,255,255,0.05) !important;
   transition: all 0.2s ease !important;
   text-decoration: none !important;
-  line-height: 1 !important;
+  line-height: 1.2 !important; /* On revient à un interlignage normal */
   white-space: normal !important;
-  /* Base padding */
+  /* Padding standard de base */
   padding: 15px 25px !important;
 }
 
-/* --- SPECIFIC ADJUSTMENTS --- */
+/* --- AJUSTEMENTS SPÉCIFIQUES --- */
 
-/* 1st Link (Nettoyage) */
+/* 1er lien (Nettoyage) */
 .dropdown-content li:first-child a {
-  /* Top padding to distance from orange border */
+  /* On aère le haut */
   padding-top: 20px !important;
-  /* Bottom padding to distance from separator line */
-  padding-bottom: 22px !important;
+  /* On aère le bas */
+  padding-bottom: 20px !important;
 }
 
-/* 2nd Link (Detailing) */
+/* 2ème lien (Detailing) */
 .dropdown-content li:last-child a {
-  /* ZERO top padding to pull text up */
-  padding-top: 0 !important; 
-  /* Large bottom padding to fill the box */
-  padding-bottom: 30px !important; 
+  /* On met le padding du haut à 0 pour coller la zone de survol à la ligne */
+  padding-top: 15px !important; 
+  /* On garde un bon espace en bas */
+  padding-bottom: 25px !important; 
   border-bottom: none !important;
-  /* CRITICAL: Use line-height to center text vertically if padding is removed */
-  line-height: 3 !important; 
-  /* Negative margin to pull the whole block up against the separator line */
-  margin-top: -1px !important;
+  /* Marge négative pour remonter physiquement le bloc */
+  margin-top: -5px !important; 
   display: block !important;
 }
 
-/* Hover Effect */
+/* Effet de survol */
 .dropdown-content li a:hover {
   background: #252525 !important;
   color: var(--accent-orange) !important;
