@@ -129,7 +129,7 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (CORRIGÉ & AJUSTÉ V5)
+   3. DROPDOWN MENU (CORRIGÉ & AJUSTÉ V6)
    ========================================= */
 
 .dropdown {
@@ -161,7 +161,7 @@ ul { list-style: none; }
   transition: all 0.2s ease-in-out !important;
   
   list-style: none !important;
-  /* CRITICAL CHANGE: Set to 0 so hover backgrounds touch the edges */
+  /* Keep container padding at 0 so hover zones touch edges */
   padding: 0 !important; 
   z-index: 9999 !important;
   height: auto !important;
@@ -224,20 +224,21 @@ ul { list-style: none; }
 
 /* 1st Link (Nettoyage) */
 .dropdown-content li:first-child a {
-  /* Add extra top padding since we removed container padding */
+  /* Top padding to distance from orange border */
   padding-top: 20px !important;
-  /* Extra bottom padding as requested */
+  /* Bottom padding to distance from separator line */
   padding-bottom: 22px !important;
 }
 
 /* 2nd Link (Detailing) */
 .dropdown-content li:last-child a {
-  /* Reduced top padding to pull text up, but keep enough for hover to look good */
-  padding-top: 12px !important; 
+  /* DRASTIC REDUCTION: Set top padding to almost zero to pull text up */
+  padding-top: 5px !important; 
   /* Large bottom padding to fill the box */
-  padding-bottom: 28px !important; 
+  padding-bottom: 30px !important; 
   border-bottom: none !important;
-  margin-top: 0 !important; /* Ensure no margin creates gaps */
+  margin-top: 0 !important;
+  display: block !important; /* Ensure block display for full width hover */
 }
 
 /* Hover Effect */
