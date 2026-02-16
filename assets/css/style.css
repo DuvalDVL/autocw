@@ -129,7 +129,7 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (CORRIGÉ & AJUSTÉ V6)
+   3. DROPDOWN MENU (CORRIGÉ & AJUSTÉ V7)
    ========================================= */
 
 .dropdown {
@@ -161,7 +161,7 @@ ul { list-style: none; }
   transition: all 0.2s ease-in-out !important;
   
   list-style: none !important;
-  /* Keep container padding at 0 so hover zones touch edges */
+  /* Keep container padding at 0 */
   padding: 0 !important; 
   z-index: 9999 !important;
   height: auto !important;
@@ -232,13 +232,16 @@ ul { list-style: none; }
 
 /* 2nd Link (Detailing) */
 .dropdown-content li:last-child a {
-  /* DRASTIC REDUCTION: Set top padding to almost zero to pull text up */
-  padding-top: 5px !important; 
+  /* ZERO top padding to pull text up */
+  padding-top: 0 !important; 
   /* Large bottom padding to fill the box */
   padding-bottom: 30px !important; 
   border-bottom: none !important;
-  margin-top: 0 !important;
-  display: block !important; /* Ensure block display for full width hover */
+  /* CRITICAL: Use line-height to center text vertically if padding is removed */
+  line-height: 3 !important; 
+  /* Negative margin to pull the whole block up against the separator line */
+  margin-top: -1px !important;
+  display: block !important;
 }
 
 /* Hover Effect */
