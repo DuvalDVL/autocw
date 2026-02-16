@@ -129,7 +129,7 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (CORRIGÉ & AJUSTÉ)
+   3. DROPDOWN MENU (CORRIGÉ & AJUSTÉ V2)
    ========================================= */
 
 .dropdown {
@@ -161,7 +161,7 @@ ul { list-style: none; }
   transition: all 0.2s ease-in-out !important;
   
   list-style: none !important;
-  /* On réduit le padding du conteneur pour que la zone de survol (hover) aille jusqu'aux bords */
+  /* Reduced container padding so hover zones reach edges */
   padding: 5px 0 !important; 
   z-index: 9999 !important;
   height: auto !important;
@@ -204,7 +204,7 @@ ul { list-style: none; }
   height: auto !important;
 }
 
-/* Style général des liens */
+/* General Link Styles */
 .dropdown-content li a {
   display: block !important;
   text-transform: none !important;
@@ -216,8 +216,31 @@ ul { list-style: none; }
   text-decoration: none !important;
   line-height: 1 !important;
   white-space: normal !important;
-  /* Padding de base confortable pour grossir la zone de clic */
+  /* Standard padding for click area */
   padding: 15px 25px !important;
+}
+
+/* --- SPECIFIC ADJUSTMENTS --- */
+
+/* 1st Link (Nettoyage): More space below */
+.dropdown-content li:first-child a {
+  padding-bottom: 22px !important;
+}
+
+/* 2nd Link (Detailing): DRASTIC reduction of top space */
+.dropdown-content li:last-child a {
+  /* Reduced top padding significantly to bring text up */
+  padding-top: 8px !important; 
+  /* Increased bottom padding to ensure hover box has height */
+  padding-bottom: 18px !important; 
+  border-bottom: none !important;
+}
+
+/* Hover Effect */
+.dropdown-content li a:hover {
+  background: #252525 !important;
+  color: var(--accent-orange) !important;
+  padding-left: 30px !important;
 }
 
 /* --- AJUSTEMENTS SPÉCIFIQUES --- */
