@@ -129,9 +129,8 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (CORRIGÉ & STABILISÉ V8)
+   3. DROPDOWN MENU (FIX FINAL)
    ========================================= */
-
 .dropdown {
   position: relative !important;
   display: flex !important;
@@ -161,10 +160,10 @@ ul { list-style: none; }
   transition: all 0.2s ease-in-out !important;
   
   list-style: none !important;
-  /* On remet le padding conteneur à 0 pour coller aux bords */
   padding: 0 !important; 
   z-index: 9999 !important;
   height: auto !important;
+  overflow: visible !important; /* IMPORTANT : permet au contenu de ne pas être coupé */
 }
 
 .icon-arrow { 
@@ -199,14 +198,16 @@ ul { list-style: none; }
 .dropdown-content li {
   display: block !important;
   width: 100% !important;
-  margin: 0 !important;
+  margin: 0 !important; /* ✅ Pas de marge négative */
   padding: 0 !important;
   height: auto !important;
+  min-height: 0 !important;
 }
 
-/* Style de base des liens */
+/* Style des liens */
 .dropdown-content li a {
   display: block !important;
+  padding: 18px 25px !important; /* ✅ Padding uniforme généreux */
   text-transform: none !important;
   font-size: 0.9rem !important;
   font-weight: 500 !important;
@@ -214,32 +215,16 @@ ul { list-style: none; }
   border-bottom: 1px solid rgba(255,255,255,0.05) !important;
   transition: all 0.2s ease !important;
   text-decoration: none !important;
-  line-height: 1.2 !important; /* On revient à un interlignage normal */
+  line-height: 1.4 !important; /* ✅ Line-height confortable */
   white-space: normal !important;
-  /* Padding standard de base */
-  padding: 15px 25px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  box-sizing: border-box !important;
 }
 
-/* --- AJUSTEMENTS SPÉCIFIQUES --- */
-
-/* 1er lien (Nettoyage) */
-.dropdown-content li:first-child a {
-  /* On aère le haut */
-  padding-top: 20px !important;
-  /* On aère le bas */
-  padding-bottom: 20px !important;
-}
-
-/* 2ème lien (Detailing) */
+/* Dernier lien : pas de bordure */
 .dropdown-content li:last-child a {
-  /* On met le padding du haut à 0 pour coller la zone de survol à la ligne */
-  padding-top: 15px !important; 
-  /* On garde un bon espace en bas */
-  padding-bottom: 25px !important; 
   border-bottom: none !important;
-  /* Marge négative pour remonter physiquement le bloc */
-  margin-top: -5px !important; 
-  display: block !important;
 }
 
 /* Effet de survol */
