@@ -129,7 +129,7 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (CORRIGÉ & AJUSTÉ V3)
+   3. DROPDOWN MENU (CORRIGÉ & AJUSTÉ V4)
    ========================================= */
 
 .dropdown {
@@ -218,6 +218,32 @@ ul { list-style: none; }
   white-space: normal !important;
   /* Standard padding */
   padding: 15px 25px !important;
+}
+
+/* --- SPECIFIC ADJUSTMENTS --- */
+
+/* 1st Link (Nettoyage): More space below */
+.dropdown-content li:first-child a {
+  padding-bottom: 22px !important;
+}
+
+/* 2nd Link (Detailing): ZERO top padding */
+.dropdown-content li:last-child a {
+  /* Set top padding to 0 to pull text up to the line */
+  padding-top: 0px !important; 
+  /* Increased bottom padding significantly to maintain box height */
+  padding-bottom: 28px !important; 
+  /* Add a bit of top margin to visually separate from line without adding clickable space above line */
+  margin-top: 10px !important; 
+  border-bottom: none !important;
+  display: block !important;
+}
+
+/* Hover Effect */
+.dropdown-content li a:hover {
+  background: #252525 !important;
+  color: var(--accent-orange) !important;
+  padding-left: 30px !important;
 }
 
 /* --- SPECIFIC ADJUSTMENTS --- */
