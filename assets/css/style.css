@@ -659,95 +659,113 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-  .desktop-only { display: none; }
-  .mobile-only { display: flex; }
+  .desktop-only { display: none !important; }
+  .mobile-only { display: flex !important; }
   
-  .hero-content h1 { font-size: 2.5rem; }
-  
-  /* --- Toggle Mobile Orange sans Box --- */
-#menu-toggle {
-  background: transparent !important; /* Supprime la box blanc cassé */
-  border: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 20px;
-  padding: 0;
-  cursor: pointer;
-}
+  .hero-content h1 { font-size: 2.2rem; }
 
-#menu-toggle span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: var(--accent-orange) !important; /* Traits oranges */
-  border-radius: 3px;
-  transition: 0.3s;
-}
-  
-  #mobile-menu {
-    position: fixed; top: var(--nav-height); left: 0; width: 100%; height: 0;
-    background: var(--bg-dark); overflow: hidden; transition: 0.3s;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 999;
+  /* --- Toggle Mobile Orange --- */
+  #menu-toggle {
+    background: transparent !important;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 18px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1001;
   }
-  #mobile-menu.active { height: calc(100vh - var(--nav-height)); }
-  /* --- Structure interne du Menu Mobile --- */
-#mobile-menu ul {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 20px;
-}
 
-#mobile-menu li {
-  width: 100%;
-  text-align: center;
-  padding: 15px 0;
-  list-style: none;
-}
+  #menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-orange) !important;
+    border-radius: 3px;
+    transition: 0.3s;
+  }
 
-/* Ajout des séparateurs spécifiques */
-#mobile-menu li:nth-child(1), /* Sous Accueil */
-#mobile-menu li:nth-child(3) { /* Sous Espace Pro */
-  border-bottom: 1px solid #333; 
-  margin-bottom: 10px;
-}
+  /* --- Overlay Menu Mobile --- */
+  #mobile-menu {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #0a0a0a; /* Fond très sombre pour le contraste */
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Commence en haut pour le scroll */
+    z-index: 1000;
+  }
 
-/* Inversion Galerie et À Propos */
-/* (On suppose ici l'ordre suivant : 1.Accueil, 2.Prestations, 3.Pro, 4.Galerie, 5.A Propos) */
-#mobile-menu li:nth-child(4) { order: 5; } /* Galerie passe après */
-#mobile-menu li:nth-child(5) { order: 4; } /* À Propos passe avant */
+  #mobile-menu.active {
+    height: calc(100vh - var(--nav-height));
+    padding-top: 20px;
+  }
 
-/* Séparateur avant le bouton Contact */
-#mobile-menu li:last-of-type {
-  border-top: 1px solid #333;
-  margin-top: 15px;
-  padding-top: 25px;
-}
+  /* --- Liste du Menu --- */
+  #mobile-menu ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
 
-/* --- Icônes Réseaux Sociaux en bas du menu --- */
-.mobile-socials-wrap {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 30px;
-  padding-bottom: 20px;
-}
+  #mobile-menu li {
+    width: 100%;
+    text-align: center;
+  }
 
-.mobile-socials-wrap svg {
-  width: 30px;
-  height: 30px;
-  fill: var(--text-light);
-  transition: 0.3s;
-}
+  #mobile-menu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.2s;
+  }
 
-.mobile-socials-wrap svg:hover {
-  fill: var(--accent-orange);
-}
-  
+  #mobile-menu li a:active {
+    color: var(--accent-orange);
+    background: rgba(255, 95, 0, 0.1);
+  }
+
+  /* --- Séparateurs (Compactés) --- */
+  #mobile-menu .menu-divider {
+    height: 1px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    margin: 8px 60px !important; /* Espacement réduit autour des traits */
+    list-style: none !important;
+  }
+
+  /* --- Icônes Réseaux Sociaux --- */
+  .mobile-socials-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .mobile-socials-wrap svg {
+    width: 26px;
+    height: 26px;
+    fill: #ffffff;
+    transition: 0.3s;
+  }
+
+  /* --- Footer & Cookies --- */
   .footer-bottom-flex { flex-direction: column; text-align: center; gap: 20px; }
-  #cookie-banner { flex-direction: column; text-align: center; }
+  #cookie-banner { flex-direction: column; text-align: center; padding: 20px; }
 }
 
 /* =========================================
