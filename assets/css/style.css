@@ -129,7 +129,7 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (FIX ULTIME V11 - 3 LIENS)
+   3. DROPDOWN MENU (FIX SENSIBILITÉ V12)
    ========================================= */
 
 /* --- Container dropdown --- */
@@ -138,7 +138,9 @@ ul { list-style: none; }
   display: flex !important;
   align-items: center !important;
   cursor: pointer !important;
-  height: 100% !important;
+  /* SÉCURITÉ : On force la hauteur à celle de la navbar pour éviter que la zone ne déborde en bas */
+  height: 100% !important; 
+  max-height: var(--nav-height) !important; 
 }
 
 /* --- Flèche --- */
@@ -153,49 +155,51 @@ ul { list-style: none; }
 
 /* --- Menu déroulant (La Boîte) --- */
 .dropdown-content {
-  /* Reset complet pour éviter les conflits */
+  /* Reset */
   all: initial !important;
   
-  /* Positionnement */
+  /* Positionnement PRÉCIS */
   display: block !important;
   position: absolute !important;
-  top: 85px !important; /* Doit correspondre à la hauteur de ton header */
+  /* Le menu commence exactement sous la barre noire */
+  top: 100% !important; 
   left: 50% !important;
   transform: translateX(-50%) translateY(10px) !important;
   
   /* Apparence */
   background-color: #1a1a1a !important;
-  min-width: 300px !important; /* Largeur confortable pour 3 liens */
+  min-width: 300px !important;
   
   box-shadow: 0 15px 35px rgba(0,0,0,0.9) !important;
   border: 1px solid #333 !important;
-  border-top: 3px solid #FF5F00 !important; /* Ligne orange */
+  border-top: 3px solid #FF5F00 !important;
   border-radius: 0 0 4px 4px !important;
   
-  /* Animation d'apparition */
+  /* Animation */
   opacity: 0 !important;
   visibility: hidden !important;
   transition: all 0.2s ease-in-out !important;
   
-  /* Structure interne */
+  /* Structure */
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
   z-index: 9999 !important;
   height: auto !important;
-  
-  /* Font reset (car all: initial supprime les fonts) */
   font-family: 'Inter', sans-serif !important;
 }
 
-/* Pont invisible pour éviter que le menu disparaisse au survol */
+/* --- LE PONT INVISIBLE (CORRIGÉ) --- */
+/* C'est lui qui posait problème. On réduit sa taille au strict minimum */
 .dropdown-content::before {
   content: "" !important;
   position: absolute !important;
-  top: -40px !important;
+  /* On remonte juste un tout petit peu pour combler l'écart visuel */
+  top: -20px !important; 
   left: 0 !important;
   width: 100% !important;
-  height: 40px !important;
+  /* Hauteur réduite : ne capte plus la souris 5cm en dessous */
+  height: 20px !important; 
   background: transparent !important;
 }
 
@@ -221,19 +225,14 @@ ul { list-style: none; }
   font-family: 'Inter', sans-serif !important;
 }
 
-/* --- Liens (a) - Style Général --- */
+/* --- Liens (a) --- */
 .dropdown-content li a {
   all: initial !important;
-  
-  /* Structure */
   display: block !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  
-  /* Espacement STANDARD (pour le lien du milieu) */
   padding: 18px 30px !important;
   
-  /* Texte */
   font-family: 'Inter', sans-serif !important;
   font-size: 0.95rem !important;
   font-weight: 500 !important;
@@ -243,30 +242,26 @@ ul { list-style: none; }
   white-space: normal !important;
   cursor: pointer !important;
   
-  /* Bordure et Fond */
   background: transparent !important;
   border-bottom: 1px solid rgba(255,255,255,0.05) !important;
   transition: all 0.2s ease !important;
 }
 
-/* --- AJUSTEMENTS SPÉCIFIQUES POUR 3 LIENS --- */
-
-/* 1. Premier lien : Un peu plus d'espace en haut pour aérer sous la ligne orange */
+/* --- AJUSTEMENTS ESPACEMENTS --- */
 .dropdown-content li:first-child a {
   padding-top: 25px !important;
 }
 
-/* 2. Dernier lien : Un peu plus d'espace en bas et pas de bordure */
 .dropdown-content li:last-child a {
   padding-bottom: 25px !important;
   border-bottom: none !important;
 }
 
-/* --- Effet Hover --- */
+/* --- Effet Hover Lien --- */
 .dropdown-content li a:hover {
   background: #252525 !important;
   color: #FF5F00 !important;
-  padding-left: 35px !important; /* Petit décalage vers la droite */
+  padding-left: 35px !important;
 }
 
 /* =========================================
