@@ -129,15 +129,15 @@ ul { list-style: none; }
 .mobile-only { display: none !important; }
 
 /* =========================================
-   3. DROPDOWN MENU
+   3. DROPDOWN MENU (CORRIGÉ)
    ========================================= */
 .dropdown {
   position: relative !important;
   display: flex !important;
   align-items: center !important;
-  height: 85px !important;
+  height: 85px !important; /* Aligné sur --nav-height */
   max-height: 85px !important;
-  pointer-events: none !important;
+  /* Correction : suppression du pointer-events: none qui bloquait le survol */
 }
 
 .dropdown > a.dropbtn {
@@ -149,8 +149,9 @@ ul { list-style: none; }
   align-items: center !important;
   cursor: pointer !important;
   transition: color 0.3s ease !important;
-  pointer-events: auto !important;
-  padding: 10px !important;
+  padding: 0 10px !important;
+  height: 100% !important; /* Le lien occupe toute la hauteur pour éviter les zones mortes */
+  line-height: 1 !important;
 }
 
 .dropdown > a.dropbtn:hover {
@@ -169,7 +170,7 @@ ul { list-style: none; }
 .dropdown-content {
   display: block !important;
   position: absolute !important;
-  top: 100% !important; 
+  top: 100% !important; /* Se colle exactement au bas du header */
   left: 50% !important;
   transform: translateX(-50%) !important;
   
@@ -181,11 +182,13 @@ ul { list-style: none; }
   border-top: 3px solid #FF5F00 !important;
   border-radius: 0 0 4px 4px !important;
   
+  /* État initial : masqué */
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
   
-  transition: opacity 0.2s ease, visibility 0.2s ease, pointer-events 0s 0.2s !important;
+  /* Transition fluide */
+  transition: opacity 0.2s ease, visibility 0.2s ease !important;
   
   list-style: none !important;
   padding: 0 !important;
@@ -197,11 +200,11 @@ ul { list-style: none; }
   overflow: visible !important;
 }
 
+/* Affichage du menu au survol du parent .dropdown */
 .dropdown:hover .dropdown-content {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
-  transition: opacity 0.2s ease, visibility 0.2s ease, pointer-events 0s 0s !important;
 }
 
 .dropdown:hover .icon-arrow { 
