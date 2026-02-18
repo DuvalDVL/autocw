@@ -625,24 +625,70 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   13. MEDIA QUERIES (RESPONSIVE)
+   13. MEDIA QUERIES (RESPONSIVE COMPLET)
    ========================================= */
+
 @media (max-width: 992px) {
-  .bento-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
-  .bento-main, .bento-tall, .bento-wide { grid-column: span 1; grid-row: span 1; }
+  /* Bento Grid */
+  .bento-grid { 
+    grid-template-columns: 1fr; 
+    grid-auto-rows: auto; 
+  }
+  .bento-main, .bento-tall, .bento-wide { 
+    grid-column: span 1; 
+    grid-row: span 1; 
+  }
+
+  /* Layouts de section */
   .footer-grid-main { grid-template-columns: 1fr; gap: 40px; }
-  .b2b-card { flex-direction: column; text-align: center; }
-  .quality-flex-layout { flex-direction: column; text-align: center; gap: 40px; }
+  .b2b-card { flex-direction: column; text-align: center; padding: 40px 25px; }
+  
+  /* Correction Layout Zig-Zag Prestations */
+  .quality-flex-layout { 
+    flex-direction: column !important; 
+    text-align: center; 
+    gap: 40px; 
+  }
+  .quality-image-side, .quality-text-side { 
+    width: 100% !important; 
+    flex: none !important; 
+  }
+  .quality-text-side { order: 1; }
+  .quality-image-side { order: 2; }
+  
+  /* Inversion pour le mode reverse sur tablette/mobile */
+  .quality-reverse { flex-direction: column !important; }
+
   .quality-cta-wrap { justify-content: center; }
   .header-actions { gap: 10px; }
 }
 
 @media (max-width: 768px) {
+  /* Visibilité */
   .desktop-only { display: none !important; }
   .mobile-only { display: flex !important; }
   
-  .hero-content h1 { font-size: 2.5rem; }
-  
+  /* --- TYPOGRAPHIE HERO (Correction de l'overflow) --- */
+  .hero-content h1 { 
+    /* Utilisation de clamp pour adapter la taille au plus petit écran possible */
+    font-size: clamp(1.6rem, 8vw, 2.2rem) !important; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    padding: 0 10px;
+    line-height: 1.2;
+  }
+  .hero-content p { font-size: 1rem; padding: 0 15px; }
+
+  /* --- TITRES DE SECTIONS --- */
+  .quality-text-side h2 { 
+    font-size: 1.8rem !important; 
+    line-height: 1.3;
+  }
+  .section-title h2 { font-size: 1.8rem; }
+  .cta-content-wrapper h2 { font-size: 1.8rem !important; }
+
+  /* --- MENU MOBILE --- */
   #menu-toggle { 
     background: none; 
     border: none; 
@@ -651,6 +697,7 @@ ul { list-style: none; }
     display: flex;
     flex-direction: column;
     gap: 5px;
+    z-index: 1001;
   }
   
   #menu-toggle span { 
@@ -658,6 +705,7 @@ ul { list-style: none; }
     width: 25px; 
     height: 2px; 
     background: #fff; 
+    transition: 0.3s;
   }
   
   #mobile-menu {
@@ -682,18 +730,7 @@ ul { list-style: none; }
   }
   
   #mobile-menu nav { width: 100%; }
-  
-  #mobile-menu ul { 
-    text-align: center; 
-    list-style: none; 
-    padding: 0;
-    margin: 0;
-  }
-  
-  #mobile-menu li { 
-    margin: 0; 
-    padding: 0;
-  }
+  #mobile-menu ul { text-align: center; list-style: none; padding: 0; margin: 0; }
   
   #mobile-menu li a { 
     display: block;
@@ -702,7 +739,6 @@ ul { list-style: none; }
     font-weight: 600;
     color: var(--text-light);
     text-transform: uppercase;
-    transition: background 0.3s, color 0.3s;
   }
   
   #mobile-menu li a:hover {
@@ -713,7 +749,7 @@ ul { list-style: none; }
   #mobile-menu .menu-divider {
     height: 1px;
     background: #333;
-    margin: 10px 20px;
+    margin: 10px 40px;
   }
   
   .mobile-socials-wrap {
@@ -728,17 +764,18 @@ ul { list-style: none; }
     width: 32px;
     height: 32px;
     fill: #fff;
-    transition: 0.3s;
   }
   
-  .mobile-socials-wrap a:hover svg {
-    fill: var(--accent-orange);
-  }
-  
+  /* --- FOOTER & DIVERS --- */
   .footer-bottom-flex { flex-direction: column; text-align: center; gap: 20px; }
   #cookie-banner { flex-direction: column; text-align: center; }
+  
+  /* --- REVIEWS CAROUSEL MOBILE --- */
+  .review-slide { padding: 0 30px; }
+  .review-text { font-size: 1.1rem; }
+  .nav-arrow { width: 40px; height: 40px; }
+  .nav-arrow svg { width: 30px; height: 30px; }
 }
-
 /* =========================================
    REVIEWS / CAROUSEL
    ========================================= */
