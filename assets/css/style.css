@@ -129,10 +129,10 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (FIX FANTÔME V13)
+   3. DROPDOWN MENU (FIX ZONE DE SURVOL)
    ========================================= */
 
-/* --- Container dropdown --- */
+/* Container dropdown */
 .dropdown {
   position: relative !important;
   display: flex !important;
@@ -142,7 +142,7 @@ ul { list-style: none; }
   max-height: var(--nav-height) !important;
 }
 
-/* --- Flèche --- */
+/* Flèche */
 .icon-arrow { 
   width: 14px !important; 
   height: 14px !important; 
@@ -152,7 +152,7 @@ ul { list-style: none; }
   display: inline-block !important;
 }
 
-/* --- Menu déroulant (La Boîte) --- */
+/* Menu déroulant */
 .dropdown-content {
   all: initial !important;
   
@@ -161,7 +161,7 @@ ul { list-style: none; }
   position: absolute !important;
   top: 100% !important; 
   left: 50% !important;
-  transform: translateX(-50%) translateY(10px) !important;
+  transform: translateX(-50%) translateY(5px) !important; /* ✅ Réduit de 10px à 5px */
   
   /* Apparence */
   background-color: #1a1a1a !important;
@@ -172,10 +172,10 @@ ul { list-style: none; }
   border-top: 3px solid #FF5F00 !important;
   border-radius: 0 0 4px 4px !important;
   
-  /* --- LE FIX EST ICI (Invisible + Intouchable) --- */
+  /* Masqué par défaut */
   opacity: 0 !important;
   visibility: hidden !important;
-  pointer-events: none !important; /* La souris passe au travers quand fermé */
+  pointer-events: none !important;
   
   /* Animation */
   transition: all 0.2s ease-in-out !important;
@@ -189,22 +189,22 @@ ul { list-style: none; }
   font-family: 'Inter', sans-serif !important;
 }
 
-/* --- Pont invisible (Taille réduite) --- */
+/* ✅ Pont invisible RÉDUIT AU MINIMUM (juste pour combler le gap de 5px) */
 .dropdown-content::before {
   content: "" !important;
   position: absolute !important;
-  top: -20px !important; /* Remonte juste assez pour coller à la barre */
+  top: -5px !important; /* ✅ Exactement la hauteur du gap */
   left: 0 !important;
   width: 100% !important;
-  height: 20px !important; /* Zone morte réduite au minimum */
+  height: 5px !important; /* ✅ Réduit à 5px au lieu de 20px */
   background: transparent !important;
 }
 
-/* --- Affichage au survol --- */
+/* Affichage au survol du .dropdown (pas du pont) */
 .dropdown:hover .dropdown-content {
   opacity: 1 !important;
   visibility: visible !important;
-  pointer-events: auto !important; /* Réactive la souris quand ouvert */
+  pointer-events: auto !important;
   transform: translateX(-50%) translateY(0) !important;
 }
 
@@ -212,7 +212,7 @@ ul { list-style: none; }
   transform: rotate(180deg) !important; 
 }
 
-/* --- Items de la liste --- */
+/* Items */
 .dropdown-content li {
   all: initial !important;
   display: block !important;
@@ -223,7 +223,7 @@ ul { list-style: none; }
   font-family: 'Inter', sans-serif !important;
 }
 
-/* --- Liens --- */
+/* Liens */
 .dropdown-content li a {
   all: initial !important;
   display: block !important;
@@ -245,7 +245,7 @@ ul { list-style: none; }
   transition: all 0.2s ease !important;
 }
 
-/* --- Ajustements Espacements --- */
+/* Espacements */
 .dropdown-content li:first-child a {
   padding-top: 25px !important;
 }
@@ -255,7 +255,7 @@ ul { list-style: none; }
   border-bottom: none !important;
 }
 
-/* --- Effet Hover Lien --- */
+/* Hover */
 .dropdown-content li a:hover {
   background: #252525 !important;
   color: #FF5F00 !important;
