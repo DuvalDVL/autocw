@@ -168,7 +168,7 @@ ul { list-style: none; }
   display: inline-block !important;
 }
 
-/* Menu - INVISIBLE et INTOUCHABLE par défaut */
+/* Menu - INVISIBE et INTOUCHABLE par défaut */
 .dropdown-content {
   display: block !important;
   position: absolute !important;
