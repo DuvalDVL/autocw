@@ -1,5 +1,5 @@
 /* =========================================
-   1. VARIABLES & BASE
+   1. VARIABLE & BASE
    ========================================= */
 :root {
   --bg-darkest: #0a0a0a;
@@ -625,10 +625,11 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   13. MEDIA QUERIES (RESPONSIVE - VERSION ULTRA-PRÉCISE)
+   13. MEDIA QUERIES (RESPONSIVE COMPLET)
    ========================================= */
 
 @media (max-width: 992px) {
+  /* Bento Grid */
   .bento-grid { 
     grid-template-columns: 1fr; 
     grid-auto-rows: auto; 
@@ -638,14 +639,15 @@ ul { list-style: none; }
     grid-row: span 1; 
   }
 
+  /* Layouts de section */
   .footer-grid-main { grid-template-columns: 1fr; gap: 40px; }
   .b2b-card { flex-direction: column; text-align: center; padding: 40px 25px; }
   
-  /* Layout Zig-Zag Services */
+  /* Correction Layout Zig-Zag Prestations */
   .quality-flex-layout { 
     flex-direction: column !important; 
     text-align: center; 
-    gap: 50px; 
+    gap: 40px; 
   }
   .quality-image-side, .quality-text-side { 
     width: 100% !important; 
@@ -653,73 +655,127 @@ ul { list-style: none; }
   }
   .quality-text-side { order: 1; }
   .quality-image-side { order: 2; }
+  
+  /* Inversion pour le mode reverse sur tablette/mobile */
   .quality-reverse { flex-direction: column !important; }
 
+  .quality-cta-wrap { justify-content: center; }
   .header-actions { gap: 10px; }
 }
 
 @media (max-width: 768px) {
+  /* Visibilité */
   .desktop-only { display: none !important; }
   .mobile-only { display: flex !important; }
   
-  /* --- H1 HERO (Fix définitif pour "Personnalisation") --- */
+  /* --- TYPOGRAPHIE HERO (Correction de l'overflow) --- */
   .hero-content h1 { 
-    /* On descend à 1.2rem en taille mini pour les écrans < 350px */
-    font-size: clamp(1.2rem, 11vw, 2.8rem) !important; 
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
-    display: block;
-    width: 100% !important;
-    line-height: 1.1 !important;
-    margin-bottom: 20px !important;
-    padding: 0 10px !important;
+    /* Utilisation de clamp pour adapter la taille au plus petit écran possible */
+    font-size: clamp(1.6rem, 8vw, 2.2rem) !important; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    padding: 0 10px;
+    line-height: 1.2;
   }
+  .hero-content p { font-size: 1rem; padding: 0 15px; }
 
-  /* --- SOUS-TITRE HERO (Fix largeur et aération) --- */
-  .hero-content p { 
-    font-size: 1.1rem !important; 
-    max-width: 85% !important; /* Utilisation de % pour plus de souplesse */
-    margin: 0 auto 35px !important; 
-    line-height: 1.5 !important;
-    color: #bbb !important;
+  /* --- TITRES DE SECTIONS --- */
+  .quality-text-side h2 { 
+    font-size: 1.8rem !important; 
+    line-height: 1.3;
   }
-
-  /* --- RESTAURATION H2 (Taille imposante) --- */
-  /* Retour à une taille forte pour l'aspect haut de gamme */
-  .quality-text-side h2, 
-  .section-title h2, 
-  .cta-content-wrapper h2 { 
-    font-size: 2.8rem !important; /* Taille d'origine restaurée */
-    line-height: 1.1 !important;
-    margin-bottom: 25px !important;
-    word-wrap: break-word !important;
-  }
+  .section-title h2 { font-size: 1.8rem; }
+  .cta-content-wrapper h2 { font-size: 1.8rem !important; }
 
   /* --- MENU MOBILE --- */
   #menu-toggle { 
-    background: none; border: none; cursor: pointer; padding: 10px;
-    display: flex; flex-direction: column; gap: 5px; z-index: 1001;
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
   }
-  #menu-toggle span { display: block; width: 25px; height: 2px; background: #fff; }
+  
+  #menu-toggle span { 
+    display: block; 
+    width: 25px; 
+    height: 2px; 
+    background: #fff; 
+    transition: 0.3s;
+  }
   
   #mobile-menu {
-    position: fixed; top: var(--nav-height); left: 0; width: 100%; height: 0;
-    background: var(--bg-dark); overflow: hidden; transition: height 0.3s ease;
-    display: flex; flex-direction: column; align-items: center; z-index: 999;
+    position: fixed; 
+    top: var(--nav-height); 
+    left: 0; 
+    width: 100%; 
+    height: 0;
+    background: var(--bg-dark); 
+    overflow: hidden; 
+    transition: height 0.3s ease;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start;
+    z-index: 999;
+    padding-top: 20px;
   }
-  #mobile-menu.active { height: calc(100vh - var(--nav-height)); }
-  #mobile-menu ul { text-align: center; width: 100%; padding-top: 20px; }
-  #mobile-menu li a { display: block; padding: 15px 20px; font-size: 1.2rem; text-transform: uppercase; }
-  #mobile-menu .menu-divider { height: 1px; background: #333; margin: 10px 40px; }
   
-  .mobile-socials-wrap { display: flex; gap: 20px; margin-top: 30px; }
-  .mobile-socials-wrap svg { width: 32px; height: 32px; fill: #fff; }
+  #mobile-menu.active { 
+    height: calc(100vh - var(--nav-height)); 
+  }
   
-  /* --- AJUSTEMENTS BAS DE PAGE --- */
-  .footer-bottom-flex { flex-direction: column; text-align: center; gap: 25px; }
-  .section-padding { padding: 60px 0 !important; }
+  #mobile-menu nav { width: 100%; }
+  #mobile-menu ul { text-align: center; list-style: none; padding: 0; margin: 0; }
+  
+  #mobile-menu li a { 
+    display: block;
+    padding: 15px 20px;
+    font-size: 1.1rem; 
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+  }
+  
+  #mobile-menu li a:hover {
+    background: rgba(255, 95, 0, 0.1);
+    color: var(--accent-orange);
+  }
+  
+  #mobile-menu .menu-divider {
+    height: 1px;
+    background: #333;
+    margin: 10px 40px;
+  }
+  
+  .mobile-socials-wrap {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px;
+  }
+  
+  .mobile-socials-wrap svg {
+    width: 32px;
+    height: 32px;
+    fill: #fff;
+  }
+  
+  /* --- FOOTER & DIVERS --- */
+  .footer-bottom-flex { flex-direction: column; text-align: center; gap: 20px; }
+  #cookie-banner { flex-direction: column; text-align: center; }
+  
+  /* --- REVIEWS CAROUSEL MOBILE --- */
+  .review-slide { padding: 0 30px; }
+  .review-text { font-size: 1.1rem; }
+  .nav-arrow { width: 40px; height: 40px; }
+  .nav-arrow svg { width: 30px; height: 30px; }
 }
-
 /* =========================================
    REVIEWS / CAROUSEL
    ========================================= */
