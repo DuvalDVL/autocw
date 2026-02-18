@@ -133,29 +133,19 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (FIX ZONE DE SURVOL STRICTE)
+   3. DROPDOWN MENU (SOLUTION NUCLÉAIRE)
    ========================================= */
 
-/* Container dropdown */
 .dropdown {
   position: relative !important;
   display: flex !important;
   align-items: center !important;
   height: 85px !important;
   max-height: 85px !important;
+  pointer-events: none !important; /* ✅ TOUT le dropdown ignore la souris */
 }
 
-/* Flèche */
-.icon-arrow { 
-  width: 14px !important; 
-  height: 14px !important; 
-  fill: currentColor !important; 
-  margin-left: 6px !important; 
-  transition: transform 0.3s ease !important;
-  display: inline-block !important;
-}
-
-/* ✅ Le lien "Prestations" lui-même */
+/* ✅ Seul le lien capte la souris */
 .dropdown > a.dropbtn {
   font-weight: 600 !important;
   text-transform: uppercase !important;
@@ -165,17 +155,21 @@ ul { list-style: none; }
   align-items: center !important;
   cursor: pointer !important;
   transition: color 0.3s ease !important;
-  padding: 10px 0 !important; /* Zone de survol raisonnable */
+  pointer-events: auto !important; /* ✅ Réactive la souris sur le lien */
+  padding: 10px !important;
 }
 
-.dropdown-content {
-  display: none !important; /* Test : cache complètement le menu */
+.icon-arrow { 
+  width: 14px !important; 
+  height: 14px !important; 
+  fill: currentColor !important; 
+  margin-left: 6px !important; 
+  transition: transform 0.3s ease !important;
+  display: inline-block !important;
 }
 
-/* Menu déroulant */
+/* Menu - INVISIBLE et INTOUCHABLE par défaut */
 .dropdown-content {
-  all: initial !important;
-  
   display: block !important;
   position: absolute !important;
   top: 100% !important; 
@@ -192,34 +186,31 @@ ul { list-style: none; }
   
   opacity: 0 !important;
   visibility: hidden !important;
-  pointer-events: none !important; /* ✅ CRUCIAL */
+  pointer-events: none !important;
   
-  transition: opacity 0.2s ease, visibility 0.2s ease !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease, pointer-events 0s 0.2s !important;
   
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
   z-index: 9999 !important;
-  height: auto !important;
   font-family: 'Inter', sans-serif !important;
 }
 
-/* ✅ CHANGEMENT CRITIQUE : Survol UNIQUEMENT du lien .dropbtn, PAS du .dropdown */
-.dropdown > a.dropbtn:hover + .dropdown-content,
-.dropdown-content:hover {
+/* Affichage au survol */
+.dropdown:hover .dropdown-content {
   opacity: 1 !important;
   visibility: visible !important;
-  pointer-events: auto !important;
+  pointer-events: auto !important; /* ✅ Réactive quand ouvert */
+  transition: opacity 0.2s ease, visibility 0.2s ease, pointer-events 0s 0s !important;
 }
 
-.dropdown > a.dropbtn:hover .icon-arrow,
-.dropdown-content:hover ~ a.dropbtn .icon-arrow { 
+.dropdown:hover .icon-arrow { 
   transform: rotate(180deg) !important; 
 }
 
 /* Items */
 .dropdown-content li {
-  all: initial !important;
   display: block !important;
   width: 100% !important;
   margin: 0 !important;
@@ -230,7 +221,6 @@ ul { list-style: none; }
 
 /* Liens */
 .dropdown-content li a {
-  all: initial !important;
   display: block !important;
   width: 100% !important;
   box-sizing: border-box !important;
@@ -250,7 +240,6 @@ ul { list-style: none; }
   transition: all 0.2s ease !important;
 }
 
-/* Espacements */
 .dropdown-content li:first-child a {
   padding-top: 25px !important;
 }
@@ -260,7 +249,6 @@ ul { list-style: none; }
   border-bottom: none !important;
 }
 
-/* Hover */
 .dropdown-content li a:hover {
   background: #252525 !important;
   color: #FF5F00 !important;
