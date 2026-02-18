@@ -1,5 +1,5 @@
 /* =========================================
-   1. VARIABLES ET BASE
+   1. VARIABLES & BASE
    ========================================= */
 :root {
   --bg-darkest: #0a0a0a;
@@ -37,7 +37,99 @@ a {
 ul { list-style: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (SOLUTION NUCLÉAIRE)
+   2. NAVBAR & HEADER
+   ========================================= */
+.site-header {
+  background-color: var(--bg-dark);
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #222;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 10px 0;
+}
+
+.logo-img {
+  height: 55px !important;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.text-orange { color: var(--accent-orange); }
+
+/* Menu Principal */
+.main-nav ul {
+  display: flex;
+  align-items: stretch;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.main-nav > ul > li {
+  display: flex;
+  align-items: center;
+  height: 85px !important;
+  min-height: 85px !important;
+  max-height: 85px !important;
+}
+
+.main-nav > ul > li.dropdown {
+  height: 85px !important;
+  min-height: 85px !important;
+  max-height: 85px !important;
+}
+
+.main-nav > ul > li > a {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.main-nav > ul > li > a:hover {
+  color: var(--accent-orange);
+}
+
+/* Actions */
+.header-actions { display: flex; align-items: center; }
+.nav-socials { display: flex; gap: 15px; align-items: center; }
+
+.icon-nav { width: 22px; height: 22px; fill: #fff; transition: 0.3s; }
+.icon-nav:hover { fill: var(--accent-orange); }
+
+.desktop-only { display: block !important; }
+.mobile-only { display: none !important; }
+
+/* =========================================
+   3. DROPDOWN MENU
    ========================================= */
 .dropdown {
   position: relative !important;
@@ -62,7 +154,7 @@ ul { list-style: none; }
 }
 
 .dropdown > a.dropbtn:hover {
-  color: var(--accent-orange) !important; /* ✅ Ajouté l'effet hover */
+  color: var(--accent-orange) !important;
 }
 
 .icon-arrow { 
@@ -74,7 +166,6 @@ ul { list-style: none; }
   display: inline-block !important;
 }
 
-/* Menu dropdown */
 .dropdown-content {
   display: block !important;
   position: absolute !important;
@@ -101,14 +192,11 @@ ul { list-style: none; }
   margin: 0 !important;
   z-index: 9999 !important;
   font-family: 'Inter', sans-serif !important;
-  
-  /* ✅ Ajouts pour s'assurer que la box s'adapte */
   height: auto !important;
   max-height: none !important;
   overflow: visible !important;
 }
 
-/* Affichage au survol */
 .dropdown:hover .dropdown-content {
   opacity: 1 !important;
   visibility: visible !important;
@@ -120,7 +208,6 @@ ul { list-style: none; }
   transform: rotate(180deg) !important; 
 }
 
-/* Items */
 .dropdown-content li {
   display: block !important;
   width: 100% !important;
@@ -128,40 +215,37 @@ ul { list-style: none; }
   padding: 0 !important;
   box-sizing: border-box !important;
   font-family: 'Inter', sans-serif !important;
-  height: auto !important; /* ✅ Ajouté */
+  height: auto !important;
 }
 
-/* Liens */
 .dropdown-content li a {
   display: block !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 20px 30px !important; /* ✅ Augmenté de 18px à 20px */
+  padding: 20px 30px !important;
   
   font-family: 'Inter', sans-serif !important;
   font-size: 0.95rem !important;
   font-weight: 500 !important;
   color: #ccc !important;
   text-decoration: none !important;
-  line-height: 1.5 !important; /* ✅ Augmenté de 1.2 à 1.5 */
+  line-height: 1.5 !important;
   white-space: normal !important;
   cursor: pointer !important;
   
   background: transparent !important;
   border-bottom: 1px solid rgba(255,255,255,0.05) !important;
   transition: all 0.2s ease !important;
-  
-  /* ✅ Assure que le texte peut respirer */
   height: auto !important;
   min-height: 0 !important;
 }
 
 .dropdown-content li:first-child a {
-  padding-top: 28px !important; /* ✅ Augmenté de 25px à 28px */
+  padding-top: 28px !important;
 }
 
 .dropdown-content li:last-child a {
-  padding-bottom: 28px !important; /* ✅ Augmenté de 25px à 28px */
+  padding-bottom: 28px !important;
   border-bottom: none !important;
 }
 
@@ -224,6 +308,7 @@ ul { list-style: none; }
   margin-bottom: 45px; 
 }
 
+/* Badge Google */
 .google-badge {
   background: #fff;
   display: inline-flex;
@@ -381,50 +466,25 @@ ul { list-style: none; }
   margin-top: 50px;
 }
 
-/* =========================================
-   NOS FORMULES NETTOYAGE (FIX FINAL)
-   ========================================= */
-
-/* 1. État de base identique pour TOUTES les cartes */
 .price-card {
   background: var(--bg-dark); 
-  border: 1px solid #333 !important; 
+  border: 1px solid #333; 
   border-radius: 12px; 
   padding: 35px;
   display: flex; 
   flex-direction: column; 
-  transition: all 0.3s ease; 
+  transition: 0.3s; 
   position: relative; 
   overflow: hidden;
-  transform: translateY(0) !important;
-  box-shadow: none;
 }
-
-/* 2. Effet au survol uniquement pour TOUTES les cartes */
-.price-card:hover {
-  border-color: var(--accent-orange) !important;
-  transform: translateY(-10px) !important;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* 3. On s'assure que la 3ème carte n'a pas de style "forcé" par défaut */
-.service-cards-grid .price-card:nth-of-type(3) {
-  border-color: #333 !important;
-  transform: translateY(0) !important;
-}
-
-/* 4. On réactive le hover spécifiquement pour la 3ème au cas où */
-.service-cards-grid .price-card:nth-of-type(3):hover {
-  border-color: var(--accent-orange) !important;
-  transform: translateY(-10px) !important;
-}
+.price-card:hover { border-color: var(--accent-orange); transform: translateY(-5px); }
 .price-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: #fff; }
 .card-price { font-size: 1.8rem; font-weight: 900; color: var(--accent-orange); margin-bottom: 20px; display: block; }
 .card-price span { font-size: 0.9rem; color: #888; font-weight: 400; }
 .card-icon { width: 50px; height: 50px; fill: var(--accent-orange); margin-bottom: 20px; }
 
 /* =========================================
-   9. QUALITY FLEX LAYOUT (ZIG-ZAG)
+   9. QUALITY FLEX LAYOUT
    ========================================= */
 .quality-flex-layout { 
   display: flex; 
@@ -453,7 +513,7 @@ ul { list-style: none; }
 .quality-text-side p { font-size: 1.1rem; margin-bottom: 25px; color: #ccc; }
 
 /* =========================================
-   10. GALERIE & ACCORDION
+   10. GALERIE & FAQ
    ========================================= */
 .home-gallery-grid {
   display: grid;
@@ -578,110 +638,102 @@ ul { list-style: none; }
   .desktop-only { display: none !important; }
   .mobile-only { display: flex !important; }
   
-  .hero-content h1 { font-size: 2.2rem; }
-
-  /* --- Toggle Mobile Orange --- */
-  #menu-toggle {
-    background: transparent !important;
-    border: none;
+  .hero-content h1 { font-size: 2.5rem; }
+  
+  #menu-toggle { 
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 18px;
-    padding: 0;
-    cursor: pointer;
-    z-index: 1001;
+    gap: 5px;
   }
-
-  #menu-toggle span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--accent-orange) !important;
-    border-radius: 3px;
-    transition: 0.3s;
+  
+  #menu-toggle span { 
+    display: block; 
+    width: 25px; 
+    height: 2px; 
+    background: #fff; 
   }
-
-  /* --- Overlay Menu Mobile --- */
+  
   #mobile-menu {
-    position: fixed;
-    top: var(--nav-height);
-    left: 0;
-    width: 100%;
+    position: fixed; 
+    top: var(--nav-height); 
+    left: 0; 
+    width: 100%; 
     height: 0;
-    background: #0a0a0a; /* Fond très sombre pour le contraste */
-    overflow: hidden;
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Commence en haut pour le scroll */
-    z-index: 1000;
-  }
-
-  #mobile-menu.active {
-    height: calc(100vh - var(--nav-height));
+    background: var(--bg-dark); 
+    overflow: hidden; 
+    transition: height 0.3s ease;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start;
+    z-index: 999;
     padding-top: 20px;
   }
-
-  /* --- Liste du Menu --- */
-  #mobile-menu ul {
-    width: 100%;
+  
+  #mobile-menu.active { 
+    height: calc(100vh - var(--nav-height)); 
+  }
+  
+  #mobile-menu nav { width: 100%; }
+  
+  #mobile-menu ul { 
+    text-align: center; 
+    list-style: none; 
     padding: 0;
     margin: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
   }
-
-  #mobile-menu li {
-    width: 100%;
-    text-align: center;
+  
+  #mobile-menu li { 
+    margin: 0; 
+    padding: 0;
   }
-
-  #mobile-menu li a {
+  
+  #mobile-menu li a { 
     display: block;
-    padding: 12px 20px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: 0.2s;
+    padding: 15px 20px;
+    font-size: 1.1rem; 
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    transition: background 0.3s, color 0.3s;
   }
-
-  #mobile-menu li a:active {
-    color: var(--accent-orange);
+  
+  #mobile-menu li a:hover {
     background: rgba(255, 95, 0, 0.1);
+    color: var(--accent-orange);
   }
-
-  /* --- Séparateurs (Compactés) --- */
+  
   #mobile-menu .menu-divider {
-    height: 1px !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    margin: 8px 60px !important; /* Espacement réduit autour des traits */
-    list-style: none !important;
+    height: 1px;
+    background: #333;
+    margin: 10px 20px;
   }
-
-  /* --- Icônes Réseaux Sociaux --- */
+  
   .mobile-socials-wrap {
     display: flex;
+    gap: 20px;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-    padding-bottom: 30px;
+    margin-top: 30px;
+    padding: 20px;
   }
-
+  
   .mobile-socials-wrap svg {
-    width: 26px;
-    height: 26px;
-    fill: #ffffff;
+    width: 32px;
+    height: 32px;
+    fill: #fff;
     transition: 0.3s;
   }
-
-  /* --- Footer & Cookies --- */
+  
+  .mobile-socials-wrap a:hover svg {
+    fill: var(--accent-orange);
+  }
+  
   .footer-bottom-flex { flex-direction: column; text-align: center; gap: 20px; }
-  #cookie-banner { flex-direction: column; text-align: center; padding: 20px; }
+  #cookie-banner { flex-direction: column; text-align: center; }
 }
 
 /* =========================================
@@ -760,49 +812,4 @@ ul { list-style: none; }
   .review-slide { padding: 0 40px; }
   .review-text { font-size: 1.1rem; }
   .nav-arrow { width: 40px; height: 40px; }
-}
-
-/* --- Correction débordement cartes Services --- */
-@media (max-width: 768px) {
-  .services-hub-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 15px; /* Empêche de coller aux bords */
-  }
-  
-  .hub-card {
-    width: 100%; /* Force la largeur à l'écran */
-    box-sizing: border-box;
-  }
-}
-
-/* --- Espacement CTA Final --- */
-.cta-content-wrapper .btn {
-  margin-top: 30px !important; /* Espace entre le texte et le bouton */
-}
-
-/* Sur ordinateur : on inverse l'ordre pour cette section précise */
-@media (min-width: 993px) {
-  .quality-reverse {
-    flex-direction: row-reverse !important;
-  }
-}
-
-/* Correctif pour les colonnes sur mobile (à mettre dans ta media query 768px ou 992px) */
-@media (max-width: 992px) {
-  .quality-flex-layout {
-    flex-direction: column !important; /* On force le passage en colonne */
-    gap: 30px !important;
-  }
-  
-  .quality-image-side, .quality-text-side {
-    width: 100% !important; /* L'image et le texte prennent toute la largeur */
-    flex: none !important;
-  }
-  
-  .quality-img-wrap img {
-    max-width: 100%;
-    height: auto;
-  }
 }
