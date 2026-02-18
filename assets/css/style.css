@@ -168,6 +168,10 @@ ul { list-style: none; }
   padding: 10px 0 !important; /* Zone de survol raisonnable */
 }
 
+.dropdown-content {
+  display: none !important; /* Test : cache complètement le menu */
+}
+
 /* Menu déroulant */
 .dropdown-content {
   all: initial !important;
