@@ -129,7 +129,7 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (FIX SENSIBILITÉ V12)
+   3. DROPDOWN MENU (FIX FANTÔME V13)
    ========================================= */
 
 /* --- Container dropdown --- */
@@ -138,9 +138,8 @@ ul { list-style: none; }
   display: flex !important;
   align-items: center !important;
   cursor: pointer !important;
-  /* SÉCURITÉ : On force la hauteur à celle de la navbar pour éviter que la zone ne déborde en bas */
-  height: 100% !important; 
-  max-height: var(--nav-height) !important; 
+  height: 100% !important;
+  max-height: var(--nav-height) !important;
 }
 
 /* --- Flèche --- */
@@ -155,13 +154,11 @@ ul { list-style: none; }
 
 /* --- Menu déroulant (La Boîte) --- */
 .dropdown-content {
-  /* Reset */
   all: initial !important;
   
-  /* Positionnement PRÉCIS */
+  /* Positionnement */
   display: block !important;
   position: absolute !important;
-  /* Le menu commence exactement sous la barre noire */
   top: 100% !important; 
   left: 50% !important;
   transform: translateX(-50%) translateY(10px) !important;
@@ -175,9 +172,12 @@ ul { list-style: none; }
   border-top: 3px solid #FF5F00 !important;
   border-radius: 0 0 4px 4px !important;
   
-  /* Animation */
+  /* --- LE FIX EST ICI (Invisible + Intouchable) --- */
   opacity: 0 !important;
   visibility: hidden !important;
+  pointer-events: none !important; /* La souris passe au travers quand fermé */
+  
+  /* Animation */
   transition: all 0.2s ease-in-out !important;
   
   /* Structure */
@@ -189,17 +189,14 @@ ul { list-style: none; }
   font-family: 'Inter', sans-serif !important;
 }
 
-/* --- LE PONT INVISIBLE (CORRIGÉ) --- */
-/* C'est lui qui posait problème. On réduit sa taille au strict minimum */
+/* --- Pont invisible (Taille réduite) --- */
 .dropdown-content::before {
   content: "" !important;
   position: absolute !important;
-  /* On remonte juste un tout petit peu pour combler l'écart visuel */
-  top: -20px !important; 
+  top: -20px !important; /* Remonte juste assez pour coller à la barre */
   left: 0 !important;
   width: 100% !important;
-  /* Hauteur réduite : ne capte plus la souris 5cm en dessous */
-  height: 20px !important; 
+  height: 20px !important; /* Zone morte réduite au minimum */
   background: transparent !important;
 }
 
@@ -207,6 +204,7 @@ ul { list-style: none; }
 .dropdown:hover .dropdown-content {
   opacity: 1 !important;
   visibility: visible !important;
+  pointer-events: auto !important; /* Réactive la souris quand ouvert */
   transform: translateX(-50%) translateY(0) !important;
 }
 
@@ -214,7 +212,7 @@ ul { list-style: none; }
   transform: rotate(180deg) !important; 
 }
 
-/* --- Items de la liste (li) --- */
+/* --- Items de la liste --- */
 .dropdown-content li {
   all: initial !important;
   display: block !important;
@@ -225,7 +223,7 @@ ul { list-style: none; }
   font-family: 'Inter', sans-serif !important;
 }
 
-/* --- Liens (a) --- */
+/* --- Liens --- */
 .dropdown-content li a {
   all: initial !important;
   display: block !important;
@@ -247,7 +245,7 @@ ul { list-style: none; }
   transition: all 0.2s ease !important;
 }
 
-/* --- AJUSTEMENTS ESPACEMENTS --- */
+/* --- Ajustements Espacements --- */
 .dropdown-content li:first-child a {
   padding-top: 25px !important;
 }
