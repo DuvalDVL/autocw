@@ -129,17 +129,18 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (FIX ZONE DE SURVOL)
+   3. DROPDOWN MENU (FIX ZONE DE SURVOL STRICT)
    ========================================= */
 
-/* Container dropdown */
+/* Container dropdown - ZONE DE SURVOL STRICTE */
 .dropdown {
   position: relative !important;
   display: flex !important;
   align-items: center !important;
   cursor: pointer !important;
-  height: 100% !important;
+  height: var(--nav-height) !important; /* ✅ Hauteur fixe, pas 100% */
   max-height: var(--nav-height) !important;
+  overflow: visible !important; /* ✅ Permet au dropdown de sortir */
 }
 
 /* Flèche */
@@ -156,12 +157,12 @@ ul { list-style: none; }
 .dropdown-content {
   all: initial !important;
   
-  /* Positionnement */
+  /* Positionnement COLLÉ au header */
   display: block !important;
   position: absolute !important;
   top: 100% !important; 
   left: 50% !important;
-  transform: translateX(-50%) translateY(5px) !important; /* ✅ Réduit de 10px à 5px */
+  transform: translateX(-50%) !important; /* ✅ SANS translateY - collé direct */
   
   /* Apparence */
   background-color: #1a1a1a !important;
@@ -178,7 +179,7 @@ ul { list-style: none; }
   pointer-events: none !important;
   
   /* Animation */
-  transition: all 0.2s ease-in-out !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease !important;
   
   /* Structure */
   list-style: none !important;
@@ -189,23 +190,15 @@ ul { list-style: none; }
   font-family: 'Inter', sans-serif !important;
 }
 
-/* ✅ Pont invisible RÉDUIT AU MINIMUM (juste pour combler le gap de 5px) */
-.dropdown-content::before {
-  content: "" !important;
-  position: absolute !important;
-  top: -5px !important; /* ✅ Exactement la hauteur du gap */
-  left: 0 !important;
-  width: 100% !important;
-  height: 5px !important; /* ✅ Réduit à 5px au lieu de 20px */
-  background: transparent !important;
-}
+/* ✅ PAS DE PONT - Supprimé complètement */
+/* Le dropdown est collé au header, pas besoin de pont */
 
-/* Affichage au survol du .dropdown (pas du pont) */
-.dropdown:hover .dropdown-content {
+/* Affichage au survol UNIQUEMENT du .dropdown container */
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover { /* ✅ Reste ouvert quand on survole le menu lui-même */
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
-  transform: translateX(-50%) translateY(0) !important;
 }
 
 .dropdown:hover .icon-arrow { 
@@ -261,7 +254,6 @@ ul { list-style: none; }
   color: #FF5F00 !important;
   padding-left: 35px !important;
 }
-
 /* =========================================
    4. HERO SECTIONS
    ========================================= */
