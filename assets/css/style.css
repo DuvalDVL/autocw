@@ -865,3 +865,28 @@ ul { list-style: none; }
 .cta-content-wrapper .btn {
   margin-top: 30px !important; /* Espace entre le texte et le bouton */
 }
+
+/* Sur ordinateur : on inverse l'ordre pour cette section précise */
+@media (min-width: 993px) {
+  .quality-reverse {
+    flex-direction: row-reverse !important;
+  }
+}
+
+/* Correctif pour les colonnes sur mobile (à mettre dans ta media query 768px ou 992px) */
+@media (max-width: 992px) {
+  .quality-flex-layout {
+    flex-direction: column !important; /* On force le passage en colonne */
+    gap: 30px !important;
+  }
+  
+  .quality-image-side, .quality-text-side {
+    width: 100% !important; /* L'image et le texte prennent toute la largeur */
+    flex: none !important;
+  }
+  
+  .quality-img-wrap img {
+    max-width: 100%;
+    height: auto;
+  }
+}
