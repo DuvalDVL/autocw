@@ -625,7 +625,7 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   13. MEDIA QUERIES (RESPONSIVE FINAL - OPTIMISÉ)
+   13. MEDIA QUERIES (RESPONSIVE - VERSION ULTRA-PRÉCISE)
    ========================================= */
 
 @media (max-width: 992px) {
@@ -641,11 +641,11 @@ ul { list-style: none; }
   .footer-grid-main { grid-template-columns: 1fr; gap: 40px; }
   .b2b-card { flex-direction: column; text-align: center; padding: 40px 25px; }
   
-  /* Layout Zig-Zag : Forcer l'image sur toute la largeur */
+  /* Layout Zig-Zag Services */
   .quality-flex-layout { 
     flex-direction: column !important; 
     text-align: center; 
-    gap: 40px; 
+    gap: 50px; 
   }
   .quality-image-side, .quality-text-side { 
     width: 100% !important; 
@@ -662,32 +662,37 @@ ul { list-style: none; }
   .desktop-only { display: none !important; }
   .mobile-only { display: flex !important; }
   
-  /* --- H1 HERO (Fix "Personnalisation") --- */
+  /* --- H1 HERO (Fix définitif pour "Personnalisation") --- */
   .hero-content h1 { 
-    /* Réduction de la taille minimale pour éviter tout débordement */
-    font-size: clamp(1.4rem, 9vw, 2.4rem) !important; 
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    width: 100%;
-    margin-bottom: 15px;
+    /* On descend à 1.2rem en taille mini pour les écrans < 350px */
+    font-size: clamp(1.2rem, 11vw, 2.8rem) !important; 
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    display: block;
+    width: 100% !important;
+    line-height: 1.1 !important;
+    margin-bottom: 20px !important;
+    padding: 0 10px !important;
   }
 
-  /* --- SOUS-TITRE HERO (Fix largeur) --- */
+  /* --- SOUS-TITRE HERO (Fix largeur et aération) --- */
   .hero-content p { 
-    font-size: 1rem; 
-    max-width: 290px; /* Empêche le texte de toucher les bords */
-    margin: 0 auto 30px; 
-    line-height: 1.4;
+    font-size: 1.1rem !important; 
+    max-width: 85% !important; /* Utilisation de % pour plus de souplesse */
+    margin: 0 auto 35px !important; 
+    line-height: 1.5 !important;
+    color: #bbb !important;
   }
 
-  /* --- RESTAURATION H2 (Impact visuel) --- */
-  /* On remonte à 2.2rem pour garder le côté haut de gamme */
+  /* --- RESTAURATION H2 (Taille imposante) --- */
+  /* Retour à une taille forte pour l'aspect haut de gamme */
   .quality-text-side h2, 
   .section-title h2, 
   .cta-content-wrapper h2 { 
-    font-size: 2.2rem !important; 
-    line-height: 1.2;
-    margin-bottom: 20px;
+    font-size: 2.8rem !important; /* Taille d'origine restaurée */
+    line-height: 1.1 !important;
+    margin-bottom: 25px !important;
+    word-wrap: break-word !important;
   }
 
   /* --- MENU MOBILE --- */
@@ -704,16 +709,15 @@ ul { list-style: none; }
   }
   #mobile-menu.active { height: calc(100vh - var(--nav-height)); }
   #mobile-menu ul { text-align: center; width: 100%; padding-top: 20px; }
-  #mobile-menu li a { display: block; padding: 15px 20px; font-size: 1.1rem; text-transform: uppercase; }
+  #mobile-menu li a { display: block; padding: 15px 20px; font-size: 1.2rem; text-transform: uppercase; }
   #mobile-menu .menu-divider { height: 1px; background: #333; margin: 10px 40px; }
   
   .mobile-socials-wrap { display: flex; gap: 20px; margin-top: 30px; }
   .mobile-socials-wrap svg { width: 32px; height: 32px; fill: #fff; }
   
-  /* --- AJUSTEMENTS DIVERS --- */
-  .footer-bottom-flex { flex-direction: column; text-align: center; gap: 20px; }
-  .review-slide { padding: 0 20px; }
-  .review-text { font-size: 1rem; }
+  /* --- AJUSTEMENTS BAS DE PAGE --- */
+  .footer-bottom-flex { flex-direction: column; text-align: center; gap: 25px; }
+  .section-padding { padding: 60px 0 !important; }
 }
 
 /* =========================================
