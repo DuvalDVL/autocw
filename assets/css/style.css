@@ -133,18 +133,16 @@ ul { list-style: none; }
 .mobile-only { display: none; }
 
 /* =========================================
-   3. DROPDOWN MENU (FIX ZONE DE SURVOL STRICT)
+   3. DROPDOWN MENU (FIX ZONE DE SURVOL STRICTE)
    ========================================= */
 
-/* Container dropdown - ZONE DE SURVOL STRICTE */
+/* Container dropdown */
 .dropdown {
   position: relative !important;
   display: flex !important;
   align-items: center !important;
-  cursor: pointer !important;
-  height: var(--nav-height) !important; /* ✅ Hauteur fixe, pas 100% */
-  max-height: var(--nav-height) !important;
-  overflow: visible !important; /* ✅ Permet au dropdown de sortir */
+  height: 85px !important;
+  max-height: 85px !important;
 }
 
 /* Flèche */
@@ -157,18 +155,29 @@ ul { list-style: none; }
   display: inline-block !important;
 }
 
+/* ✅ Le lien "Prestations" lui-même */
+.dropdown > a.dropbtn {
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  font-size: 0.85rem !important;
+  color: var(--text-light) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  transition: color 0.3s ease !important;
+  padding: 10px 0 !important; /* Zone de survol raisonnable */
+}
+
 /* Menu déroulant */
 .dropdown-content {
   all: initial !important;
   
-  /* Positionnement COLLÉ au header */
   display: block !important;
   position: absolute !important;
   top: 100% !important; 
   left: 50% !important;
-  transform: translateX(-50%) !important; /* ✅ SANS translateY - collé direct */
+  transform: translateX(-50%) !important;
   
-  /* Apparence */
   background-color: #1a1a1a !important;
   min-width: 300px !important;
   
@@ -177,15 +186,12 @@ ul { list-style: none; }
   border-top: 3px solid #FF5F00 !important;
   border-radius: 0 0 4px 4px !important;
   
-  /* Masqué par défaut */
   opacity: 0 !important;
   visibility: hidden !important;
-  pointer-events: none !important;
+  pointer-events: none !important; /* ✅ CRUCIAL */
   
-  /* Animation */
   transition: opacity 0.2s ease, visibility 0.2s ease !important;
   
-  /* Structure */
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -194,18 +200,16 @@ ul { list-style: none; }
   font-family: 'Inter', sans-serif !important;
 }
 
-/* ✅ PAS DE PONT - Supprimé complètement */
-/* Le dropdown est collé au header, pas besoin de pont */
-
-/* Affichage au survol UNIQUEMENT du .dropdown container */
-.dropdown:hover .dropdown-content,
-.dropdown-content:hover { /* ✅ Reste ouvert quand on survole le menu lui-même */
+/* ✅ CHANGEMENT CRITIQUE : Survol UNIQUEMENT du lien .dropbtn, PAS du .dropdown */
+.dropdown > a.dropbtn:hover + .dropdown-content,
+.dropdown-content:hover {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
 }
 
-.dropdown:hover .icon-arrow { 
+.dropdown > a.dropbtn:hover .icon-arrow,
+.dropdown-content:hover ~ a.dropbtn .icon-arrow { 
   transform: rotate(180deg) !important; 
 }
 
@@ -258,6 +262,7 @@ ul { list-style: none; }
   color: #FF5F00 !important;
   padding-left: 35px !important;
 }
+
 /* =========================================
    4. HERO SECTIONS
    ========================================= */
