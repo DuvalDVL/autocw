@@ -4,8 +4,8 @@ description: "Le Studio de Detailing Ultime à Sallanches. Protection Céramique
 author: "Duval DVL"
 
 # --- CONFIGURATION URL ---
-url: "https://duvaldvl.github.io"
-baseurl: "/autocw"
+url: "https://auto-cw.com/"
+baseurl: ""
 
 # --- CONFIGURATION BUILD ---
 markdown: kramdown
