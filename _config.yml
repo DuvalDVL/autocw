@@ -4,7 +4,7 @@ description: "Le Studio de Detailing Ultime à Sallanches. Protection Céramique
 author: "Duval DVL"
 
 # --- CONFIGURATION URL ---
-url: "https://auto-cw.com/"
+url: "https://auto-cw.com"
 baseurl: ""
 
 # --- CONFIGURATION BUILD ---
@@ -13,7 +13,8 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
+  - jekyll-sitemap 
+  
 # --- DONNÉES ENTREPRISE ---
 company:
   name: "Auto C&W"
